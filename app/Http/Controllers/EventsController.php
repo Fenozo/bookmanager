@@ -40,8 +40,8 @@ class EventsController extends Controller
         
 
         $this->validate($request, [
-                    'title' =>'required|alpha_num',
-                    'description' =>'required|alpha_num',
+                    'title' =>'required|min:3',
+                    'description' =>'required|min:5',
                         ] );
 
             Event::create([
@@ -75,7 +75,9 @@ class EventsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $event = Event::whereId($id)->firstOrFail();
+
+        return view('events.edit', ['event' => $event]);
     }
 
     /**
@@ -87,7 +89,23 @@ class EventsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' =>'required|min:3',
+            'description' =>'required|min:5',
+        ]);
+
+
+
+        $event = Event::findOrFail($id);
+
+        $event->update([
+            'title' => $request->title,
+            'description' => $request->description
+        ]);
+
+
+
+        return redirect()->route('events.show', ['event' => $event]);
     }
 
     /**
@@ -98,6 +116,7 @@ class EventsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Event::destroy($id);
+        return redirect()->route('events.index');
     }
 }
