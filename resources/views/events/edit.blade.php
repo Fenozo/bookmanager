@@ -4,7 +4,7 @@
 
 
 
-<h1>Evénnement</h1>
+<h1>Evénnement #{{ $event->id }}</h1>
 
 	<div class="row">
 	
@@ -13,17 +13,12 @@
 					<form action="{{ route('events.update', $event->id) }}" method="POST">
 					{{ csrf_field() }}
 
-					{{-- 
-						<!-- <input type="hidden" name="_method" value="PUT"> -->
-					 --}}
+					{{-- <!-- <input type="hidden" name="_method" value="PUT"> --> --}}
+
 						{{ method_field('PUT') }}
 					 
+						@include('events/_form', ['submitButtomText'=> "Modifier l'événement"])
 
-						@include('events/_form')
-
-
-
-					<button class="btn btn-success"> Modifier </button>
 					</form>
 				</div>
 			</div>

@@ -13,7 +13,7 @@
 					@foreach($events as $event)
 
 					<article>
-						<a href="{!! route('events.show', ['id' => $event->id]) !!} "><h2>{{ $event->title }}</h2></a>
+						<a href="{!! route('events.show', ['id' => $event->id]) !!} "><h2>{{ $event->title }} #{{ $event->id }}</h2></a>
 						
 						<div class="box-center">{{ $event->created_at->format('d/m/Y H:m') }}</div>
 						<p>{{ $event->description }}</p>
@@ -21,7 +21,7 @@
 					</article>
 					@endforeach
 					<div class="box-center">
-						{{ $events->links() }}
+						{{ $events->links('vendor.pagination.bootstrap-4') }}
 					</div>
 
 				@else

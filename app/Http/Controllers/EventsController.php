@@ -15,7 +15,7 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $events = Event::Paginate(1);
+        $events = Event::Paginate(3);
 
         return view('events.index', compact('events'));
     }
@@ -39,16 +39,15 @@ class EventsController extends Controller
      */
     public function store(CreateEventFormRequest $request)
     {
-
-
-            Event::create([
-                    'title' => $request->title,
-                    'description' => $request->description
-                ]);
+        Event::create([
+            'title' => $request->title,
+            'description' => $request->description
+        ]);
         
+        session()->flash("notification.message", "L'événement est créer avec succé");
+        session()->flash("notification.type","success");
 
         return redirect()->route('root_web');
-
     }
 
     /**
@@ -91,6 +90,10 @@ class EventsController extends Controller
             'description' => $request->description
         ]);
 
+        session()->flash("notification.message", sprintf("L'événement  #%s a été modifié avec succé", $event->id));
+        session()->flash("notification.type","success");
+
+
         return redirect()->route('events.show', ['event' => $event]);
     }
 
@@ -103,6 +106,11 @@ class EventsController extends Controller
     public function destroy(Event $event)
     {
         $event->delete();
+
+        session()->flash("notification.message", sprintf("L'événement #%s a été supprimé avec succé", $event->id));
+        session()->flash("notification.type","danger");
+
+
         return redirect()->route('events.index');
     }
 }

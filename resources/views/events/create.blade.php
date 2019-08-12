@@ -12,9 +12,9 @@
 				<div class="flex-center position-ref ">
 					<form action="{{ route('events.store') }}" method="POST">
 					{{ csrf_field() }}
-					@include('events/_form')
+					@include('events/_form', ['submitButtomText'=> "Créer un événement"])
 
-					<button class="btn btn-success"> Enregistrer</button>
+					
 					</form>
 				</div>
 			</div>

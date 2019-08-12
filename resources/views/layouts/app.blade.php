@@ -129,7 +129,12 @@
         </nav>
 
 
-        <div class="content">
+        <div class="content" style="padding-top:22px;">
+            @if (session()->has('notification.message'))
+            <div class="alert alert-{{ session()->get('notification.type') }}">
+                {{ session()->get('notification.message') }}
+            </div>
+            @endif
              @yield('content')
         </div>
 

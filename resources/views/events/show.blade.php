@@ -4,7 +4,7 @@
 
 	<div class="body">
 		
-		<h1>Evénnement</h1>
+		<h1>Evénnement #{{ $event->id }}</h1>
 
 
 		<h2>{{ $event->title }}</h2>
