@@ -9,21 +9,27 @@
 
 		<h2>{{ $event->title }}</h2>
 		<div>{{ $event->description }}</div>
-		<form method="GET" action="{{ route('events.edit', $event->id) }}">
-			<button class="btn btn-success"> Modifier </button>
-		</form>
-		<form method="POST" action="{{ route('events.destroy', $event->id) }}">
 
-			<a>
-				{{ csrf_field() }}
-				{{ method_field('DELETE') }}
-				<button class="btn btn-danger"> supprimer </button>
-			</a>
-		</form>
+		<a href="{{ route('events.edit', $event->id) }}" class="btn btn-success"> Modifier</a> <span ></span>
 
-
-		
+		<a href="{{ route('events.destroy', $event->id) }}" class="btn btn-danger" data-method="DELETE" data-confirm="Etes-vous sûr ?" >Supprimer </a>
+	
 
 	</div>
 
+<style>
+	span {
+		display: inline-block;
+		border-left:1px solid #000;
+		height:40px;
+		margin:0 5px;
+		margin-bottom:-15px;
+	}
+</style>
+@stop
+
+@section('javascript')
+	<script>
+
+	</script>
 @stop
