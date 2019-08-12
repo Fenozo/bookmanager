@@ -89,6 +89,15 @@
                 color: red;
                 font-weight: 900;
             }
+            form {
+                display: inline;
+            }
+            .box-center
+            {
+                display: flex;
+                justify-content: center;
+                min-width: 449px;
+            }
         </style>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">

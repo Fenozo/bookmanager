@@ -19,14 +19,9 @@
 						{{ method_field('PUT') }}
 					 
 
-					<div class="form-group">
-						<input class="form-control" type="text" name="title" value="{{ $event->title }}">
-					</div>
-					{!! $errors->first('title', '<p class="error">:message</p>') !!}
-					<div class="form-group">
-						<textarea name="description" class="form-control">{{ $event->description }}</textarea>
-					</div>
-					{!! $errors->first('description', '<p class="error">:message</p>') !!}
+						@include('events/_form')
+
+
 
 					<button class="btn btn-success"> Modifier </button>
 					</form>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateEventFormRequest;
 use App\Model\Event;
 
 class EventsController extends Controller
@@ -14,7 +15,7 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $events = Event::all();
+        $events = Event::Paginate(1);
 
         return view('events.index', compact('events'));
     }
@@ -26,7 +27,8 @@ class EventsController extends Controller
      */
     public function create()
     {
-        return view('events.create');
+        $event = new Event;
+        return view('events.create', compact('event'));
     }
 
     /**
@@ -35,14 +37,9 @@ class EventsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateEventFormRequest $request)
     {
-        
 
-        $this->validate($request, [
-                    'title' =>'required|min:3',
-                    'description' =>'required|min:5',
-                        ] );
 
             Event::create([
                     'title' => $request->title,
@@ -60,9 +57,9 @@ class EventsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Event $event)
     {
-        $event = Event::whereId($id)->firstOrFail();
+        // $event = Event::whereId($id)->firstOrFail();
 
         return view('events.show', ['event' => $event]);
     }
@@ -73,9 +70,9 @@ class EventsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Event $event)
     {
-        $event = Event::whereId($id)->firstOrFail();
+        // $event = Event::whereId($id)->firstOrFail();
 
         return view('events.edit', ['event' => $event]);
     }
@@ -87,23 +84,12 @@ class EventsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateEventFormRequest $request, Event $event)
     {
-        $this->validate($request, [
-            'title' =>'required|min:3',
-            'description' =>'required|min:5',
-        ]);
-
-
-
-        $event = Event::findOrFail($id);
-
         $event->update([
             'title' => $request->title,
             'description' => $request->description
         ]);
-
-
 
         return redirect()->route('events.show', ['event' => $event]);
     }
@@ -114,9 +100,9 @@ class EventsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Event $event)
     {
-        Event::destroy($id);
+        $event->delete();
         return redirect()->route('events.index');
     }
 }

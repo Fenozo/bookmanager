@@ -9,15 +9,20 @@
 
 		<h2>{{ $event->title }}</h2>
 		<div>{{ $event->description }}</div>
-
-		<form method="POST" action="{{ route('events.destroy', $event->id) }}">
-			{{ csrf_field() }}
-			{{ method_field('DELETE') }}
-			<button> supprimer </button>
+		<form method="GET" action="{{ route('events.edit', $event->id) }}">
+			<button class="btn btn-success"> Modifier </button>
 		</form>
-		<div>
-			<a href="{{ route('events.edit', $event->id) }}">Modifier</a>
-		</div>
+		<form method="POST" action="{{ route('events.destroy', $event->id) }}">
+
+			<a>
+				{{ csrf_field() }}
+				{{ method_field('DELETE') }}
+				<button class="btn btn-danger"> supprimer </button>
+			</a>
+		</form>
+
+
+		
 
 	</div>
 
