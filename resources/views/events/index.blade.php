@@ -13,7 +13,7 @@
 					@foreach($events as $event)
 
 					<article>
-						<a href="{!! route('events.show', ['id' => $event->id]) !!} "><h2>{{ $event->title }} #{{ $event->id }}</h2></a>
+						<a href="{!! route('events.show', $event) !!} "><h2>{{ $event->title }} #{{ $event->id }}</h2></a>
 						
 						<div class="box-center">{{ $event->created_at->format('d/m/Y H:m') }}</div>
 						<p>{{ $event->description }}</p>

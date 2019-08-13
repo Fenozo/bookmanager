@@ -10,9 +10,9 @@
 		<h2>{{ $event->title }}</h2>
 		<div>{{ $event->description }}</div>
 
-		<a href="{{ route('events.edit', $event->id) }}" class="btn btn-success"> Modifier</a> <span ></span>
+		<a href="{{ route('events.edit', $event) }}" class="btn btn-success"> Modifier</a> <span ></span>
 
-		<a href="{{ route('events.destroy', $event->id) }}" class="btn btn-danger" data-method="DELETE" data-confirm="Etes-vous sûr ?" >Supprimer </a>
+		<a href="{{ route('events.destroy', $event) }}" class="btn btn-danger" data-method="DELETE" data-confirm="Etes-vous sûr ?" >Supprimer </a>
 	
 
 	</div>

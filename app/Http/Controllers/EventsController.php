@@ -41,7 +41,8 @@ class EventsController extends Controller
     {
         Event::create([
             'title' => $request->title,
-            'description' => $request->description
+            'description' => $request->description,
+
         ]);
         
         Flashy::message("L'événement est créer avec succé");
@@ -86,7 +87,8 @@ class EventsController extends Controller
     {
         $event->update([
             'title' => $request->title,
-            'description' => $request->description
+            'description' => $request->description,
+      
         ]);
 
         flashy()->primary(sprintf("L'événement  #%s a été modifié avec succé", $event->id));

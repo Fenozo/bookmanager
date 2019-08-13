@@ -10,7 +10,7 @@
 	
 			<div class="col-md-12">
 				<div class="flex-center position-ref ">
-					<form action="{{ route('events.update', $event->id) }}" method="POST">
+					<form action="{{ route('events.update', $event) }}" method="POST">
 					{{ csrf_field() }}
 
 					{{-- <!-- <input type="hidden" name="_method" value="PUT"> --> --}}
