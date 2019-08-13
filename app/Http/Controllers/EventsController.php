@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateEventFormRequest;
 use App\Model\Event;
-
+use Flashy;
 class EventsController extends Controller
 {
     /**
@@ -44,8 +44,7 @@ class EventsController extends Controller
             'description' => $request->description
         ]);
         
-        session()->flash("notification.message", "L'événement est créer avec succé");
-        session()->flash("notification.type","success");
+        Flashy::message("L'événement est créer avec succé");
 
         return redirect()->route('root_web');
     }
@@ -90,8 +89,7 @@ class EventsController extends Controller
             'description' => $request->description
         ]);
 
-        session()->flash("notification.message", sprintf("L'événement  #%s a été modifié avec succé", $event->id));
-        session()->flash("notification.type","success");
+        flashy()->primary(sprintf("L'événement  #%s a été modifié avec succé", $event->id));
 
 
         return redirect()->route('events.show', ['event' => $event]);
@@ -107,9 +105,7 @@ class EventsController extends Controller
     {
         $event->delete();
 
-        session()->flash("notification.message", sprintf("L'événement #%s a été supprimé avec succé", $event->id));
-        session()->flash("notification.type","danger");
-
+        Flashy::error(sprintf("L'événement #%s a été supprimé avec succé", $event->id));
 
         return redirect()->route('events.index');
     }

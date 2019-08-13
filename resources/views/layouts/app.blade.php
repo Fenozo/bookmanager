@@ -141,9 +141,11 @@
 
     </div>
 
+
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/app.js') }}" ></script>
 
+    @include('flashy::message')
     @yield('javascript')
 </body>
 </html>
