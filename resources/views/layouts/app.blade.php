@@ -17,6 +17,7 @@
 
 
     <!-- Styles -->
+    <link href="{{ asset('css/flashy.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 </head>
@@ -144,6 +145,7 @@
 
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/app.js') }}" ></script>
+    <script src="{{ asset('js/flashy.js') }}" ></script>
 
     @include('flashy::message')
     @yield('javascript')
