@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEventsTable extends Migration
+class CreatePersonnesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreateEventsTable extends Migration
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('personnes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
-            // Le slug doit avoir la taille inférieur à 200 si non elle ne peut pas inséré dans la base de données
-            $table->string('slug', 150);
-            $table->text('description');
+            $table->string('name');
+            $table->string('prename');
+            $table
+                ->string('email', 180)
+                ->unique();
+            $table->string('phone');
+            $table->dateTime('date_naissance');
             $table->timestamps();
         });
     }
@@ -30,6 +33,6 @@ class CreateEventsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('personnes');
     }
 }

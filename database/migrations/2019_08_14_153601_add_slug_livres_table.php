@@ -4,9 +4,8 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddUniqueSlugInTableEvents extends Migration
+class AddSlugLivresTable extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -14,8 +13,8 @@ class AddUniqueSlugInTableEvents extends Migration
      */
     public function up()
     {
-        Schema::table('events', function (Blueprint $table) {
-            $table->unique('slug');
+        Schema::table('livres', function (Blueprint $table) {
+            $table->string('slug',180)->after('title')->unique();
         });
     }
 
@@ -26,8 +25,8 @@ class AddUniqueSlugInTableEvents extends Migration
      */
     public function down()
     {
-        Schema::table('events', function (Blueprint $table) {
-            $table->dropUnique('events_slug_unique');
+        Schema::table('livres', function (Blueprint $table) {
+            $table->dropColumn('slug');
         });
     }
 }
