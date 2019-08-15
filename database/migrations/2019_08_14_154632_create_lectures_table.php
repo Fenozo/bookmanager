@@ -15,9 +15,12 @@ class CreateLecturesTable extends Migration
     {
         Schema::create('lectures', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('livre_id');
-            $date->text('content');
+            $table->integer('book_id');
+            $table->integer('page_id');
             $table->integer('personne_id');
+            $table->integer('chapiter_id');
+            $table->text('content');
+            $table->string('verse');
             $table->dateTime('date_start');
             $table->dateTime('date_end');
             $table->timestamps();
