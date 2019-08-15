@@ -2,5 +2,6 @@
 
 
 
-Route::get('/', 'EventsController@index')->name('root_web');
-Route::resource('events', 'EventsController');
+Route::get('/', 'LivresController@index')->name('home');
+Route::get('/lecture', 'LecturesController@index')->name('lecture');
+Route::resource('events', 'LecturesController');

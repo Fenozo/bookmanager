@@ -16,6 +16,8 @@ class Kernel extends ConsoleKernel
         //
     ];
 
+    protected $hidden = false;
+
     /**
      * Define the application's command schedule.
      *

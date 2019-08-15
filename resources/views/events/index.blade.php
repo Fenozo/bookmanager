@@ -6,7 +6,7 @@
 		
 		<div class="col-md-12">
 			<div class="div-center">
-				<h1>{{ $events->count() }} {{ str_plural('Evennement', $events->count()) }}</h1>
+				<h1>{{ $counts }} {{ str_plural('Evennement', $events->count()) }}</h1>
 
 				@if ($events->count() > 0)
 

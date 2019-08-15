@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateEventFormRequest;
+
+use Illuminate\Support\Facades\DB;
 use App\Model\Event;
 use Flashy;
 class EventsController extends Controller
@@ -15,9 +17,13 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $events = Event::Paginate(3);
-
-        return view('events.index', compact('events'));
+       
+        $events = Event::orderBy('id','desc')->Paginate(3);
+        $counts = Event::count();
+        // dump($counts);
+        // $events = Event::where('id', '>', 0)->orderBy('id','desc')->paginate(3);
+        
+        return view('events.index', compact('events', 'counts'));
     }
 
     /**
