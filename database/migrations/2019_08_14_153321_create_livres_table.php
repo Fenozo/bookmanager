@@ -15,13 +15,9 @@ class CreateLivresTable extends Migration
     {
         Schema::create('livres', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('chapiter_id');
-            $table->integer('page_id');
+            $table->string('name');
             $table->text('description');
             $table->string('author');
-            $table->string('name');
-            $table->string('title');
-
             $table->dateTime('date_publication')->nullable();
             $table->timestamps();
         });

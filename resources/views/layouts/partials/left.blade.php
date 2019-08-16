@@ -27,17 +27,26 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
             <li>
-                <a href="{{ route('home') }}">
-                    <i class="fa fa-th"></i> <span>Dashboard</span>
+                <a href="{{ route('livre.list') }}">
+                    <i class="fa fa-th"></i> <span>Livre</span>
                     <span class="pull-right-container">
                         <small class="label pull-right bg-green">Initialisation</small>
                     </span>
                 </a>
             </li>
             <li class="">
-                <a href="{{ route('lecture') }}">
+                <a href="{{ route('lecture.list') }}">
                     <i class="fa fa-files-o"></i>
                     <span>Lécture</span>
+                    <span class="pull-right-container">
+                        <span class="label label-primary pull-right">3</span>
+                    </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="{{ route('page.list') }}">
+                    <i class="fa fa-files-o"></i>
+                    <span>Page</span>
                     <span class="pull-right-container">
                         <span class="label label-primary pull-right">4</span>
                     </span>

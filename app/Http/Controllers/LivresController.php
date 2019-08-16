@@ -12,7 +12,7 @@ class LivresController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {        
         // dd('Hello word');
         return view('livres.index');
     }
@@ -35,7 +35,7 @@ class LivresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
