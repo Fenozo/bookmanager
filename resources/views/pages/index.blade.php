@@ -17,7 +17,7 @@
 </section>
 
 <section class="content">
-	<div class="row" style="max-width:400px;margin:0 auto">
+	<div class="row" style="max-width:560px;margin:0 auto">
             <div class="col-md-12">
                 <button type="button" style="    background-color: #3be826;border-color: #3be826;" class="btn btn-primary nouveau-article" data-toggle="modal" data-target="#modal-default">
                     <i class="fa fa-plus"></i>

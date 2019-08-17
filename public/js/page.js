@@ -16,10 +16,9 @@ jQuery(function() {
                 success: function(response) {
                     $('.showing-page-list').find('div').remove();
 
-                    response.forEach((elem) => {
-                        var titre = elem.title;
-                        var content = elem.content;
-                        $('.showing-page-list').append('<div class="search-div">' + titre + ' ' + content + '</div>');
+                    response.list.forEach((elem) => {
+                        var text = elem;
+                        $('.showing-page-list').append('<div class="search-div"> ' + text + '</div>');
 
                     });
                 }

@@ -15,23 +15,30 @@ class PagesController extends Controller
      */
     public function index()
     {
-
-        $page = Page::all();
+        $elements = [];
+        
         if (isset($_GET['argument']))
         {
             $search = $_GET['argument'];
-            $page = Page::where('title', 'like', "%".$search."%")
-                ->orWhere('content', 'like', "%".$search."%")
+            $page = Page::where('title', 'like', "%".$search."%")->limit(10)
                 ->get();
-            foreach ($page as $k => &$v) {
-                
-                
-                $v->title = Str::replaceToStrong($search, $v->title);
-                $v->content = Str::replaceToStrong($search, $v->content);
 
-            }
+            if (count($page) == 0)
+            {
+                $page = Page::where('content', 'like', "%".$search."%")->limit(10)
+                    ->get();
+                foreach ($page as $k => &$v) {
+                    $elements ['list'][]  = Str::replaceToStrong($search, $v->content);
+                }
+
+            } else 
+                {
+                    foreach ($page as $k => &$v) {
+                        $elements ['list'][] = Str::replaceToStrong($search, $v->title);
+                    }
+                }
         }
-        return $page;
+        return $elements;
     }
 
     /**
