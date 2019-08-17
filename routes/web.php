@@ -18,3 +18,5 @@ Route::group(['prefix'=> 'lecture'], function () {
 // Route::resource('events', 'LecturesController');
 
 Route::get('api/chapiter','ChapitersController@index')->name('api.chapiter');
+
+Route::get('api/page/list', 'Api\PagesController@index')->name('api.page.list');

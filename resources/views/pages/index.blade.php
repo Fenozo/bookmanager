@@ -17,21 +17,39 @@
 </section>
 
 <section class="content">
-	<div class="row">
+	<div class="row" style="max-width:400px;margin:0 auto">
+            <div class="col-md-12">
+                <button type="button" style="    background-color: #3be826;border-color: #3be826;" class="btn btn-primary nouveau-article" data-toggle="modal" data-target="#modal-default">
+                    <i class="fa fa-plus"></i>
+                    
+                </button>
+            </div>
 		<div class="col-md-12">
-			<div class="box box-primary">
+			<div class="box box-primary" style="border: 0px;margin-top: 20px;">
 	            <div class="box-header">
 	                <h3 class="box-title">La liste des pages par livre</h3>
 	            </div>
 	            <div class="box-body">
-                <button type="button" class="btn btn-info nouveau-article" data-toggle="modal" data-target="#modal-livre">
+                <!-- <button type="button" class="btn btn-info nouveau-article" data-toggle="modal" data-target="#modal-livre">
                     <i class="fa fa-plus"></i>
                     Nouveau Livre
-                </button>
-                <button type="button" class="btn btn-primary nouveau-article" data-toggle="modal" data-target="#modal-default">
-                    <i class="fa fa-plus"></i>
-                    Nouvelle page
-                </button>
+                </button> -->
+                <!--  -->
+
+                <form class="search-form-page">
+                    <div class="input-group">
+                        <input type="text" id="search-page" name="search" class="form-control" placeholder="Search">
+
+                        <div class="input-group-btn">
+                            <button type="submit" name="submit" class="btn btn-warning btn-flat"><i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="showing-page-list">
+
+                    </div>
+                    <!-- /.input-group -->
+                </form>
                 
                     <!-- /.box-header -->
                     @include('livres.new')
@@ -56,6 +74,45 @@
 
 <script type="text/javascript">
 
+jQuery(function(){
+    $(document).on('keyup', '#search-page', function() {
+        // console.log($(this).val())
+
+        
+
+        var arg = $(this).val();
+        
+        if (arg.length > 0) {
+            $.ajax({
+                url : "{{ route('api.page.list') }}",
+                method : "GET",
+                data : { argument : arg},
+                success : function (response)
+                {
+                    $('.showing-page-list').find('div').remove();
+                    response.forEach((elem)=> {
+                        var titre = elem.title;
+                        var content = elem.content;
+                        // titre = titre.replace(/\[b\]([\s\S]*?)\[\/b\]/g, '<strong>$1</stong>');
+                        // content = content.replace(/\[b\]([\s\S]*?)\[\/b\]/g, '<strong>$1</stong>');
+
+                        $('.showing-page-list').append('<div>'+titre+' '+content+'</div>');
+                    // console.log(elem.title)
+                    var text = 'bla bla [b]un peu de texte[/b] bla [b]bla bla en gras[/b] bla bla';
+                    result = text.replace(/\[b\]([\s\S]*?)\[\/b\]/g, '<strong>$1</strong>');
+                    // var result = sentence.replace(/Sébastien/, 'Johann');
+                    console.log(result);
+
+                    })
+                }
+            });
+        } else {
+            $('.showing-page-list').find('div').remove();
+        }
+        
+
+    });
+});
 
 jQuery(function(){
 
