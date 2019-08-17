@@ -25,10 +25,9 @@ class PagesController extends Controller
                 ->get();
             foreach ($page as $k => &$v) {
                 
-                // $v->title = str_replace($argument, '<strong>'.$argument.'<strong>' , $v->title);
+                
                 $v->title = Str::replaceToStrong($search, $v->title);
                 $v->content = Str::replaceToStrong($search, $v->content);
-              
 
             }
         }

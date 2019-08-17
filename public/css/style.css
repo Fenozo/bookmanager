@@ -12,3 +12,14 @@
 .datepicker {
     padding: 9px 12px;
 }
+
+
+/************************************/
+
+.showing-page-list div {
+    font-size: 18px;
+    font-weight: 500;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 7px;
+    margin: 2px 0px;
+}
