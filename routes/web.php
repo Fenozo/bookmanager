@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/', 'LivresController@index')->name('livre.list');
+Route::get('/', 'PagesController@index')->name('page.list.index');
 
 Route::group(['prefix'=>'pages'],function(){
 

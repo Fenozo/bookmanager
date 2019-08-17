@@ -16,10 +16,44 @@
 
 /************************************/
 
+.nouvelle-page {
+    background-color: #716f6d;
+    border-color: #dfe8de;
+    position: absolute;
+    left: 9px;
+    top: -7px;
+    z-index: 10;
+}
+
+.box-search-page {
+    position: absolute;
+    left: 53px;
+    top: 3px;
+}
+
+
+/************************************/
+
 .showing-page-list div {
     font-size: 18px;
     font-weight: 500;
     border-bottom: 1px solid #ccc;
     padding: 5px 7px;
     margin: 2px 0px;
+}
+
+#count-search-page {
+    background-color: #a2b5c1 !important;
+    font-size: 86px;
+    padding: 0px 9px;
+    /* position: absolute; */
+    left: -69px;
+    top: 86px;
+    padding-top: 1px;
+    text-shadow: 2px 2px 0px #2b2626;
+    z-index: 20;
+    border-radius: 0;
+}
+
+
 }

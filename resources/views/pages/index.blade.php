@@ -19,15 +19,17 @@
 <section class="content">
 	<div class="row" style="max-width:560px;margin:0 auto">
             <div class="col-md-12">
-                <button type="button" style="    background-color: #3be826;border-color: #3be826;" class="btn btn-primary nouveau-article" data-toggle="modal" data-target="#modal-default">
-                    <i class="fa fa-plus"></i>
-                    
-                </button>
+            
             </div>
 		<div class="col-md-12">
-			<div class="box box-primary" style="border: 0px;margin-top: 20px;">
+            <span class="pull-right-container">
+                <span class="label label-primary pull-right" id="count-search-page">0</span>
+            </span>
+			<div class="box box-primary" style="border: 0px;margin-top: 85px;padding-top:16px;">
 	            <div class="box-header">
-	                <h3 class="box-title">La liste des pages par livre</h3>
+                <button type="button" style="" class="btn btn-primary nouvelle-page" data-toggle="modal" data-target="#modal-default">
+                    <i class="fa fa-plus"></i>
+                </button><h3 class="box-title box-search-page">La liste des pages par livre</h3>
 	            </div>
 	            <div class="box-body">
                 <!-- <button type="button" class="btn btn-info nouveau-article" data-toggle="modal" data-target="#modal-livre">
