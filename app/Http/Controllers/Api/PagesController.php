@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Page;
 use App\Helpers\Str;
+use DB;
 class PagesController extends Controller
 {
     /**
@@ -19,24 +20,32 @@ class PagesController extends Controller
         
         if (isset($_GET['argument']))
         {
+            $elements ['count'] = 0;
             $search = $_GET['argument'];
-            $page = Page::where('title', 'like', "%".$search."%")->limit(10)
-                ->get();
-
-            if (count($page) == 0)
+            // Recherche à partir du titre
+            
+            $elements ['count'] = Page::where('title', 'like', "%".$search."%")->count('id');
+            
+            if ($elements ['count']>0)
             {
-                $page = Page::where('content', 'like', "%".$search."%")->limit(10)
-                    ->get();
-                foreach ($page as $k => &$v) {
-                    $elements ['list'][]  = Str::replaceToStrong($search, $v->content);
+                $page_title = Page::where('title', 'like', "%".$search."%")->limit(10)->pluck('title');
+                // print_r($page_title);exit;
+                foreach ($page_title as $k => &$title) {
+                    $elements ['list'][] = Str::replaceToStrong($search, $title);
                 }
+            }
+            // Cherche et retourne le compte des éléments trouvé
+            $count_content = Page::where('content', 'like', "%".$search."%")->count('id');
+            $elements ['count'] += $count_content;
 
-            } else 
-                {
-                    foreach ($page as $k => &$v) {
-                        $elements ['list'][] = Str::replaceToStrong($search, $v->title);
-                    }
+            if ($count_content > 0) {
+                // recherche à partir du contenu de la page
+                $page_content = Page::where('content', 'like', "%".$search."%")->limit(10)->pluck('content');
+
+                foreach ($page_content as $k => &$content) {
+                    $elements ['list'][]  = Str::replaceToStrong($search, $content);
                 }
+            }
         }
         return $elements;
     }

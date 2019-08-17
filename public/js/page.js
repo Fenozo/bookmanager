@@ -4,28 +4,39 @@ jQuery(function() {
         event.preventDefault();
     });
 
+    // $('#count-search-page').fadeOut();
+
     $(document).on('keyup', '#search-page', function() {
 
         var arg = $(this).val();
 
-        if (arg.length > 0) {
-            $.ajax({
-                url: $('.page-list-url').data('url'),
-                method: "GET",
-                data: { argument: arg },
-                success: function(response) {
-                    $('.showing-page-list').find('div').remove();
 
+        $.ajax({
+            url: $('.page-list-url').data('url'),
+            method: "GET",
+            data: { argument: arg },
+            success: function(response) {
+                $('.showing-page-list').find('div').remove();
+                if (arg.length == 0) {
+                    $('#count-search-page').html(0);
+                } else {
+                    $('#count-search-page').html(response.count);
+                }
+
+                if (response.hasOwnProperty('list') && response.list.length > 0) {
+                    // parcours des élements trouvé
                     response.list.forEach((elem) => {
                         var text = elem;
-                        $('.showing-page-list').append('<div class="search-div"> ' + text + '</div>');
+                        if (arg.length > 1) {
+                            $('.showing-page-list').append('<div class="search-div"> ' + text + '</div>');
+                        } else {
+                            $('.showing-page-list').find('div').remove();
+                        }
 
                     });
                 }
-            });
-        } else {
-            $('.showing-page-list').find('div').remove();
-        }
+            }
+        });
 
 
     });
