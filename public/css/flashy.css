@@ -6,10 +6,11 @@
     position: fixed;
     /* bottom: 20px;
      */
-    top: 20px;
+    top: 42px;
     right: 20px;
     font-size: 16px;
     color: #fff;
+    z-index: 2000;
 }
 
 .flashy--success {

@@ -5,14 +5,14 @@
 <section class="content-header">
     <h1>
         {{ config('app.name') }}
-        <small>Page</small>
+        <small>Recherche</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         {{--
             <li><a href="#">Forms</a></li>
         --}}
-        <li class="active">Page</li>
+        <li class="active">home</li>
     </ol>
 </section>
 
@@ -27,8 +27,8 @@
             </span>
 			<div class="box box-primary" style="border: 0px;margin-top: 85px;padding-top:16px;">
 	            <div class="box-header">
-                <button type="button" style="" class="btn btn-primary nouvelle-page" data-toggle="modal" data-target="#modal-default">
-                    <i class="fa fa-plus"></i>
+                <!-- <button type="button" style="" class="btn btn-primary nouvelle-page" data-toggle="modal" data-target="#modal-default">
+                    <i class="fa fa-plus"></i> -->
                 </button><h3 class="box-title box-search-page">La liste des pages par livre</h3>
 	            </div>
 	            <div class="box-body">
@@ -53,7 +53,6 @@
                     <!-- /.input-group -->
                 </form>
                     <!-- csrt_token() -->
-                    <input type="hidden" class="book-url-where" data-url="{{ route('api.livre.where') }}" >
                     <input type="hidden" class="livre-index-url" data-url="{{ route('api.livre.index') }}" >
                     <input type="hidden" class="page-list-url" data-url="{{ route('api.page.list') }}" value="{{ route('api.page.list') }}">
                     <input type="hidden" class="livre-store-url" data-url="{{ route('api.livre.store') }}" value="{{ route('api.livre.store') }}">
@@ -61,47 +60,11 @@
                     <input type="hidden" class="page-store-url" data-url="{{ route('api.page.store') }}" value="{{ route('api.page.store') }}">
 
 
-                    <div class="book-modal">
-                        
-                    </div>
                     <!-- /.box-header -->
-                    @include('livres.new')
+                   {{--  @include('livres.new') --}}
                     <!-- /.modal -->
                     <!-- /.box-header -->
-                    @include('pages.new')
-
-                    <!-- /.box-header -->
-                    <div class="modal fade" id="book-modal">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <form id="form-page-store" role="form" action="" method="post">
-
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title text-shadow">Chercher <strong class="">livre</strong></h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h1>Liste des livres</h1>
-                                      
-                                            <div class="input-group">
-                                                <input autocorrect="off" autocomplete="off" autocapitalize="off" type="text" id="book-search" name="search" class="form-control" placeholder="Search">
-
-                                                <div class="input-group-btn">
-                                                    <button type="submit" name="submit" class="search-page btn btn-warning btn-flat"><i class="fa fa-search"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="showing-book-list">
-
-                                            </div>
-                                            <!-- /.input-group -->
-                                        
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                    {{-- @include('pages.new') --}}
                     
                     <!-- /.modal -->
 

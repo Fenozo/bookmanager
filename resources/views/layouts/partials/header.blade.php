@@ -44,6 +44,7 @@
     
     <link href=" {{ asset('css/style.css') }} " rel="stylesheet" />
     <link href=" {{ asset('css/text-shadow.css') }} " rel="stylesheet" />
+    <link href=" {{ asset('css/flashy.css') }} " rel="stylesheet" />
   
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

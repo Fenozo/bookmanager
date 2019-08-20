@@ -1,6 +1,8 @@
 .text-shadow {
-    font-size: 26px;
-    color: #2691c5;
+	font-size: 26px;
+    color: #f9f9f9;
     letter-spacing: 2px;
-    text-shadow: #252424 2px 2px 0px;
+    text-shadow: #252424 1px 1px 2px;
+    font-weight: 900;
 }
+

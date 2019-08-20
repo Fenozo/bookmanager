@@ -172,6 +172,10 @@
     <script src="dist/js/pages/dashboard2.js"></script>
     <!-- AdminLTE for demo purposes ->
     <script src="dist/js/demo.js"></script> -->
+    
+    <script src="{{ asset('js/flashy.js') }}" ></script>
+
+    @include('flashy::message')
 
     @yield('javascript')
     

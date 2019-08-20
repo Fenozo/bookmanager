@@ -27,6 +27,14 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
             <li>
+                <a href="{{ route('home') }}">
+                    <i class="fa fa-th"></i> <span>Accueil</span>
+                    <span class="pull-right-container">
+                        <small class="label pull-right bg-green">Initialisation</small>
+                    </span>
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('livre.list') }}">
                     <i class="fa fa-th"></i> <span>Livre</span>
                     <span class="pull-right-container">

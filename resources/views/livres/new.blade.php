@@ -45,7 +45,7 @@
                                         <div class="input-group-addon">
                                             <i class="fa fa-calendar"></i>
                                         </div>
-                                        <input type="text" name="livre[date_publication]" class="form-control pull-right" id="livre_datepicker">
+                                        <input type="text" name="livre[date_publication]" class="form-control pull-right" id="date_publication">
                                     </div>
                                     <!-- /.input group -->
                                 </div>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" id="save-livre">Enregistrer</button>
+                    <button type="submit" class="btn btn-primary" id="livre-save">Enregistrer</button>
                 </div>
             </form>
         </div>

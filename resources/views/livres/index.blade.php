@@ -2,10 +2,12 @@
 
 @section('content')
 
+<input type="hidden" id="livre-url" data-url="{{ route('api.livre.store')}}">
+
 <section class="content-header">
     <h1>
-        Advanced Form Elements
-        <small>Preview</small>
+        {{config('app.name')}}
+        <small>livre</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -14,87 +16,100 @@
     </ol>
 </section>
 
-{{--
-
-	<section class="content">
-		<div class="row">
-			<div class="col-md-6">
-				<div class="box box-primary">
-					<div class="box-header">
-						<h3 class="box-title">Date picker</h3>
-					</div>
-					<div class="box-body">
-						<!-- Date -->
-						<div class="form-group">
-							<label>Date:</label>
-
-							<div class="input-group date">
-								<div class="input-group-addon">
-									<i class="fa fa-calendar"></i>
-								</div>
-								<input type="text" class="form-control pull-right" id="datepicker">
-							</div>
-							<!-- /.input group -->
-						</div>
-						<!-- /.form group -->
-
-						<!-- Date range -->
-						<div class="form-group">
-							<label>Date range:</label>
-
-							<div class="input-group">
-								<div class="input-group-addon">
-									<i class="fa fa-calendar"></i>
-								</div>
-								<input type="text" class="form-control pull-right" id="reservation">
-							</div>
-							<!-- /.input group -->
-						</div>
-						<!-- /.form group -->
-
-						<!-- Date and time range -->
-						<div class="form-group">
-							<label>Date and time range:</label>
-
-							<div class="input-group">
-								<div class="input-group-addon">
-									<i class="fa fa-clock-o"></i>
-								</div>
-								<input type="text" class="form-control pull-right" id="reservationtime">
-							</div>
-							<!-- /.input group -->
-						</div>
-						<!-- /.form group -->
-
-						<!-- Date and time range -->
-						<div class="form-group">
-							<label>Date range button:</label>
-
-							<div class="input-group">
-								<button type="button" class="btn btn-default pull-right" id="daterange-btn">
-								<span>
-								<i class="fa fa-calendar"></i> Date range picker
-								</span>
-								<i class="fa fa-caret-down"></i>
-							</button>
-							</div>
-						</div>
-						<!-- /.form group -->
-
-					</div>
-					<!-- /.box-body -->
-				</div>
-			</div>
+<section class="content">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="box box-primary">
+	            <div class="box-header">
+	                <h3 class="box-title">La liste des livres</h3>
+	            </div>
+	            <div class="box-body">
+                <button type="button" class="btn btn-primary nouveau-article" data-toggle="modal" data-target="#modal-livre">
+				<i class="fa fa-plus"></i>
+                </button>
+                    @include('livres.new')
+	               <div id="booklist" data-url="{{ route('api.livre.list') }}">
+                    <!-- page liste -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td style="width:105px;">#</td>
+                                <td> Nom du livre </td>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            @foreach ($livres as $livre)
+                            <tr>
+                                <td> {{ $livre->id }} </td>
+                                <td> {{ $livre->name }} </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    {{ $livres->links() }}
+	               <!-- page liste-->
+                   </div>
+	            </div>
+	            <!-- /.box-body -->
+	        </div>
 		</div>
-	</section>
+	</div>
+</section>
 
---}}
 
 @stop
 
 @section('javascript')
 
+<script src="{{ asset('js/livre.js') }}"></script>
+
 <script type="text/javascript">
+
+$('#booklist').load($('#booklist').data('url'));
+// $('#booklist').data('url')
+
+$(document).on('click','.page-item > a', function(e){
+    e.preventDefault()
+
+    var url = this;
+
+    $.ajax({
+        url : url,
+        dataType : 'html',
+        success : function(response) {
+            $('#booklist').html(response)
+        }
+    });
+
+});
+
+/**
+* Faire une ajout d'une vouvelle livre
+*
+*/
+$(document).on('click', '.nouveau-article', function(e) {
+    e.preventDefault();
+    var h4 = '<h4 class="modal-title text-shadow">Nouveau <strong class="">Livre</strong></h4>';
+    $('.livre.modal-header').find('.modal-title').remove();
+    $('.livre.modal-header').append(h4);
+})
+/**
+* Faire une édite du champ livre
+*
+*/
+$(document).on('click', 'a.edit', function(a){
+    a.preventDefault()
+    // alert($(this).data('id'))
+    // alert($(this).data('name'))
+    // alert($(this).data('author'))
+    var h4 = '<h4 class="modal-title text-shadow">Modification <strong class="">Livre</strong></h4>';
+    $('.livre.modal-header').find('.modal-title').remove();
+    $('.livre.modal-header').append(h4);
+
+    $('#modal-livre').modal('show')
+    
+})
+
 
 //Date range picker
 $('#reservation').daterangepicker()
@@ -106,26 +121,28 @@ $('#reservationtime').daterangepicker({
     })
 
 //Date range as a button
-            $('#daterange-btn').daterangepicker({
-                    ranges: {
-                        'Today': [moment(), moment()],
-                        'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                        'This Month': [moment().startOf('month'), moment().endOf('month')],
-                        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                    },
-                    startDate: moment().subtract(29, 'days'),
-                    endDate: moment()
-                },
-                function(start, end) {
-                    $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
-                }
-            )
+    $('#daterange-btn').daterangepicker({
+            ranges: {
+                'Today': [moment(), moment()],
+                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            },
+            startDate: moment().subtract(29, 'days'),
+            endDate: moment()
+        },
+        function(start, end) {
+            $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+        })
 
 //Date picker
-$('#datepicker').datepicker({
-	autoclose: true
+$('#date_publication').datepicker({
+	autoclose: true,
+	todayBtn: true,
+	today: true,
+	format: 'dd-mm-yyyy'
 })
 
 </script>

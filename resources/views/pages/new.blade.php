@@ -19,6 +19,20 @@
                                 {{--
                                 
                                 --}}
+                                <div class="select">
+                                    <div class="form-group">
+                                        <h2>Livre : <span id="book_title"></span> </h2>
+                                        <input type="hidden" id="input_hidden_book" value="">
+                                        <input type="hidden" id="input_hidden_id" name="book_id" value="">
+                                        <div>
+                                            <button class="btn btn-info select_one_book"><i class="fa fa-plus"></i></button>
+                                        </div>
+                                        {{--
+                                            <select class="livre-slct2" name="book_id" style="width: 100%" id="select-book">
+                                            </select>
+                                        --}}
+                                    </div>
+                                </div>
                                 
                                 <div class="form-group">
                                     <label for="title">Titre</label>
@@ -28,7 +42,7 @@
                                 <div class="select-chapiter">
                                     <div class="form-group">
                                         <label for="slug">chapiters</label>
-                                            <select name="chapiter_id" class="form-control select2" id="select2" style="width: 100%;">                             
+                                            <select name="chapiter_id" class="form-control select2" id="chapiter" style="width: 100%;">                             
                                             </select>
                                     </div>
                                 </div>

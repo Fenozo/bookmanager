@@ -1,11 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
-use DB;
-use Flashy;
-class LivresController extends Controller
+use Illuminate\Http\Response;
+use App\Http\Controllers\Controller;
+
+use App\Models\Chapiter;
+
+class ChapitersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,13 +16,29 @@ class LivresController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {        
-        // dd('Hello word');
-        $livres = DB::table('livres')
-                ->paginate(5)
-                ;
+    {
+        $items = [];
+        
+        if (isset( $_GET['search']) && $_GET['search'] != null ){
+           
+            $name = $_GET['search'];
+            $chapiters = Chapiter::where('name','like', '%'.$name.'%')->get(['id', 'name']);
+        } else if (isset( $_GET['book_id']) && $_GET['book_id'] != null ){
+            $book_id = $_GET['book_id'];
+            $chapiters = Chapiter::where('book_id','like', '%'.$book_id.'%')->get(['id', 'name']);
+        }else {
+            $chapiters = Chapiter::all();
+        }
+       
+        $data = 
+        [
+            'page' => count($chapiters),
+            'items' => $chapiters
+            
+        ];
 
-        return view('livres.index', compact('livres'));
+        return new Response(\json_encode($data, false));
+        return $data;
     }
 
     /**
@@ -40,34 +59,7 @@ class LivresController extends Controller
      */
     public function store(Request $request)
     {
-        $retoure = [];
-
-        $livre = $request->input('livre');
-
-        $livre = \App\Models\Livre::create([
-            'name'          =>  $livre['name'],
-            'author'        =>  $livre['author'],
-            'description'   =>  $livre['description'],
-            'date_publication'   =>  new \Datetime($livre['date_publication']),
-        ]);
-
-        if ($livre) 
-        {
-            // Flashy::message("Le livre a été créer avec succé");
-            $retoure['notify'] = 1;
-            $retoure['type'] = 'success';
-            $retoure['message'] = 'Le livre a été créer avec succé';
-        } else 
-        {
-            $retoure['notify'] = 0;
-            $retoure['type'] = 'error';
-            $retoure['message'] = 'Erreur';
-            // Flashy::message("Erreur");
-        }
-        
-        // return new Response(json_encode($livre, false));
-        return $retoure;
-
+        //
     }
 
     /**

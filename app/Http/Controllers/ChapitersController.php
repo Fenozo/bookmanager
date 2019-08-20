@@ -16,51 +16,26 @@ class ChapitersController extends Controller
      */
     public function index()
     {
-        // $data = [
-        //             [
-        //                 'owner'         =>['avatar_url' => 'avatar'],
-        //                 'full_name'     => 'Rakotosoa',
-        //                 'description'   => "Description",
-        //                 'forks_count'   => "forks_count",
-        //                 'stargazers_count'   => "stargazers_count",
-        //                 'watchers_count'   => "watchers_count",
-        //             ],
-        //             [
-        //                 'owner'         =>['avatar_url' => 'avatar'],
-        //                 'full_name'     => 'Rakotosoa',
-        //                 'description'   => "Description",
-        //                 'forks_count'   => "forks_count",
-        //                 'stargazers_count'   => "stargazers_count",
-        //                 'watchers_count'   => "watchers_count",
-        //             ]
-        //         ];
-
-        // if (count($_POST) > 0) 
-        // {
-        //     print_r($_POST);
-        // }
-
         
+        // $items = [];
         
-        $items = [];
-        
-        if (isset( $_GET['search']) && $_GET['search'] != null ){
+        // if (isset( $_GET['search']) && $_GET['search'] != null ){
            
-            $name = $_GET['search'];
-            $chapiters = Chapiter::where('name','like', '%'.$name.'%')->get();
-        } else {
-            $chapiters = Chapiter::all();
-        }
+        //     $name = $_GET['search'];
+        //     $chapiters = Chapiter::where('name','like', '%'.$name.'%')->get(['id', 'name']);
+        // } else {
+        //     $chapiters = Chapiter::all();
+        // }
        
-        $data = 
-        [
-            'page' => count($chapiters),
-            'items' => $chapiters
+        // $data = 
+        // [
+        //     'page' => count($chapiters),
+        //     'items' => $chapiters
             
-        ];
+        // ];
 
-        return new Response(\json_encode($data, false));
-        return $data;
+        // return new Response(\json_encode($data, false));
+        // return $data;
     }
 
     /**

@@ -55,5 +55,36 @@
     border-radius: 0;
 }
 
+.content-header {
+    color: #fff;
+    text-shadow: #ccc 2px 2px 0px;
+}
+
+.skin-blue .content-header {
+    background: #ccc;
+    padding-bottom: 16px;
+}
+
+/************************************************/
+.modal-body {
+    min-height: 400px;
+}
+.modal-body h1 {
+    margin: 0;
+    padding-bottom: 15px;
+}
+
+.showing-book-list p{
+    font-size: 16px;
+    font-weight: 500;
+    padding: 6px 7px;
+    margin: 2px 0px;
+    box-shadow: 5px 1px 18px #ced2d4;
+    background-color: #fff;
+}
+.showing-book-list {
+    overflow: auto;
+    height: 279px;
+    background: #f7f9f9;
 
 }

@@ -63,9 +63,11 @@ jQuery(function() {
 
 });
 
+
 jQuery(function() {
-    $('.select2').select2();
+    $('#chapiter').select2();
     save_page();
+    getListBook();
     getLitCapiter();
 
     var chap = '<div class="form-group chap"><label for="chapiter">Chapitre</label><input type="text" name="chapiter" class="form-control" id="chapiter" placeholder="Chapitre"></div>';
@@ -88,40 +90,24 @@ jQuery(function() {
         }
 
     });
+    // $('.select2-selection__rendered')
 
-    $('.select2-selection__rendered').on('click', function() {
-        if ($('input').hasClass('select2-search__field')) {
-            $('.select2-search').on('keyup', 'input', function() {
-                var valeur = $('.select2-search').find('input').val();
-                $.ajax({
-                    url: $('.chapiter-url').val(),
-                    method: "GET",
-                    data: { search: valeur },
-                    success: function(data) {
-                        var datas = JSON.parse(data);
-                        $('#select2').find('option').remove();
-                        datas.items.forEach(elem => {
-                            $('#select2').append('<option value="' + elem.id + '">' + elem.name + '</option>');
-                        });
-                    }
-                })
-            })
-        }
-    })
 
 
     function save_page() {
         $('#save-page').on('click', function(e) {
             e.preventDefault();
             var datas = $('#form-page-store').serialize();
+
+            console.log(datas)
             $.ajax({
                 url: $('.page-store-url').data('url'),
                 method: "POST",
                 data: datas,
                 success: function(resp) {
                     var response = {};
-
-                    $('.modal').modal('hide');
+                    console.log(resp)
+                    $('#modal-default').modal('hide');
 
                     if (!response.hasOwnProperty('message')) {
                         return null;
@@ -135,22 +121,56 @@ jQuery(function() {
 
                 }
             });
+
+        });
+    }
+
+    function getListBook() {
+
+        $.ajax({
+            url : $('.livre-index-url').data('url'),
+            method : 'GET',
+            dataType : 'json',
+            success : function (datas) {
+                // var datas = JSON.parse(datas);
+
+                datas.forEach(elem => {
+                    // console.log(elem);
+                    if ($('#input_hidden_book').val() == ""){
+                        $('#input_hidden_book').val(JSON.stringify(elem));
+
+                    }
+                    $('#select-book').append('<option value= "'+elem.id+'">'+elem.name+'</option>');
+                });
+            }
         });
     }
 
     function getLitCapiter() {
-        $.ajax({
-            url: $('.chapiter-url').data('url'),
-            method: "GET",
-            success: function(data) {
-                var datas = JSON.parse(data);
+        $('#modal-default').on('show.bs.modal', function() {
+            // Book id 
+            var id = $('#input_hidden_id').val();
 
-                datas.items.forEach(elem => {
-                    $('#select2').append('<option value="' + elem.id + '">' + elem.name + '</option>');
+            if (id != 0)
+            {
+                $.ajax({
+                    url: $('.chapiter-url').data('url'),
+                    method: "GET",
+                    data : {book_id : id},
+                    dataType : 'json',
+                    success: function(datas) {
+
+                        datas.items.forEach(elem => {
+                            $('#chapiter').append('<option value="' + elem.id + '">' + elem.name + '</option>');
+                        });
+                    }
                 });
             }
-        })
+            
+        });
+
     }
+
 
 
     $('.select2-search__field').on('keyup', function() {
@@ -159,7 +179,92 @@ jQuery(function() {
 
     function seach() {
         $('.select2-search__field').on('keyup', function() {
-            alert($(this).val())
+            // alert($(this).val())
         });
     }
+});
+
+jQuery(function(){
+    $('.livre-slct2').select2();
+
+     $('#select2-select-book-container').on('click', function() {
+
+         if ($(this).find('.select2-search__field'))
+            {
+                $('.select2-search').on('keyup','input', function(){
+                    // alert(this)
+                   
+                });
+            }
+     });
+
+    $('#select2-chapiter-container').on('click', function() {
+        if ($('input').hasClass('select2-search__field')) {
+            $('.select2-search').on('keyup', 'input', function() {
+                var valeur = $('.select2-search').find('input').val();
+                var book = JSON.parse($('#input_hidden_book').val());
+
+                // $.ajax({
+                //     url: $('.chapiter-url').val(),
+                //     method: "GET",
+                //     dataType: 'json',
+                //     data: { search: valeur ,book_id : book.id},
+                //     success: function(datas) {
+                //                     console.log(datas)
+                //         // var datas = JSON.parse(data);
+                //         $('#chapiter').find('option').remove();
+                //         datas.items.forEach(elem => {
+                //             $('#chapiter').append('<option value="' + elem.id + '">' + elem.name + '</option>');
+                //         });
+                //     }
+                // });
+            })
+        }
+    });
+
+});
+
+jQuery(function() {
+    $('.book-modal').modal('hide');
+    $(document).on('click','.select_one_book', function(e){
+        e.preventDefault();
+        $('#modal-default').modal('hide');
+        $('#book-modal').modal('show');
+
+        $('#book-modal').on('hidden.bs.modal', function(){
+            $('#modal-default').modal('show');
+        });
+        
+        $(document).on('keyup', '#book-search', function() {
+             valeur = $(this).val();
+                    console.log(valeur);
+                        $.ajax({
+                            url : $('.book-url-where').data('url'),
+                            method : 'GET',
+                            dataType : 'json',
+                            data : {search : valeur},
+                            success : function(datas) 
+                            {
+                                console.log(datas);
+
+                                $('.showing-book-list').find('p').remove();
+                                datas.items.forEach(elem => {
+                                    $('.showing-book-list').append('<p data-id="'+elem.id+'" data-title="'+elem.name+'">'+elem.name+'</p>');
+                                });
+                            }
+                        });
+        });
+
+            $(document).on('click','.showing-book-list>p', function() {
+                var id = $(this).data('id');
+                var name = $(this).data('title');
+                $('#book_title').html(name);
+                $('#input_hidden_id').val(id);
+                $('#book-modal').modal('hide');
+            });
+        // $('.modal').modal('hide');
+        // $('.book-modal').modal('show');
+        // $('.book-modal').css({"position":"absolute", "top":"0","z-index":"30000"})
+
+    });
 });
