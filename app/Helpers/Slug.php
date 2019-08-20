@@ -6,7 +6,7 @@ class Slug {
     /**
      * Création d'un moteur de création de slug
      * @param $slug
-     * @param $object
+     * @param $object 
      */
     public static function create($slug, $object) 
     {   
