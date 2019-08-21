@@ -21,6 +21,8 @@
                                 {{--
                                 
                                 --}}
+
+                                <input type="hidden" name="livre[id]" id="book_id">
                                 
                                 <div class="form-group">
                                     <label for="name">Titre</label>

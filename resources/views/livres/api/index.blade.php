@@ -22,7 +22,7 @@
                 <td> {{ $livre->name }} </td>
                 <td> {{ $livre->author }} </td>
 
-                <td> <a href="{{ $livre->id }}" data-name="{{ $livre->name }}" data-author="{{ $livre->author }}" data-id="{{ $livre->id }}" class="btn btn-info edit">Edit</a>
+                <td> <a href="{{ $livre->id }}" data-name="{{ $livre->name }}" data-author="{{ $livre->author }}" data-id="{{ $livre->id }}" data-description="{{ $livre->description }}" data-publication="{{ $livre->date_publication }}" class="btn btn-info edit">Edit</a>
                 </td>
 
             </tr>

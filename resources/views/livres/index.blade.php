@@ -3,6 +3,7 @@
 @section('content')
 
 <input type="hidden" id="livre-url" data-url="{{ route('api.livre.store')}}">
+<input type="hidden" id="livre-url-update" data-url="{{ route('api.livre.update')}}">
 
 <section class="content-header">
     <h1>
@@ -83,59 +84,31 @@ $(document).on('click','.page-item > a', function(e){
 
 });
 
-/**
-* Faire une ajout d'une vouvelle livre
-*
-*/
-$(document).on('click', '.nouveau-article', function(e) {
-    e.preventDefault();
-    var h4 = '<h4 class="modal-title text-shadow">Nouveau <strong class="">Livre</strong></h4>';
-    $('.livre.modal-header').find('.modal-title').remove();
-    $('.livre.modal-header').append(h4);
-})
-/**
-* Faire une édite du champ livre
-*
-*/
-$(document).on('click', 'a.edit', function(a){
-    a.preventDefault()
-    // alert($(this).data('id'))
-    // alert($(this).data('name'))
-    // alert($(this).data('author'))
-    var h4 = '<h4 class="modal-title text-shadow">Modification <strong class="">Livre</strong></h4>';
-    $('.livre.modal-header').find('.modal-title').remove();
-    $('.livre.modal-header').append(h4);
-
-    $('#modal-livre').modal('show')
-    
-})
-
-
 //Date range picker
 $('#reservation').daterangepicker()
     //Date range picker with time picker
-$('#reservationtime').daterangepicker({
-        timePicker: true,
-        timePickerIncrement: 30,
-        format: 'MM/DD/YYYY h:mm A'
-    })
+// $('#reservationtime').daterangepicker({
+//         timePicker: true,
+//         timePickerIncrement: 30,
+//         format: 'MM/DD/YYYY h:mm A'
+// })
 
-//Date range as a button
-    $('#daterange-btn').daterangepicker({
-            ranges: {
-                'Today': [moment(), moment()],
-                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                'This Month': [moment().startOf('month'), moment().endOf('month')],
-                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-            },
-            startDate: moment().subtract(29, 'days'),
-            endDate: moment()
-        },
-        function(start, end) {
-            $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
-        })
+// //Date range as a button
+//     $('#daterange-btn').daterangepicker({
+//             ranges: {
+//                 'Today': [moment(), moment()],
+//                 'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+//                 'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+//                 'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+//                 'This Month': [moment().startOf('month'), moment().endOf('month')],
+//                 'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+//             },
+//             startDate: moment().subtract(29, 'days'),
+//             endDate: moment()
+//         },
+//         function(start, end) {
+//             $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+//         })
 
 //Date picker
 $('#date_publication').datepicker({

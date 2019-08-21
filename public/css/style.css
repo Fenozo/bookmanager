@@ -88,3 +88,14 @@
     background: #f7f9f9;
 
 }
+.modal-header {
+    background-color: #0095ff;
+}
+.btn-info {
+    background-color: #0095ff;
+    border-color: #00acd6;
+}
+
+.modal #description {
+    min-height: 160px;
+}

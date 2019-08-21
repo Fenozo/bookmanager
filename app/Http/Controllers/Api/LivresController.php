@@ -66,7 +66,7 @@ class LivresController extends Controller
      */
     public function list()
     {
-        $livres = Livre::orderBy('id', 'desc')->paginate(3, ['id','name','slug','author'], 'livrepage');
+        $livres = Livre::orderBy('id', 'desc')->paginate(3, ['id','name','slug','author','description','date_publication'], 'livrepage');
         
         return view('livres.api.index',[
             'livres' => $livres
@@ -147,12 +147,34 @@ class LivresController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        print_r($request->all());
+        $request = $request->all();
+        $id = $request['livre']['id'];
+        $livre = $request['livre'];
+        unset($livre['id']);
+
+
+        $livre = \App\Models\Livre::where('id', $id)->update([
+            'name'              =>  $livre['name'],
+            'author'            =>  $livre['author'],
+            'description'       =>  $livre['description'],
+            'date_publication'  =>  new \Datetime($livre['date_publication']),
+        ]);
+
+        if ($livre) {
+                $response = [
+                        'message'   => 'Les données sont bien enregistré avec successé',
+                        'id'        => $id,
+                    ];
+        } else 
+            {
+                $response = [];
+            }
+
+        return $response;
     }
 
     /**

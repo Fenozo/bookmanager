@@ -13,10 +13,12 @@ Route::group(['prefix'=>'livre'], function(){
 });
 Route::group(['prefix' => 'api'], function () {
     
+    Route::post('livre/update','Api\LivresController@update')->name('api.livre.update');
     Route::post('livre/store','Api\LivresController@store')->name('api.livre.store');
     Route::get('livre/index','Api\LivresController@index')->name('api.livre.index');
     Route::get('livre/where','Api\LivresController@where')->name('api.livre.where');
     Route::get('livre/list','Api\LivresController@list')->name('api.livre.list');
+
     Route::post('api/page/store','Api\PagesController@store')->name('api.page.store');
     Route::get('chapiter','Api\ChapitersController@index')->name('api.chapiter');
 
