@@ -116,11 +116,15 @@ $(document).on('click','#livre-update', function(e){
         dataType : 'json',
         data : datas,
         success : function(response) {
-            console.log(response)
-            if ($('.page-item').attr('aria-current') == 'page') {
-                var  page = $('.page-item').find('.page-link').html();
-                alert(page)
-            }
+            // console.log(response)
+            // if ($('.page-item').attr('aria-current') == 'page') {
+            //     var  page = $('.page-item').find('.page-link').html();
+            //     alert(page)
+            // }
+            flashy("Enregistrer avec succès", '#', 'success');
+            var numberCurrentPage = $('.active').find('span').html();
+            $('#booklist').load($('#booklist').data('url')+'?livrepage='+numberCurrentPage);
+                
             $('#modal-livre').modal('hide');
         }
     })

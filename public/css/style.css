@@ -81,6 +81,7 @@
     margin: 2px 0px;
     box-shadow: 5px 1px 18px #ced2d4;
     background-color: #fff;
+    cursor: pointer;
 }
 .showing-book-list {
     overflow: auto;

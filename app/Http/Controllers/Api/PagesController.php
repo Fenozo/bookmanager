@@ -84,7 +84,7 @@ class PagesController extends Controller
          $data_page = [
              'title'         => $request->input('title'),
              'content'       => $request->input('content'),
-             'book_id'       => $request->input('book_id'),
+             'book_id'       => $request->input('book_id', 1),
          ];
  
          
@@ -123,7 +123,10 @@ class PagesController extends Controller
  
              if ($request->get('chapiter') != null)
              {
-                 $chapiter = \App\Models\Chapiter::create(['name' => $request->get('chapiter')]);
+                 $chapiter = \App\Models\Chapiter::create([
+                    'name' => $request->get('chapiter'),
+                    'book_id' => $data_page['book_id']
+                ]);
                  $chapiter_id = $chapiter->id;
              }
  

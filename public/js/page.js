@@ -99,7 +99,7 @@ jQuery(function() {
             e.preventDefault();
             var datas = $('#form-page-store').serialize();
 
-            console.log(datas)
+            // console.log(datas)
             $.ajax({
                 url: $('.page-store-url').data('url'),
                 method: "POST",
@@ -114,7 +114,7 @@ jQuery(function() {
                     }
 
                     if (response.message == 1) {
-
+                        flashy("Enregistrer avec succès", '#', 'success');
                     } else if (response.message == 'error') {
 
                     }
