@@ -21,6 +21,7 @@ class PagesController extends Controller
         // header ( 'content-type:text/html; charset=utf-8') ;
 
         $elements = [];
+        $elements ['list'] = [];
         
         if (isset($_GET['argument']))
         {
@@ -32,10 +33,20 @@ class PagesController extends Controller
             
             if ($elements ['count']>0)
             {
-                $page_title = Page::where('title', 'like', "%".$search."%")->limit(10)->pluck('title');
+                $page_title = Page::where('title', 'like', "%".$search."%")->limit(10)->get(['id','title','content']);
                 // print_r($page_title);exit;
-                foreach ($page_title as $k => &$title) {
-                    $elements ['list'][] = Str::replaceToStrong($search, $title);
+                foreach ($page_title as $k => $data) {
+                    if (! isset($elements ['list'][$data->id]))
+                    {
+                        $title = Str::replaceToStrong($search, $data->title);
+                        $elements ['list'][] = [
+                            'id'        => $data->id,
+                            'text'      => $title,
+                            'title'     => $data->title,
+                            'content'   => $data->content,
+                        ];
+                    }
+                    // $elements ['id'][$data->id] = $data->id; 
                 }
             }
             // Cherche et retourne le compte des éléments trouvé
@@ -44,16 +55,26 @@ class PagesController extends Controller
 
             if ($count_content > 0) {
                 // recherche à partir du contenu de la page
-                $page_content = Page::where('content', 'like', "%".$search."%")->limit(10)->pluck('content');
+                $page_content = Page::where('content', 'like', "%".$search."%")->limit(10)->get(['id','title','content']);
 
-                foreach ($page_content as $k => &$content) {
+                foreach ($page_content as $k => $data) {
                     // Limité l'affichage de caractère à 150 sur le champ content
-                    $content = htmlentities( $content, ENT_QUOTES, 'UTF-8') ;
+                    $content = htmlentities( $data->content, ENT_QUOTES, 'UTF-8') ;
                     $content = Str::replaceToStrong($search, $content);
                     // $strlen = strlen($content);
                     $court_text = substr( $content,0, 150);
                     $court_text = strlen($content) > 150 ? $court_text.' [...]' : $court_text ;
-                    $elements ['list'][]  = $court_text;
+
+                    if (! isset($elements ['list'][$data->id]))
+                    {
+                        $elements ['list'][]  = [
+                                'id'        => $data->id,
+                                'text'      => $court_text, 
+                                'title'     => $data->title,
+                                'content'   => $data->content,
+                            ];
+                    }
+                    // $elements ['id'][$data->id] = $data->id;
                 }
             }
         }

@@ -69,7 +69,24 @@
                     <!-- /.modal -->
                     <!-- /.box-header -->
                     @include('pages.new')
-
+                    <div class="modal fade" id="datail-modal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span></button>
+                                    <h4>Détail sur le recherche #<span></span></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h1 class="title-mini">Title...</h1>
+                                    <div class="data-content">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
                     <!-- /.box-header -->
                     <div class="modal fade" id="book-modal">
                         <div class="modal-dialog">

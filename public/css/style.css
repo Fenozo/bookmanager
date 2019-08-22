@@ -100,3 +100,15 @@
 .modal #description {
     min-height: 160px;
 }
+/*******************************************************************/
+
+.search-div 
+{
+    cursor : pointer;
+}
+.title-mini
+{
+    font-size: 19px;
+    color: #7f7a7a;
+    text-shadow: #848383 1px 1px 0px;
+}

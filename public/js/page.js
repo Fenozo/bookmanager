@@ -14,6 +14,7 @@ jQuery(function() {
         $.ajax({
             url: $('.page-list-url').data('url'),
             method: "GET",
+            dataType : 'json',
             data: { argument: arg },
             success: function(response) {
                 $('.showing-page-list').find('div').remove();
@@ -26,9 +27,15 @@ jQuery(function() {
                 if (response.hasOwnProperty('list') && response.list.length > 0) {
                     // parcours des élements trouvé
                     response.list.forEach((elem) => {
-                        var text = elem;
+                        // var item = JSON.stringify(elem);
+                        var text = elem.text;
+                        var id = elem.id;
+                        var title = elem.title
+                        var content = elem.content
+
+                        console.log(elem);
                         if (arg.length > 1) {
-                            $('.showing-page-list').append('<div class="search-div"> ' + text + '</div>');
+                            $('.showing-page-list').append('<div  data-id="'+id+'" data-title="'+title+'" data-content="'+content+'" class="search-div"> ' + text + '</div>');
                         } else {
                             $('.showing-page-list').find('div').remove();
                         }
@@ -39,6 +46,17 @@ jQuery(function() {
         });
 
 
+    });
+});
+
+jQuery(function(){
+    $(document).on("click", ".search-div", function(){
+        // alert($(this).data('id')+' '+ $(this).data('title')+ ' '+ $(this).data('content'));
+        $('#datail-modal').modal('show');
+        $('#datail-modal').find('h4').find('span').html($(this).data('id'));
+        $('#datail-modal').find('.modal-body').find('h1').html($(this).data('title'));
+        $('#datail-modal').find('.data-content').find('p').remove();
+        $('#datail-modal').find('.data-content').append('<p>'+$(this).data('content')+'</p>');
     });
 });
 
@@ -237,7 +255,7 @@ jQuery(function() {
         
         $(document).on('keyup', '#book-search', function() {
              valeur = $(this).val();
-                    console.log(valeur);
+                    // console.log(valeur);
                         $.ajax({
                             url : $('.book-url-where').data('url'),
                             method : 'GET',
@@ -245,7 +263,7 @@ jQuery(function() {
                             data : {search : valeur},
                             success : function(datas) 
                             {
-                                console.log(datas);
+                                // console.log(datas);
 
                                 $('.showing-book-list').find('p').remove();
                                 datas.items.forEach(elem => {
