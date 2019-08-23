@@ -112,3 +112,15 @@
     color: #7f7a7a;
     text-shadow: #848383 1px 1px 0px;
 }
+
+.page-content {
+    min-height: 315px !important;
+}
+
+@media (min-width: 768px ) {
+    .modal-dialog {
+        width: 98%;
+        max-width: 1345px;
+        left: 0%;
+    }
+}

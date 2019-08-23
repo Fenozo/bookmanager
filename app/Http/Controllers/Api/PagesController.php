@@ -41,9 +41,9 @@ class PagesController extends Controller
                         $title = Str::replaceToStrong($search, $data->title);
                         $elements ['list'][] = [
                             'id'        => $data->id,
-                            'text'      => $title,
-                            'title'     => $data->title,
-                            'content'   => $data->content,
+                            'text'      => Str::decode_str($title),
+                            'title'     => Str::decode_str($data->title),
+                            'content'   => Str::decode_str($data->content),
                         ];
                     }
                     // $elements ['id'][$data->id] = $data->id; 
@@ -59,10 +59,11 @@ class PagesController extends Controller
 
                 foreach ($page_content as $k => $data) {
                     // Limité l'affichage de caractère à 150 sur le champ content
-                    $content = htmlentities( $data->content, ENT_QUOTES, 'UTF-8') ;
+                    $content = $data->content;
+                    $content = htmlentities( $content, ENT_QUOTES, 'UTF-8') ;
                     $content = Str::replaceToStrong($search, $content);
                     // $strlen = strlen($content);
-                    $court_text = substr( $content,0, 150);
+                    $court_text = substr( Str::decode_str($content),0, 150);
                     $court_text = strlen($content) > 150 ? $court_text.' [...]' : $court_text ;
 
                     if (! isset($elements ['list'][$data->id]))
@@ -70,8 +71,8 @@ class PagesController extends Controller
                         $elements ['list'][]  = [
                                 'id'        => $data->id,
                                 'text'      => $court_text, 
-                                'title'     => $data->title,
-                                'content'   => $data->content,
+                                'title'     => Str::decode_str($data->title),
+                                'content'   => Str::decode_str($data->content),
                             ];
                     }
                     // $elements ['id'][$data->id] = $data->id;

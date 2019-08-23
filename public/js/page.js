@@ -8,17 +8,16 @@ jQuery(function() {
 
     $(document).on('keyup', '#search-page', function() {
 
-        var arg = $(this).val();
-
+        var search = $(this).val();
 
         $.ajax({
             url: $('.page-list-url').data('url'),
             method: "GET",
             dataType : 'json',
-            data: { argument: arg },
+            data: { argument: search },
             success: function(response) {
                 $('.showing-page-list').find('div').remove();
-                if (arg.length == 0) {
+                if (search.length == 0) {
                     $('#count-search-page').html(0);
                 } else {
                     $('#count-search-page').html(response.count);
@@ -33,8 +32,11 @@ jQuery(function() {
                         var title = elem.title
                         var content = elem.content
 
-                        console.log(elem);
-                        if (arg.length > 1) {
+                        var pattern = new RegExp(search,"gi");
+                        var subject = text;
+                        // var text = subject.replace(pattern,"<strong>"+search+"</strong>");
+
+                        if (search.length > 1) {
                             $('.showing-page-list').append('<div  data-id="'+id+'" data-title="'+title+'" data-content="'+content+'" class="search-div"> ' + text + '</div>');
                         } else {
                             $('.showing-page-list').find('div').remove();
@@ -124,7 +126,7 @@ jQuery(function() {
                 data: datas,
                 success: function(resp) {
                     var response = {};
-                    console.log(resp)
+                    // console.log(resp)
                     $('#modal-default').modal('hide');
 
                     if (!response.hasOwnProperty('message')) {
@@ -219,8 +221,8 @@ jQuery(function(){
     $('#select2-chapiter-container').on('click', function() {
         if ($('input').hasClass('select2-search__field')) {
             $('.select2-search').on('keyup', 'input', function() {
-                var valeur = $('.select2-search').find('input').val();
-                var book = JSON.parse($('#input_hidden_book').val());
+                var valeur  = $('.select2-search').find('input').val();
+                var book    = JSON.parse($('#input_hidden_book').val());
 
                 // $.ajax({
                 //     url: $('.chapiter-url').val(),
@@ -236,7 +238,7 @@ jQuery(function(){
                 //         });
                 //     }
                 // });
-            })
+            });
         }
     });
 
@@ -254,15 +256,17 @@ jQuery(function() {
         });
         
         $(document).on('keyup', '#book-search', function() {
-             valeur = $(this).val();
+             var search = $(this).val();
                     // console.log(valeur);
+
                         $.ajax({
                             url : $('.book-url-where').data('url'),
                             method : 'GET',
                             dataType : 'json',
-                            data : {search : valeur},
+                            data : {search : search},
                             success : function(datas) 
                             {
+                                // alert(search)
                                 // console.log(datas);
 
                                 $('.showing-book-list').find('p').remove();
