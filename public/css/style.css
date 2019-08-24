@@ -116,7 +116,17 @@
 .page-content {
     min-height: 315px !important;
 }
-
+.modal-content .data-content {
+    font-size: 16px;
+    font-weight: 600;
+}
+strong {
+    font-size:19px;
+    /*color:red;*/
+}
+strong em {
+    font-weight: 900;
+}
 @media (min-width: 768px ) {
     .modal-dialog {
         width: 98%;

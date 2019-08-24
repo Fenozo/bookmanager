@@ -34,16 +34,17 @@ class PagesController extends Controller
             if ($elements ['count']>0)
             {
                 $page_title = Page::where('title', 'like', "%".$search."%")->limit(10)->get(['id','title','content']);
-                // print_r($page_title);exit;
-                foreach ($page_title as $k => $data) {
+                
+                foreach ($page_title as $k => $data) 
+                {
                     if (! isset($elements ['list'][$data->id]))
                     {
                         $title = Str::replaceToStrong($search, $data->title);
                         $elements ['list'][] = [
-                            'id'        => $data->id,
-                            'text'      => Str::decode_str($title),
-                            'title'     => Str::decode_str($data->title),
-                            'content'   => Str::decode_str($data->content),
+                            'id'        => $data->id
+                            ,'text'      => Str::decode_str($title)
+                            ,'title'     => Str::decode_str($data->title)
+                            ,'content'   => Str::decode_str($data->content)
                         ];
                     }
                     // $elements ['id'][$data->id] = $data->id; 
@@ -53,26 +54,36 @@ class PagesController extends Controller
             $count_content = Page::where('content', 'like', "%".$search."%")->count('id');
             $elements ['count'] += $count_content;
 
-            if ($count_content > 0) {
+            if ($count_content > 0) 
+            {
                 // recherche à partir du contenu de la page
                 $page_content = Page::where('content', 'like', "%".$search."%")->limit(10)->get(['id','title','content']);
 
-                foreach ($page_content as $k => $data) {
+                foreach ($page_content as $k => $data) 
+                {
                     // Limité l'affichage de caractère à 150 sur le champ content
                     $content = $data->content;
+                    
                     $content = htmlentities( $content, ENT_QUOTES, 'UTF-8') ;
                     $content = Str::replaceToStrong($search, $content);
-                    // $strlen = strlen($content);
-                    $court_text = substr( Str::decode_str($content),0, 150);
-                    $court_text = strlen($content) > 150 ? $court_text.' [...]' : $court_text ;
+                    $count_search = strlen($search);
+                    $strpos = !empty($search)? strpos($data->content, $search) : 0;
+ 
+                    $court_text = substr( $content, ( $strpos>8 ? $strpos - 8 : 0), ($strpos>8 ? $strpos+150 : 151) );
+
+                    if($strpos > 8 &&  strlen($court_text) < 150) {
+                        $content = substr($content, ( $strpos>8 ? $strpos - 8 : 0));
+                    }
+                    
+                    $court_text = strlen($court_text) > 150 ? $court_text.' [...]' : $content ;
 
                     if (! isset($elements ['list'][$data->id]))
                     {
                         $elements ['list'][]  = [
-                                'id'        => $data->id,
-                                'text'      => $court_text, 
-                                'title'     => Str::decode_str($data->title),
-                                'content'   => Str::decode_str($data->content),
+                                'id'        => $data->id
+                                ,'text'      => Str::decode_str($court_text)
+                                ,'title'     => Str::decode_str($data->title)
+                                ,'content'   => Str::decode_str($data->content)
                             ];
                     }
                     // $elements ['id'][$data->id] = $data->id;

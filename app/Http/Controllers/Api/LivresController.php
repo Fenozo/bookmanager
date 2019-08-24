@@ -98,7 +98,7 @@ class LivresController extends Controller
          $livre = \App\Models\Livre::create([
              'name'          =>  $livre['name'],
              'author'        =>  $livre['author'],
-             'description'   =>  $livre['description'],
+             'description'   =>  strip_tags($livre['description']),
              'date_publication'   =>  new \Datetime($livre['date_publication']),
          ]);
  
@@ -160,7 +160,7 @@ class LivresController extends Controller
         $livre = \App\Models\Livre::where('id', $id)->update([
             'name'              =>  $livre['name'],
             'author'            =>  $livre['author'],
-            'description'       =>  $livre['description'],
+            'description'       =>   htmlspecialchars($livre['description'], ENT_QUOTES, "UTF-8"),
             'date_publication'  =>  new \Datetime($livre['date_publication']),
         ]);
 

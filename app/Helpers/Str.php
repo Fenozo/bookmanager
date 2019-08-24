@@ -1,5 +1,6 @@
 <?php
 namespace App\Helpers;
+use Symfony\Polyfill\Mbstring\Mbstring;
 
 class Str 
 {
@@ -10,18 +11,43 @@ class Str
    
     public static function replaceToStrong($search, $subject)
     {
+        if (!defined("HELPERS"))
+            define("HELPERS", __DIR__);
     	$tmp_search 	= self::split($search, ['/','/']);
+        $search_list    = $tmp_search ['list'];
     	$tmp_subject 	= $subject;
+        $text = "";
+
+        $search_list [] = "/".self::decode_str($search)."/";
+
+        $fichier = fopen(HELPERS.'/demo.txt', "a+");
+        fwrite($fichier, self::decode_str($search)."\n");
+        fwrite($fichier, "###################################################\n");
+        fwrite($fichier, json_encode($search_list)."\n");
+        fwrite($fichier, $subject."\n");
+        fclose($fichier);
+
 
         $text = preg_replace_callback(
-        	$tmp_search['list'],
-        	function($rearch){
+            $search_list,
+            function($rearch){
+ 
+                return isset($rearch[0]) ? '<strong>'.$rearch[0].'</strong>' : '';
 
-				return isset($rearch[0]) ? '<strong style="font-size:19px;">'.$rearch[0].'</strong>' : '';
+            }, $subject );
 
-			}, $subject );
+        return self::decode_str($text);
+    }
 
-        return $text;
+    static function _($arg, $object = '-') {
+      $c = 0;
+      $tire = '';
+      $limit = is_array($arg) ? count($arg) : strlen($arg);
+      while($c < $limit){
+        $c++;
+        $tire .= $object;
+      }
+      return $tire;
     }
     /**
     * prend un chaine et retourne deux tableaux
@@ -32,7 +58,7 @@ class Str
     */
     public static function split($string, $limite = ['[',']']) 
     {
-        $tab = str_split(strtolower($string));
+        $tab = str_split($string);
 
         $total   = [];
         $changed = [];
@@ -40,7 +66,7 @@ class Str
         $l1 = $limite[0];
         $l2 = $limite[1];
 
-        $total [] = $l1.strtolower($string).$l2;
+        $total [] = $l1.Mbstring::mb_strtolower(self::decode_str($string)).$l2;
 
         foreach ($tab as $key => $value)
         {
@@ -51,19 +77,21 @@ class Str
             for($i=0; $i<count($tab); $i++ ) 
             {
 
-                if (!in_array($tab[$i],  $changed)&&$value == $tab[$i] && $c === 0) {
-                    $changed [$i] = $value;
-                    $string .= strtoupper($value);
+                if (!in_array($tab[$i],  $changed) && $value == $tab[$i] && $c === 0)
+                {
+                    $changed [$i] = self::decode_str($value);
+                    $string .= self::decode_str($value);
                     $c +=1;
-                } else 
-                    {
+                }else{
                         $string .= $tab[$i];
                     }
             }
 
-            $total [] = $l1.$string.$l2;
+            $total [] = $l1.Mbstring::mb_convert_encoding($string, 'UTF8').$l2;
 
         }
+
+        // print_r($total);exit;
 
         return ['list' =>$total, 'changed' => $changed];
     }
@@ -71,7 +99,9 @@ class Str
     public static function decode_str($string)
     {
        $conversion = array(
-           "\\351"   => "&eacute;"
+            "è"      => "&agrave;"
+           ,"é"      => "&eacute;"
+           ,"\\351"  => "&eacute;"
            ,"\\222"  => "'"
            ,"\\347"  => "&ccedi;"
            ,"\\340"  => "&agrave;"
@@ -79,12 +109,22 @@ class Str
            ,"\\253"  => "\""
            ,"\\273"  => "\""
            ,"\\205"  => "..."
-           ,"\\"     => ""
-           ,"&eg<"   => "&egrave;s"
            ,"\u00e8s"=> "&egrave;s"
            ,"\""     => "&quot;"
+           ,"'"      => "&#039;"
        );
        return strtr($string, $conversion);
+    }
+    public static function encode_str($string)
+    {
+        $conversion = array(
+            "&agrave;"  => "è"
+            ,"&eacute;" => "é"
+            ,"&ccedi;"  => "ç"
+            ,"quot"     => "\""
+            ,"&#039;"   => "'"
+        );
+        return strtr($string, $conversion);
     }
 
 
@@ -105,6 +145,15 @@ class Str
     public static function isEmail($email)
     {
         return !empty($email) && preg_match(self::cleanNonUnicodeSupport('/^[a-z\p{L}0-9!#$%&\'*+\/=?^`{}|~_-]+[.a-z\p{L}0-9!#$%&\'*+\/=?^`{}|~_-]*@[a-z\p{L}0-9]+(?:[.]?[_a-z\p{L}0-9-])*\.[a-z\p{L}0-9]+$/ui'), $email);
+    }
+
+
+    public static function htmlEntities($string) {
+
+        return htmlentities($string, ENT_QUOTES, "UTF-8");
+    }
+    public static function htmlEntitiesDecode($string) {
+        return html_entity_decode($string, ENT_QUOTES, "UTF-8");
     }
 }
 

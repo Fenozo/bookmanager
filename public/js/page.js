@@ -34,6 +34,8 @@ jQuery(function() {
 
                         var pattern = new RegExp(search,"gi");
                         var subject = text;
+
+                            // console.log(search)
                         // var text = subject.replace(pattern,"<strong>"+search+"</strong>");
 
                         if (search.length > 1) {
