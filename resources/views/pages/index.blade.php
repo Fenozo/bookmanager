@@ -78,6 +78,9 @@
                                     <h4>Détail sur le recherche #<span></span></h4>
                                 </div>
                                 <div class="modal-body">
+                                    <div style="margin-bottom:12px">
+                                        <a href="#" class="btn btn-info">Editer</a>
+                                    </div>
                                     <h1 class="title-mini">Title...</h1>
                                     <div class="data-content">
                                         

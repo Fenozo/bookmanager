@@ -20,7 +20,11 @@ class Str
 
         $search_list [] = "/".self::decode_str($search)."/";
 
-        $fichier = fopen(HELPERS.'/demo.txt', "a+");
+        $date_memo = date('d-m-Y');
+
+        \App\Helpers\Dir::create_dir(['/../','memo','textes']);
+
+        $fichier = fopen(HELPERS.'/../memo/textes/-'.$date_memo.'-.txt', "a+");
         fwrite($fichier, self::decode_str($search)."\n");
         fwrite($fichier, "###################################################\n");
         fwrite($fichier, json_encode($search_list)."\n");
@@ -112,6 +116,10 @@ class Str
            ,"\u00e8s"=> "&egrave;s"
            ,"\""     => "&quot;"
            ,"'"      => "&#039;"
+           ,"û"      => "&ucirc;"
+           ,"ô"      => "&ocirc;"
+           ,"ö"      => "&ouml;"
+           ,"î"      => "&icirc;"
        );
        return strtr($string, $conversion);
     }
