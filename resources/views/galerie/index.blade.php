@@ -14,14 +14,14 @@
 		</div>
 		<!-- /.box-header -->
 		<div class="box-body content">
-			<?php 
-			
-			?>
+
 			<?php foreach ($images as $file) { ?>
-				<div>
+				
+				<div  class="dropfile" data-value="{{ filename_in_path($file) }}" >
 					<img src="{{ asset('\img'.$file)}}" >
 				</div>
 			<?php } ?>
+			
 			<div class="dropfile">
 				
 			</div>

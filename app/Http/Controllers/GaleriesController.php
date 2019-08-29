@@ -21,7 +21,7 @@ class GaleriesController extends Controller
     }
 
     public function upload(Request $request) {
-
+       
         $img = new \App\Helpers\Images(['..','..','public/','img']);
         $img->uploaded();
 

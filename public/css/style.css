@@ -142,7 +142,7 @@ strong em {
 }
 .dropfile {
     position: relative;
-    border: 3px dashed #CDCACA !important;
+    border: 3px dashed #bdb3b3  !important;
     color:#ABA9A9 !important;
     display: block !important;
     width: 150px;
@@ -152,7 +152,7 @@ strong em {
 .box-body img{
     border: 2px solid #000;
     width: 150px;
-    height: 150px;
+    height: 100%;
     display: block;
     overflow: hidden;
 }
@@ -164,13 +164,15 @@ strong em {
     position: absolute;
     z-index: 10;
     width: 150px;
-    height: 100px;
+    min-height: 100px;
 }
-.dropfile.progress {
-    position: absolute; 
+.dropfile .progress {
+    position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -20px;
     background-color: #498CFA;
+    right: 0;
+    text-align: center;
 }
 .dropfile.hover{
     background-color: #D6D7E5;
