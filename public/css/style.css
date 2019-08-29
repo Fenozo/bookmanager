@@ -134,3 +134,60 @@ strong em {
         left: 0%;
     }
 }
+
+/*#############################################################################*/
+.nosidebar {
+    padding: 59px;
+    max-width: 1104px;
+}
+.dropfile {
+    position: relative;
+    border: 3px dashed #CDCACA !important;
+    color:#ABA9A9 !important;
+    display: block !important;
+    width: 150px;
+    height: 150px;
+    margin-left: 5px;
+}
+.box-body img{
+    border: 2px solid #000;
+    width: 150px;
+    height: 150px;
+    display: block;
+    overflow: hidden;
+}
+.dropfile, .box-body img {
+    float: left;
+}
+
+.dropfile img {
+    position: absolute;
+    z-index: 10;
+    width: 150px;
+    height: 100px;
+}
+.dropfile.progress {
+    position: absolute; 
+    left: 0;
+    bottom: 0;
+    background-color: #498CFA;
+}
+.dropfile.hover{
+    background-color: #D6D7E5;
+    border-color: #3B7FED !important;
+}
+.dropfile.hover img{
+    filter: alpha(opacity=30);
+    -ms-filter:progid:DXImageTransform.Microsoft.Alpha(opacity=30);
+    -moz-opacity:0.3;
+    opacity: 0.3;
+}
+.dropfile span.instructions{
+    position: absolute; 
+    top: 33%;
+    left: 0;
+    right: 0;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}

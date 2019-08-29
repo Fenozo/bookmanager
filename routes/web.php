@@ -1,8 +1,9 @@
 <?php
 
 Route::get('/', 'HomeController@index')->name('home');
-
-Route::group(['prefix'=>'pages'],function(){
+Route::get('/galerie','GaleriesController@index')->name('galerie.list');
+Route::post('/galerie/upload','GaleriesController@upload')->name('galerie.upload');
+Route::group(['prefix'=>'pages'],function() {
 
     Route::get('/list', 'PagesController@index')->name('page.list');
     
@@ -11,6 +12,7 @@ Route::group(['prefix'=>'pages'],function(){
 Route::group(['prefix'=>'livre'], function(){
     Route::get('/list', 'LivresController@index')->name('livre.list');
 });
+
 Route::group(['prefix' => 'api'], function () {
     
     Route::post('livre/update','Api\LivresController@update')->name('api.livre.update');

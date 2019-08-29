@@ -52,6 +52,15 @@
                 </a>
             </li>
             <li class="">
+                <a href="{{ route('galerie.list') }}">
+                    <i class="fa fa-files-o"></i>
+                    <span>Galerie</span>
+                    <span class="pull-right-container">
+                        <span class="label label-primary pull-right">3</span>
+                    </span>
+                </a>
+            </li>
+            <li class="">
                 <a href="{{ route('page.list') }}">
                     <i class="fa fa-files-o"></i>
                     <span>Page</span>

@@ -37,5 +37,6 @@ class Dir
                 mkdir ($path.DS.$d, 0755); // on cré le dossier
             }
         }
+        return $path.DS.$d;
     }
 }
