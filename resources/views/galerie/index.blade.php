@@ -13,7 +13,7 @@
 		  </div>
 		</div>
 		<!-- /.box-header -->
-		<div class="box-body content">
+		<div id="content" class="box-body content">
 
 			<?php foreach ($images as $file) { ?>
 				
