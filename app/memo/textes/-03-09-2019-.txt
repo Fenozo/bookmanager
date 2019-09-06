@@ -1,0 +1,102 @@
+ges
+####################################################["\/ges\/","\/ges\/","\/ges\/","\/ges\/","\/ges\/"]
+["\/gesti\/","\/gesti\/","\/gesti\/","\/gesti\/","\/gesti\/","\/gesti\/","\/gesti\/"]
+Gestion des ressources
+ges
+###################################################
+["\/ges\/","\/ges\/","\/ges\/","\/ges\/","\/ges\/"]
+1 Principes g&eacute;n&eacute;raux et d&eacute;finitions
+1.1. Les diff&eacute;rents types de co&ucirc;ts
+
+Il existe divers types de co&ucirc;ts. Un co&ucirc;t au sens g&eacute;n&eacute;ral du terme est un regroupement de charges qui peut correspondre:
+- &agrave; une fonction de l&#039;entreprise : production, distribution, administration,... ou en descendant plus dans le d&eacute;tail, &eacute;tude, fabrication, vente, apr&egrave;s-vente, ...;
+- &agrave; un moyen d&#039;exploitation : magasin, usine, rayon, atelier, bureau, machine ou poste de travail;
+- &agrave; une responsabilit&eacute;, d&#039;un directeur, chef de service, contrema&icirc;tre,...;
+- &agrave; une activit&eacute; d&#039;exploitation : famille de produits (marchandises, biens fabriqu&eacute;s, services rendus), produit individualis&eacute;, ou stade d&#039;&eacute;laboration d&#039;un produit (&eacute;tude, achat, production, distribution, ...).
+
+En ce qui concerne le co&ucirc;ts des produits d&#039;enreprises de production ou de transformation, on distingue en particulier en comptabilit&eacute; analytique :
+- les co&ucirc;t de production, repr&eacute;sentant tout ce qu&#039;ont co&ucirc;t&eacute; les produits semi-ouvr&eacute;s ou finis, consomm&eacute;s et des autres co&ucirc;ts engag&eacute;s par l&#039;entreprise au cours des op&eacute;rations de production, jusqu&#039;au stade qui pr&eacute;c&egrave;de imm&eacute;diatement leur stockage &eacute;ventuel et/ou leur vente;
+- les co&ucirc;ts de revient (terme qui a remplac&eacute; le terme traditionnel de prix de revient) des produits vendus qui, outre le co&ucirc;t des produits pris en stocks, incluent une quote-part appropri&eacute;e de charges &quot;hors production&quot;, soit g&eacute;n&eacute;ralement des charges de recherche et d&eacute;veloppement, d&#039;administration et de distribution;
+On parle de calcul de co&ucirc;ts complets lorsque ces co&ucirc;ts calcul&eacute;s tiennent compte de toutes les charges support&eacute;es par l&#039;entreprise, de co&ucirc;ts partiels lorsqu&#039;on ne prend en compte dans le calcul qu&#039;une partie de ces charges : soit les &eacute;l&eacute;ments directs, c&#039;est &agrave; dire affectables sans ambigu&iuml;t&eacute; aux produits, soit les &eacute;l&eacute;ments variables, c&#039;est &agrave; dire variant proportionnellement avec les quantit&eacute;s produites ou vendues. On reviendra ult&eacute;rieurement sur les d&eacute;finitions plus pr&eacute;cises de ces termes.
+
+Les co&ucirc;ts peuvent &ecirc;tre calcul&eacute;s ex post : ce sont des co&ucirc;ts constat&eacute;s; on parle aussi de co&ucirc;ts r&eacute;els ou historiques.
+ges
+###################################################
+["\/ges\/","\/ges\/","\/ges\/","\/ges\/","\/ges\/"]
+Nous allons commencer par un chapitre assez court pour introduire Doctrine 2.
+Avant de rentrer dans le vif du sujet, nous allons voir les avantages qu&rsquo;un ORM et plus
+particuli&egrave;rement Doctrine2 peut nous apporter tout au long de nos d&eacute;veloppements.
+Nous finirons ensuite par l&rsquo;installation et la configuration de celui-ci pour pouvoir passer
+rapidement &agrave; la pratique d&egrave;s le chapitre suivant.
+gestio
+###################################################
+["\/gestio\/","\/gestio\/","\/gestio\/","\/gestio\/","\/gestio\/","\/gestio\/","\/gestio\/","\/gestio\/"]
+Gestion des ressources
+gestion
+###################################################
+["\/gestion\/","\/gestion\/","\/gestion\/","\/gestion\/","\/gestion\/","\/gestion\/","\/gestion\/","\/gestion\/","\/gestion\/"]
+Gestion des ressources
+ges
+###################################################
+["\/ges\/","\/ges\/","\/ges\/","\/ges\/","\/ges\/"]
+Gestion des ressources
+ges
+###################################################
+["\/ges\/","\/ges\/","\/ges\/","\/ges\/","\/ges\/"]
+1 Principes g&eacute;n&eacute;raux et d&eacute;finitions
+1.1. Les diff&eacute;rents types de co&ucirc;ts
+
+Il existe divers types de co&ucirc;ts. Un co&ucirc;t au sens g&eacute;n&eacute;ral du terme est un regroupement de charges qui peut correspondre:
+- &agrave; une fonction de l&#039;entreprise : production, distribution, administration,... ou en descendant plus dans le d&eacute;tail, &eacute;tude, fabrication, vente, apr&egrave;s-vente, ...;
+- &agrave; un moyen d&#039;exploitation : magasin, usine, rayon, atelier, bureau, machine ou poste de travail;
+- &agrave; une responsabilit&eacute;, d&#039;un directeur, chef de service, contrema&icirc;tre,...;
+- &agrave; une activit&eacute; d&#039;exploitation : famille de produits (marchandises, biens fabriqu&eacute;s, services rendus), produit individualis&eacute;, ou stade d&#039;&eacute;laboration d&#039;un produit (&eacute;tude, achat, production, distribution, ...).
+
+En ce qui concerne le co&ucirc;ts des produits d&#039;enreprises de production ou de transformation, on distingue en particulier en comptabilit&eacute; analytique :
+- les co&ucirc;t de production, repr&eacute;sentant tout ce qu&#039;ont co&ucirc;t&eacute; les produits semi-ouvr&eacute;s ou finis, consomm&eacute;s et des autres co&ucirc;ts engag&eacute;s par l&#039;entreprise au cours des op&eacute;rations de production, jusqu&#039;au stade qui pr&eacute;c&egrave;de imm&eacute;diatement leur stockage &eacute;ventuel et/ou leur vente;
+- les co&ucirc;ts de revient (terme qui a remplac&eacute; le terme traditionnel de prix de revient) des produits vendus qui, outre le co&ucirc;t des produits pris en stocks, incluent une quote-part appropri&eacute;e de charges &quot;hors production&quot;, soit g&eacute;n&eacute;ralement des charges de recherche et d&eacute;veloppement, d&#039;administration et de distribution;
+On parle de calcul de co&ucirc;ts complets lorsque ces co&ucirc;ts calcul&eacute;s tiennent compte de toutes les charges support&eacute;es par l&#039;entreprise, de co&ucirc;ts partiels lorsqu&#039;on ne prend en compte dans le calcul qu&#039;une partie de ces charges : soit les &eacute;l&eacute;ments directs, c&#039;est &agrave; dire affectables sans ambigu&iuml;t&eacute; aux produits, soit les &eacute;l&eacute;ments variables, c&#039;est &agrave; dire variant proportionnellement avec les quantit&eacute;s produites ou vendues. On reviendra ult&eacute;rieurement sur les d&eacute;finitions plus pr&eacute;cises de ces termes.
+
+Les co&ucirc;ts peuvent &ecirc;tre calcul&eacute;s ex post : ce sont des co&ucirc;ts constat&eacute;s; on parle aussi de co&ucirc;ts r&eacute;els ou historiques.
+ges
+###################################################
+["\/ges\/","\/ges\/","\/ges\/","\/ges\/","\/ges\/"]
+Nous allons commencer par un chapitre assez court pour introduire Doctrine 2.
+Avant de rentrer dans le vif du sujet, nous allons voir les avantages qu&rsquo;un ORM et plus
+particuli&egrave;rement Doctrine2 peut nous apporter tout au long de nos d&eacute;veloppements.
+Nous finirons ensuite par l&rsquo;installation et la configuration de celui-ci pour pouvoir passer
+rapidement &agrave; la pratique d&egrave;s le chapitre suivant.
+gestio
+###################################################
+["\/gestio\/","\/gestio\/","\/gestio\/","\/gestio\/","\/gestio\/","\/gestio\/","\/gestio\/","\/gestio\/"]
+Gestion des ressources
+ges
+###################################################
+["\/ges\/","\/ges\/","\/ges\/","\/ges\/","\/ges\/"]
+Gestion des ressources
+ges
+###################################################
+["\/ges\/","\/ges\/","\/ges\/","\/ges\/","\/ges\/"]
+1 Principes g&eacute;n&eacute;raux et d&eacute;finitions
+1.1. Les diff&eacute;rents types de co&ucirc;ts
+
+Il existe divers types de co&ucirc;ts. Un co&ucirc;t au sens g&eacute;n&eacute;ral du terme est un regroupement de charges qui peut correspondre:
+- &agrave; une fonction de l&#039;entreprise : production, distribution, administration,... ou en descendant plus dans le d&eacute;tail, &eacute;tude, fabrication, vente, apr&egrave;s-vente, ...;
+- &agrave; un moyen d&#039;exploitation : magasin, usine, rayon, atelier, bureau, machine ou poste de travail;
+- &agrave; une responsabilit&eacute;, d&#039;un directeur, chef de service, contrema&icirc;tre,...;
+- &agrave; une activit&eacute; d&#039;exploitation : famille de produits (marchandises, biens fabriqu&eacute;s, services rendus), produit individualis&eacute;, ou stade d&#039;&eacute;laboration d&#039;un produit (&eacute;tude, achat, production, distribution, ...).
+
+En ce qui concerne le co&ucirc;ts des produits d&#039;enreprises de production ou de transformation, on distingue en particulier en comptabilit&eacute; analytique :
+- les co&ucirc;t de production, repr&eacute;sentant tout ce qu&#039;ont co&ucirc;t&eacute; les produits semi-ouvr&eacute;s ou finis, consomm&eacute;s et des autres co&ucirc;ts engag&eacute;s par l&#039;entreprise au cours des op&eacute;rations de production, jusqu&#039;au stade qui pr&eacute;c&egrave;de imm&eacute;diatement leur stockage &eacute;ventuel et/ou leur vente;
+- les co&ucirc;ts de revient (terme qui a remplac&eacute; le terme traditionnel de prix de revient) des produits vendus qui, outre le co&ucirc;t des produits pris en stocks, incluent une quote-part appropri&eacute;e de charges &quot;hors production&quot;, soit g&eacute;n&eacute;ralement des charges de recherche et d&eacute;veloppement, d&#039;administration et de distribution;
+On parle de calcul de co&ucirc;ts complets lorsque ces co&ucirc;ts calcul&eacute;s tiennent compte de toutes les charges support&eacute;es par l&#039;entreprise, de co&ucirc;ts partiels lorsqu&#039;on ne prend en compte dans le calcul qu&#039;une partie de ces charges : soit les &eacute;l&eacute;ments directs, c&#039;est &agrave; dire affectables sans ambigu&iuml;t&eacute; aux produits, soit les &eacute;l&eacute;ments variables, c&#039;est &agrave; dire variant proportionnellement avec les quantit&eacute;s produites ou vendues. On reviendra ult&eacute;rieurement sur les d&eacute;finitions plus pr&eacute;cises de ces termes.
+
+Les co&ucirc;ts peuvent &ecirc;tre calcul&eacute;s ex post : ce sont des co&ucirc;ts constat&eacute;s; on parle aussi de co&ucirc;ts r&eacute;els ou historiques.
+ges
+###################################################
+["\/ges\/","\/ges\/","\/ges\/","\/ges\/","\/ges\/"]
+Nous allons commencer par un chapitre assez court pour introduire Doctrine 2.
+Avant de rentrer dans le vif du sujet, nous allons voir les avantages qu&rsquo;un ORM et plus
+particuli&egrave;rement Doctrine2 peut nous apporter tout au long de nos d&eacute;veloppements.
+Nous finirons ensuite par l&rsquo;installation et la configuration de celui-ci pour pouvoir passer
+rapidement &agrave; la pratique d&egrave;s le chapitre suivant.

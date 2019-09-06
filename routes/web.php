@@ -1,14 +1,25 @@
 <?php
 
+Route::get("/finds", "Api\FindersController@find")->name("find");
+/**
+* ##################################################################
+*/
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/galerie','GaleriesController@index')->name('galerie.list');
 Route::post('/galerie/upload','GaleriesController@upload')->name('galerie.upload');
+
+/**
+* ####################-GESTION DE PAGE-###########################################
+*/
+
 Route::group(['prefix'=>'pages'],function() {
 
     Route::get('/list', 'PagesController@index')->name('page.list');
     
 });
-
+/**
+* ######################-GESTION DE LIVRE-############################################
+*/
 Route::group(['prefix'=>'livre'], function(){
     Route::get('/list', 'LivresController@index')->name('livre.list');
 });

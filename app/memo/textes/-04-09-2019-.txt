@@ -1,0 +1,188 @@
+t
+###################################################
+["\/t\/","\/t\/","\/t\/"]
+Event 1
+t
+###################################################
+["\/t\/","\/t\/","\/t\/"]
+Titre pour la page
+t
+###################################################
+["\/t\/","\/t\/","\/t\/"]
+Smashing Node.js JavaScript Everywhere
+t
+###################################################
+["\/t\/","\/t\/","\/t\/"]
+Rakotosoa François
+t
+###################################################
+["\/t\/","\/t\/","\/t\/"]
+October 11, 1995
+t
+###################################################
+["\/t\/","\/t\/","\/t\/"]
+Ny amin'ny Galiliana sasany izay novonoina, sy ny fanoharana ny amin'ny aviavy tsy namoa
+t
+###################################################
+["\/t\/","\/t\/","\/t\/"]
+Ny amin'ny Galiliana sasany izay novonoina, sy ny fanoharana ny amin'ny aviavy tsy namoa
+t
+###################################################
+["\/t\/","\/t\/","\/t\/"]
+Ny amin'ny Galiliana sasany izay novonoina, sy ny fanoharana ny amin'ny aviavy tsy namoa
+t
+###################################################
+["\/t\/","\/t\/","\/t\/"]
+cours-complet comptabilité general
+t
+###################################################
+["\/t\/","\/t\/","\/t\/"]
+Dortoir
+t
+###################################################
+["\/t\/","\/t\/","\/t\/"]
+olona tsara fanahy ve ?
+t
+###################################################
+["\/t\/","\/t\/","\/t\/"]
+Contenue
+t
+###################################################
+["\/t\/","\/t\/","\/t\/"]
+Getting Started: Setup and Concepts
+t
+###################################################
+["\/t\/","\/t\/","\/t\/"]
+Olona tsara fanahy
+t
+###################################################
+["\/t\/","\/t\/","\/t\/"]
+Will Lyman responded to his partener&#039;s urgent whisper by opening his eyes a slit and glancing up at the monitor installed in the ceiling of the van. He was slightly groggy, and it took him a second to remember where he was: parked outside a barn at keeneland Race Course in Lexington, Kentucky, charged with bringing to justice a gang of the pettiest crooks it had ever been his displeasure to chase.
+t
+###################################################
+["\/t\/","\/t\/","\/t\/"]
+&quot;Lioka 13:1&quot;
+Ary tamin&#039;izany andro izany nisy ny sasany teo izy nanambara tamin&#039;i Jesosy izay nanjoa ny Galaliana, izay naharoharon&#039;i Pilato tamin&#039;ny fanatiny ny rany.
+t
+###################################################
+["\/t\/","\/t\/","\/t\/"]
+&quot;Lioka 13:2&quot;
+Fa Jesosy namaly ka nanao taminy hoe: Ataonareo va fa ireny Galiliana ireny no mpanota mihoatra noho ny Galiliana rehetre, satria nozoin&#039;izany zavatra izany izy ?
+t
+###################################################
+["\/t\/","\/t\/","\/t\/"]
+&quot;Lioka 13:3&quot;
+Tsy hoy Izaho aminareo; fa raha tsy mibebaka hianareo dia ho ringana tahaka tahaka azy koa hianareo rehetra.
+t
+###################################################
+["\/t\/","\/t\/","\/t\/"]
+1 Principes g&eacute;n&eacute;raux et d&eacute;finitions
+1.1. Les diff&eacute;rents types de co&ucirc;ts
+
+Il existe divers types de co&ucirc;ts. Un co&ucirc;t au sens g&eacute;n&eacute;ral du terme est un regroupement de charges qui peut correspondre:
+- &agrave; une fonction de l&#039;entreprise : production, distribution, administration,... ou en descendant plus dans le d&eacute;tail, &eacute;tude, fabrication, vente, apr&egrave;s-vente, ...;
+- &agrave; un moyen d&#039;exploitation : magasin, usine, rayon, atelier, bureau, machine ou poste de travail;
+- &agrave; une responsabilit&eacute;, d&#039;un directeur, chef de service, contrema&icirc;tre,...;
+- &agrave; une activit&eacute; d&#039;exploitation : famille de produits (marchandises, biens fabriqu&eacute;s, services rendus), produit individualis&eacute;, ou stade d&#039;&eacute;laboration d&#039;un produit (&eacute;tude, achat, production, distribution, ...).
+
+En ce qui concerne le co&ucirc;ts des produits d&#039;enreprises de production ou de transformation, on distingue en particulier en comptabilit&eacute; analytique :
+- les co&ucirc;t de production, repr&eacute;sentant tout ce qu&#039;ont co&ucirc;t&eacute; les produits semi-ouvr&eacute;s ou finis, consomm&eacute;s et des autres co&ucirc;ts engag&eacute;s par l&#039;entreprise au cours des op&eacute;rations de production, jusqu&#039;au stade qui pr&eacute;c&egrave;de imm&eacute;diatement leur stockage &eacute;ventuel et/ou leur vente;
+- les co&ucirc;ts de revient (terme qui a remplac&eacute; le terme traditionnel de prix de revient) des produits vendus qui, outre le co&ucirc;t des produits pris en stocks, incluent une quote-part appropri&eacute;e de charges &quot;hors production&quot;, soit g&eacute;n&eacute;ralement des charges de recherche et d&eacute;veloppement, d&#039;administration et de distribution;
+On parle de calcul de co&ucirc;ts complets lorsque ces co&ucirc;ts calcul&eacute;s tiennent compte de toutes les charges support&eacute;es par l&#039;entreprise, de co&ucirc;ts partiels lorsqu&#039;on ne prend en compte dans le calcul qu&#039;une partie de ces charges : soit les &eacute;l&eacute;ments directs, c&#039;est &agrave; dire affectables sans ambigu&iuml;t&eacute; aux produits, soit les &eacute;l&eacute;ments variables, c&#039;est &agrave; dire variant proportionnellement avec les quantit&eacute;s produites ou vendues. On reviendra ult&eacute;rieurement sur les d&eacute;finitions plus pr&eacute;cises de ces termes.
+
+Les co&ucirc;ts peuvent &ecirc;tre calcul&eacute;s ex post : ce sont des co&ucirc;ts constat&eacute;s; on parle aussi de co&ucirc;ts r&eacute;els ou historiques.
+t
+###################################################
+["\/t\/","\/t\/","\/t\/"]
+s. m. Troupe de Cavalerie, compos&eacute;e ordinairement de quatre compagnies. Petit corps
+de Cavalerie rang&eacute;, mis en ordre pour combattre. Un Escadron de Chevau&minus;L&eacute;gers. Un Escadron de
+Carabiniers. Gros Escadron. Escadron serr&eacute;. Former un Escadron. Enfoncer un Escadron. Rompre un
+Escadron. Ouvrir un Escadron. Escadron qui plie. D&eacute;faire un Escadron. Renverser un Escadron. La t&ecirc;te d&#039;un
+Escadron. Le flanc d&#039;un Escadron. Il partagea sa troupe en deux Escadrons.
+te
+###################################################
+["\/te\/","\/te\/","\/te\/","\/te\/"]
+cours-complet comptabilité general
+te
+###################################################
+["\/te\/","\/te\/","\/te\/","\/te\/"]
+Juste un autre test
+te
+###################################################
+["\/te\/","\/te\/","\/te\/","\/te\/"]
+Test
+te
+###################################################
+["\/te\/","\/te\/","\/te\/","\/te\/"]
+Test
+te
+###################################################
+["\/te\/","\/te\/","\/te\/","\/te\/"]
+Contenue
+te
+###################################################
+["\/te\/","\/te\/","\/te\/","\/te\/"]
+Getting Started: Setup and Concepts
+te
+###################################################
+["\/te\/","\/te\/","\/te\/","\/te\/"]
+Will Lyman responded to his partener&#039;s urgent whisper by opening his eyes a slit and glancing up at the monitor installed in the ceiling of the van. He was slightly groggy, and it took him a second to remember where he was: parked outside a barn at keeneland Race Course in Lexington, Kentucky, charged with bringing to justice a gang of the pettiest crooks it had ever been his displeasure to chase.
+te
+###################################################
+["\/te\/","\/te\/","\/te\/","\/te\/"]
+&quot;Lioka 13:1&quot;
+Ary tamin&#039;izany andro izany nisy ny sasany teo izy nanambara tamin&#039;i Jesosy izay nanjoa ny Galaliana, izay naharoharon&#039;i Pilato tamin&#039;ny fanatiny ny rany.
+te
+###################################################
+["\/te\/","\/te\/","\/te\/","\/te\/"]
+1 Principes g&eacute;n&eacute;raux et d&eacute;finitions
+1.1. Les diff&eacute;rents types de co&ucirc;ts
+
+Il existe divers types de co&ucirc;ts. Un co&ucirc;t au sens g&eacute;n&eacute;ral du terme est un regroupement de charges qui peut correspondre:
+- &agrave; une fonction de l&#039;entreprise : production, distribution, administration,... ou en descendant plus dans le d&eacute;tail, &eacute;tude, fabrication, vente, apr&egrave;s-vente, ...;
+- &agrave; un moyen d&#039;exploitation : magasin, usine, rayon, atelier, bureau, machine ou poste de travail;
+- &agrave; une responsabilit&eacute;, d&#039;un directeur, chef de service, contrema&icirc;tre,...;
+- &agrave; une activit&eacute; d&#039;exploitation : famille de produits (marchandises, biens fabriqu&eacute;s, services rendus), produit individualis&eacute;, ou stade d&#039;&eacute;laboration d&#039;un produit (&eacute;tude, achat, production, distribution, ...).
+
+En ce qui concerne le co&ucirc;ts des produits d&#039;enreprises de production ou de transformation, on distingue en particulier en comptabilit&eacute; analytique :
+- les co&ucirc;t de production, repr&eacute;sentant tout ce qu&#039;ont co&ucirc;t&eacute; les produits semi-ouvr&eacute;s ou finis, consomm&eacute;s et des autres co&ucirc;ts engag&eacute;s par l&#039;entreprise au cours des op&eacute;rations de production, jusqu&#039;au stade qui pr&eacute;c&egrave;de imm&eacute;diatement leur stockage &eacute;ventuel et/ou leur vente;
+- les co&ucirc;ts de revient (terme qui a remplac&eacute; le terme traditionnel de prix de revient) des produits vendus qui, outre le co&ucirc;t des produits pris en stocks, incluent une quote-part appropri&eacute;e de charges &quot;hors production&quot;, soit g&eacute;n&eacute;ralement des charges de recherche et d&eacute;veloppement, d&#039;administration et de distribution;
+On parle de calcul de co&ucirc;ts complets lorsque ces co&ucirc;ts calcul&eacute;s tiennent compte de toutes les charges support&eacute;es par l&#039;entreprise, de co&ucirc;ts partiels lorsqu&#039;on ne prend en compte dans le calcul qu&#039;une partie de ces charges : soit les &eacute;l&eacute;ments directs, c&#039;est &agrave; dire affectables sans ambigu&iuml;t&eacute; aux produits, soit les &eacute;l&eacute;ments variables, c&#039;est &agrave; dire variant proportionnellement avec les quantit&eacute;s produites ou vendues. On reviendra ult&eacute;rieurement sur les d&eacute;finitions plus pr&eacute;cises de ces termes.
+
+Les co&ucirc;ts peuvent &ecirc;tre calcul&eacute;s ex post : ce sont des co&ucirc;ts constat&eacute;s; on parle aussi de co&ucirc;ts r&eacute;els ou historiques.
+te
+###################################################
+["\/te\/","\/te\/","\/te\/","\/te\/"]
+s. m. Troupe de Cavalerie, compos&eacute;e ordinairement de quatre compagnies. Petit corps
+de Cavalerie rang&eacute;, mis en ordre pour combattre. Un Escadron de Chevau&minus;L&eacute;gers. Un Escadron de
+Carabiniers. Gros Escadron. Escadron serr&eacute;. Former un Escadron. Enfoncer un Escadron. Rompre un
+Escadron. Ouvrir un Escadron. Escadron qui plie. D&eacute;faire un Escadron. Renverser un Escadron. La t&ecirc;te d&#039;un
+Escadron. Le flanc d&#039;un Escadron. Il partagea sa troupe en deux Escadrons.
+te
+###################################################
+["\/te\/","\/te\/","\/te\/","\/te\/"]
+s.m. On appelle ainsi dans les Couvens, un lieu o&ugrave; couchent les Religieux ou les Religieuses. Un beau dortoir. Coucher au dortoir. Le dortoir n&#039;&eacute;toit pas autrefois partag&eacute; en petites chambres ou cellules comme il l&#039;est aujourd&#039;hui.
+te
+###################################################
+["\/te\/","\/te\/","\/te\/","\/te\/"]
+PHP (PHP Hypertext Preprocessor) est une plate-forme compos&eacute; d&#039;un langage de programmation tr&egrave;s complet et de nombreux outils pour le d&eacute;veloppement. Elle s&#039;adapte tr&egrave;s rapidement aux technologies &eacute;mergentes et se voit de plus en plus utilis&eacute; dans les d&eacute;veloppements web dynamiques professionnels et Open Source. Voici quelques-unes de ses caract&eacute;ristiques principales:
+- un tr&egrave;s bon compromis entre fiabilit&eacute; et rapidit&eacute; d&#039;ex&eacute;cution;
+- une plate-forme avant tout sp&eacute;cialis&eacute;e pour le d&eacute;veloppement de sites web dynamiques de toute taille;
+- une plate-forme pratique et compl&egrave;te adapt&eacute;e aux applications en ligne de commande;
+-une syntaxe compl&egrave;te, souple et permissive, qui ne rebute pas les d&eacute;veloppeurs d&eacute;butants et ne limite pas les utilisateurs confirm&eacute;s;
+-un langage proc&eacute;dural et un langage orient&eacute; objet;
+- un outil tr&egrave;s complet, dot&eacute; de nombreuses fonctionnalit&eacute;s, extensions et biblioth&egrave;ques.
+
+PHP 5 et ses nouveaut&eacute;s propulse PHP dans le monde des plates-formes d&#039;entreprise comme .Net ou J2EE.
+te
+###################################################
+["\/te\/","\/te\/","\/te\/","\/te\/"]
+-Les ports num&eacute;rot&eacute;s de 0 &agrave; 511 sont les &quot;well known ports&quot; de l&#039;architecture TCP/IP. Ils donnent acc&egrave;s aux services standard de l&#039;interconnexion : transfert de fichiers (FTP port 21), terminal (Telnet port 23), courrier (SMTP port 25), serveur web (HTTP port 80)
+- De 512 &agrave; 1023, on trouve les services Unix.
+- Au del&agrave;, (1024...) ce sont les ports &quot;utilisateurs&quot; disponibles pour placer un service applicatif quelconque.
+- Une connexion est identifi&eacute;e de fa&ccedil;on unique par la donn&eacute;e de deux couples, une adresse IP et un num&eacute;ro de port, un pour le client et un autre pour le serveur.
+- Une communication client/serveur n&#039;a pas forc&eacute;ment lieu via un r&eacute;seau. Il est en effet possible de faire communiquer un client et un serveur sur une m&ecirc;me machine, via l&#039;interface de loopback, repr&eacute;sent&eacute;e par convention par l&#039;adresse IP 127.0.0.1.
+te
+###################################################
+["\/te\/","\/te\/","\/te\/","\/te\/"]
+&lt;script type =text/javascript&gt; alert(&#039;Salut&#039;); history.back(); &lt;/script&gt;

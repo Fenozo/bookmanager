@@ -6,7 +6,7 @@ use Illuminate\Http\Response;
 use App\Models\Page;
 use App\Helpers\Str;
 
-class Finder 
+class FinderPage
 {
 
 
@@ -76,6 +76,7 @@ class Finder
                                 ,'text'      => Str::decode_str($court_text)
                                 ,'title'     => Str::decode_str($data->title)
                                 ,'content'   => Str::decode_str($data->content)
+                                // ,'content'   => $data->content
                             ];
                     }
                     // $elements ['id'][$data->id] = $data->id;

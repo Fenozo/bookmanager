@@ -70,7 +70,10 @@
 		function upload(files, area, index) 
 		{
 			var file = files[index];
-			
+				
+			console.log(index);
+			console.log(files[index]);
+
 			if (index>0 && options.clone)
 			{
 				area = area.html("").clone().insertAfter(area).dropfile(options);
@@ -92,14 +95,15 @@
 						options.clone = false;
 					}
 
-				area.attr('data-value',json.name);
 				area.removeClass('hover');
 
 				// Une erreur a été vue
-				if (json.error) {
+				if (json.error != null) {
 					return false;
 				}
 
+				area.attr('data-value', json.name);
+				console.log(area);
 				progress.css({height:"0%"});
 
 				if(index < files.length-1)
@@ -116,6 +120,7 @@
 				area.html(json.content);
 
 			}, false);
+
 			xhr.upload.addEventListener('progress', function(e) 
 			{
 				if (e.lengthComputable) 

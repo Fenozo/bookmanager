@@ -17,6 +17,7 @@ jQuery(function() {
             data: { argument: search },
             success: function(response) {
                 $('.showing-page-list').find('div').remove();
+                
                 if (search.length == 0) {
                     $('#count-search-page').html(0);
                 } else {
@@ -59,7 +60,8 @@ jQuery(function(){
         $('#datail-modal').modal('show');
         $('#datail-modal').find('h4').find('span').html($(this).data('id'));
         $('#datail-modal').find('.modal-body').find('h1').html($(this).data('title'));
-        $('#datail-modal').find('.data-content').find('p').remove();
+        // $('#datail-modal').find('.data-content').find('p').remove();
+        $('#datail-modal').find('.data-content').html("");
         $('#datail-modal').find('.data-content').append('<p>'+$(this).data('content')+'</p>');
     });
 });
@@ -262,11 +264,11 @@ jQuery(function() {
                     // console.log(valeur);
 
                         $.ajax({
-                            url : $('.book-url-where').data('url'),
-                            method : 'GET',
-                            dataType : 'json',
-                            data : {search : search},
-                            success : function(datas) 
+                            url         : $('.book-url-where').data('url'),
+                            method      : 'GET',
+                            dataType    : 'json',
+                            data        : {search : search},
+                            success     : function(datas) 
                             {
                                 // alert(search)
                                 // console.log(datas);

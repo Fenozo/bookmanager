@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Page;
 use App\Helpers\Str;
 use DB;
+
 class PagesController extends Controller
 {
     /**
@@ -20,7 +21,7 @@ class PagesController extends Controller
 
         // header ( 'content-type:text/html; charset=utf-8') ;
 
-        return \App\Helpers\Finder::like(Page::class);
+        return \App\Helpers\FinderPage::like(Page::class);
     }
 
     /**

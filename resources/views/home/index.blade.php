@@ -25,7 +25,7 @@
             <span class="pull-right-container">
                 <span class="label label-primary pull-right" id="count-search-page">0</span>
             </span>
-			<div class="box box-primary" style="border: 0px;margin-top: 85px;padding-top:16px;">
+			<div class="box box-primary" style="border: 0px;margin-top: -15px;padding-top:16px;min-height: 92px;">
 	            <div class="box-header">
                 <!-- <button type="button" style="" class="btn btn-primary nouvelle-page" data-toggle="modal" data-target="#modal-default">
                     <i class="fa fa-plus"></i> -->
@@ -40,7 +40,7 @@
 
                 <form class="search-form-page">
                     <div class="input-group">
-                        <input autocorrect="off" autocomplete="off" autocapitalize="off" type="text" id="search-page" name="search" class="form-control" placeholder="Search">
+                        <input data-url="{{ route('find') }}" autocorrect="off" autocomplete="off" autocapitalize="off" type="text" id="search-page" name="search" class="form-control" placeholder="Search">
 
                         <div class="input-group-btn">
                             <button type="submit" name="submit" class="search-page btn btn-warning btn-flat"><i class="fa fa-search"></i>
@@ -75,16 +75,113 @@
 	        </div>
 		</div>
 	</div>
+    <div class="row">
+        <div class="my-box col-md-3 col-sm-3 col-xs-12">
+            <div class="block">
+                <div class="left">
+                    <img src="{{ asset('img/chat-arche-noe.png') }}">
+                    <em>Image</em>
+                </div>
+                <div class="right">
+                    <h1>php </h1>
+                    <p>
+                        <?php echo substr("Le PHP est une langage de programmation bien connue est très célèbre sur le
+                        monde de l'internet", 0, 100); ?>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="my-box col-md-3 col-sm-3 col-xs-12">
+            <div class="block">
+                <div class="left">
+                    <img src="{{ asset('img/chat-arche-noe.png') }}">
+                    <em>Image</em>
+                </div>
+                <div class="right">
+                    <h1>Java </h1>
+                </div>
+            </div>
+        </div>
+        <div class="my-box col-md-3 col-sm-3 col-xs-12">
+            <div class="block">
+                <div class="left">
+                    <img src="{{ asset('img/chat-arche-noe.png') }}">
+                    <em>Image</em>
+                </div>
+                <div class="right">
+                    <h1>C++ </h1>
+                </div>
+            </div>
+        </div>
+        <div class="my-box col-md-3 col-sm-3 col-xs-12">
+            <div class="block">
+                <div class="left">
+                    <img src="{{ asset('img/chat-arche-noe.png') }}">
+                    <em>Image</em>
+                </div>
+                <div class="right">
+                    <h1>C# </h1>
+                    <p>Le C# est une langage de programmation bien connue</p>
+                </div>
+            </div>
+        </div>
+        <div class="my-box col-md-3 col-sm-3 col-xs-12">
+            <div class="block">
+                <div class="left">
+                    <img src="{{ asset('img/chat-arche-noe.png') }}">
+                    <em>Image</em>
+                </div>
+                <div class="right">
+                    <h1>C++ </h1>
+                </div>
+            </div>
+        </div>
+        <div class="my-box col-md-3 col-sm-3 col-xs-12">
+            <div class="block">
+                <div class="left">
+                    <img src="{{ asset('img/chat-arche-noe.png') }}">
+                    <em>Image</em>
+                </div>
+                <div class="right">
+                    <h1>C# </h1>
+                </div>
+            </div>
+        </div>
+        <div class="my-box col-md-3 col-sm-3 col-xs-12">
+            <div class="block">
+                <div class="left">
+                    <img src="{{ asset('img/chat-arche-noe.png') }}">
+                    <em>Image</em>
+                </div>
+                <div class="right">
+                    <h1>C++ </h1>
+                </div>
+            </div>
+        </div>
+        <div class="my-box col-md-3 col-sm-3 col-xs-12">
+            <div class="block">
+                <div class="left">
+                    <img src="{{ asset('img/chat-arche-noe.png') }}">
+                    <em>Image</em>
+                </div>
+                <div class="right">
+                    <h1>C# </h1>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 @stop
 
 @section('javascript')
 
-<script src="{{ asset('js/page.js') }}"></script>
+<!-- <script src="{{ asset('js/page.js') }}"></script> -->
+<script src="{{ asset('js/script.js') }}" type="text/javascript"></script>
 <script type="text/javascript">
 
 
+$('#search-page').script();
 // alert("{{ route('api.chapiter') }}")
 /**
 --------------------------------------------------------------------------------

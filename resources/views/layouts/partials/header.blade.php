@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="<?php echo csrf_token(); ?>" id="token">
-    <title>
-
-    @section('title', 'Bookmanager | Dashboard')
-    @yield('title')
-
+    <meta log="{{ asset('/Logo-bookmanager.png') }}" charset="utf-8">
+    <title >
+        @section('title', 'Bookmanager | Dashboard')
+        @yield('title')
     </title>
+    <meta charset="utf-8">
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">

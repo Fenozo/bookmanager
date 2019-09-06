@@ -7,101 +7,22 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Eventbrote') }}</title>
+    <title>
 
-    <!-- Scripts -->
+    {{ config('app.name', 'Eventbrote') }}</title>
     
-
-    <!-- Fonts -->
-  
-
-
     <!-- Styles -->
     <link href="{{ asset('css/flashy.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style2.css') }}">
 
 </head>
 <body>
     <style>
-        html, body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-
-            .body 
-            {
-                margin-top:3em;
-            }
-            .flex-center div{
-                /*align-items: center;*/
-                display: flex;
-                min-width: 449px;
-
-            }
-            .flex-center textarea {
-                min-height: 200px;
-            }
-            .error {
-                color: red;
-                font-weight: 900;
-            }
-            form {
-                display: inline;
-            }
-            .box-center
-            {
-                display: flex;
-                justify-content: center;
-                min-width: 449px;
-            }
         </style>
     <div id="app">
+        
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -129,7 +50,6 @@
                 </div>
             </div>
         </nav>
-
 
         <div class="content" style="padding-top:22px;">
             @if (session()->has('notification.message'))

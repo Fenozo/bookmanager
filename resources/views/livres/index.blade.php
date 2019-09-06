@@ -8,6 +8,7 @@
 <section class="content-header">
     <h1>
         {{config('app.name')}}
+        
         <small>livre</small>
     </h1>
     <ol class="breadcrumb">

@@ -53,6 +53,17 @@ class Str
       }
       return $tire;
     }
+
+    static function  randomize() {
+        $textRand = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        $text = str_split($textRand);
+        $v = "";
+        foreach ($text as $key => $v) {
+            $v .= isset($text[rand(0,9)]) ? $text[rand(0,9)] : $v;
+        }
+        return $v;
+    }
+
     /**
     * prend un chaine et retourne deux tableaux
     * le principal et la list
@@ -103,23 +114,30 @@ class Str
     public static function decode_str($string)
     {
        $conversion = array(
-            "è"      => "&agrave;"
-           ,"é"      => "&eacute;"
-           ,"\\351"  => "&eacute;"
-           ,"\\222"  => "'"
-           ,"\\347"  => "&ccedi;"
-           ,"\\340"  => "&agrave;"
-           ,"\\350"  => "&egrave;"
-           ,"\\253"  => "\""
-           ,"\\273"  => "\""
-           ,"\\205"  => "..."
-           ,"\u00e8s"=> "&egrave;s"
-           ,"\""     => "&quot;"
-           ,"'"      => "&#039;"
-           ,"û"      => "&ucirc;"
-           ,"ô"      => "&ocirc;"
-           ,"ö"      => "&ouml;"
-           ,"î"      => "&icirc;"
+            "è"         => "&agrave;"
+           ,"é"         => "&eacute;"
+           ,"\\351"     => "&eacute;"
+           ,"\\222"     => "'"
+           ,"\\347"     => "&ccedi;"
+           ,"\\340"     => "&agrave;"
+           ,"\\350"     => "&egrave;"
+           ,"\\253"     => "\""
+           ,"\\273"     => "\""
+           ,"\\205"     => "..."
+           ,"\u00e8s"   => "&egrave;s"
+           ,"\""        => "&quot;"
+           ,"'"         => "&#039;"
+           ,"û"         => "&ucirc;"
+           ,"ô"         => "&ocirc;"
+           ,"ö"         => "&ouml;"
+           ,"î"         => "&icirc;"
+           ,"history.back()" => "history_back"
+           ,"alert("    => "_alert("
+           ,"<?"        => "<php>"
+           ,"<?php"     => "<php>"
+           ,"?>"        => "</php>"
+           ,"<script"   => "<js"
+           ,"</script>" => "<js>"
        );
        return strtr($string, $conversion);
     }

@@ -160,7 +160,7 @@ class LivresController extends Controller
         $livre = \App\Models\Livre::where('id', $id)->update([
             'name'              =>  $livre['name'],
             'author'            =>  $livre['author'],
-            'description'       =>   htmlspecialchars($livre['description'], ENT_QUOTES, "UTF-8"),
+            'description'       =>   $livre['description'],
             'date_publication'  =>  new \Datetime($livre['date_publication']),
         ]);
 

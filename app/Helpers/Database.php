@@ -5,6 +5,7 @@ class Database {
     private static $host;
     private static $username;
     private static $password;
+    
     public static function init($host, $username, $password)
     {
         self::$host     = $host;
