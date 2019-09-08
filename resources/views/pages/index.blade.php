@@ -19,7 +19,7 @@
 <section class="content">
 	<div class="row" style="max-width:560px;margin:0 auto">
             <div class="col-md-12">
-            
+                
             </div>
 		<div class="col-md-12">
             <span class="pull-right-container">
@@ -49,6 +49,17 @@
                     </div>
                     <div class="showing-page-list">
 
+                    </div>
+                    <h2 class="h2 title">Recents shows</h2>
+                    <div class="content-recent-list">
+                        <ul class="recent-list">
+                            <li class="search-div" data-title="recent 2" data-show="{{ route('api.page.show', ['id' => 2] ) }}">
+                                <h3>recent 2</h3>
+                            </li>
+                            <li class="search-div" data-title="recent 2" data-show="{{ route('api.page.show', ['id' => 1] ) }}">
+                                <h3>recent 1</h3>
+                            </li>
+                        </ul>
                     </div>
                     <!-- /.input-group -->
                 </form>
@@ -112,6 +123,7 @@
                                                     </button>
                                                 </div>
                                             </div>
+
                                             <div class="showing-book-list">
 
                                             </div>
@@ -143,6 +155,124 @@
 
 
 // alert("{{ route('api.chapiter') }}")
+    
+
+    jQuery(function(){
+
+    recent_search_list();
+
+    function recent_search_list () {
+        $.ajax({
+            url : "{{ route('api.stories.index') }}",
+            method : "GET",
+            dataType : "json",
+            success : function(response) {
+                $('.recent-list').html("");
+                response.data.forEach(elem => {
+                    var id = elem.id;
+
+                    $('.recent-list').append('<li class="search-div" data-title="'
+                        +elem.title+'" data-show="{{ route("api.page.show", "" ) }}/'+id+'">'
+                        +elem.title+'</li>');
+                    // console.log(elem);
+                });
+            }
+        });
+    }
+
+    $(document).on("click", ".search-div", function(){
+        // alert($(this).data('id')+' '+ $(this).data('title')+ ' '+ $(this).data('content'));
+        $('#datail-modal').modal('show');
+        $('#datail-modal').find('h4').find('span').html($(this).data('id'));
+        $('#datail-modal').find('.modal-body').find('h1').html($(this).data('title'));
+        // $('#datail-modal').find('.data-content').find('p').remove();
+        $('#datail-modal').find('.data-content').html("");
+        // $('#datail-modal').find('.data-content').html('<p>'
+        //     +$(this).data('content')+
+        //     '</p>');
+        
+        var url_show = $(this).attr('data-show');
+        $.ajax({
+            url : url_show,
+            method : "GET",
+            dataType : "json",
+            success : function (response) {
+                
+                // Convertion de balise <?php ?>
+                
+                var data = response.content.replace(/\[php\]/, "&lt;?php <br/><section><code>");
+                data = data.replace(/\[\/php\]/, "</code></section>?&gt;");
+
+                // Convertion acolade
+                data = data.replace(/\[acolade\]/g, "{");
+                data = data.replace(/\[\/acolade\]/g, "}");
+
+                $('#datail-modal').find('.data-content').html("<code>"+data+"</code>");
+                
+            },
+            error : function(error) {
+                console.log(error);
+            }
+        });
+
+        recent_search_list();
+
+    });
+});
+    (function($) {
+        
+        
+    })(jQuery);
+
+    // $(".content-recent-list").html();
+
+
+    $(document).on('keyup', '#search-page', function() {
+
+        var search = $(this).val();
+
+        $.ajax({
+            url: $('.page-list-url').data('url'),
+            method: "GET",
+            dataType : 'json',
+            data: { argument: search },
+            success: function(response) {
+                $('.showing-page-list').find('div').remove();
+                
+                if (search.length == 0) {
+                    $('#count-search-page').html(0);
+                } else {
+                    $('#count-search-page').html(response.count);
+                }
+
+                if (response.hasOwnProperty('list') && response.list.length > 0) {
+                    // parcours des élements trouvé
+                    response.list.forEach((elem) => {
+                        // var item = JSON.stringify(elem);
+                        var text = elem.text;
+                        var id = elem.id;
+                        var title = elem.title
+                        var content = elem.content                       
+
+                        if (search.length >0 ) {
+
+                            $('.showing-page-list').append('<div data-id="'
+                                +id+'" data-title="'
+                                +title+'" data-content="'
+                                +content+'" class="search-div" data-show="{{ route("api.page.show", "" ) }}/'+id+'"> '
+                                + text + '</div>');
+                        } else {
+                            $('#count-search-page').html(0);
+                            $('.showing-page-list').find('div').remove();
+                        }
+
+                    });
+                }
+            }
+        });
+
+    });
+
 /**
 --------------------------------------------------------------------------------
 

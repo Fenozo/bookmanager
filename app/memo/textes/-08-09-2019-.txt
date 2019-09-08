@@ -1,0 +1,1706 @@
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+ob
+###################################################
+["\/ob\/","\/ob\/","\/ob\/","\/ob\/"]
+ob_get_contens()
+ob
+###################################################
+["\/ob\/","\/ob\/","\/ob\/","\/ob\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+ob
+###################################################
+["\/ob\/","\/ob\/","\/ob\/","\/ob\/"]
+ob_get_contens()
+ob
+###################################################
+["\/ob\/","\/ob\/","\/ob\/","\/ob\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+ob
+###################################################
+["\/ob\/","\/ob\/","\/ob\/","\/ob\/"]
+ob_get_contens()
+ob
+###################################################
+["\/ob\/","\/ob\/","\/ob\/","\/ob\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+
+###################################################
+["\/\/","\/\/","\/\/"]
+ob_get_contens()
+
+###################################################
+["\/\/","\/\/","\/\/"]
+test
+
+###################################################
+["\/\/","\/\/","\/\/"]
+get_html_translation_table()
+
+###################################################
+["\/\/","\/\/","\/\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+
+###################################################
+["\/\/","\/\/","\/\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+
+###################################################
+["\/\/","\/\/","\/\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+
+###################################################
+["\/\/","\/\/","\/\/"]
+ob_get_contens()
+
+###################################################
+["\/\/","\/\/","\/\/"]
+test
+
+###################################################
+["\/\/","\/\/","\/\/"]
+get_html_translation_table()
+
+###################################################
+["\/\/","\/\/","\/\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+
+###################################################
+["\/\/","\/\/","\/\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+
+###################################################
+["\/\/","\/\/","\/\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["o","o","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["o","o","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["#o#","#o#","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["#o#","#o#","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+ob
+###################################################
+["#ob#","#ob#","#ob#","\/ob\/"]
+ob_get_contens()
+ob
+###################################################
+["#ob#","#ob#","#ob#","\/ob\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["#o#","#o#","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["#o#","#o#","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["#o#","#o#","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["#o#","#o#","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["#o#","#o#","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["#o#","#o#","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+
+###################################################
+["##","##","\/\/"]
+ob_get_contens()
+
+###################################################
+["##","##","\/\/"]
+test
+
+###################################################
+["##","##","\/\/"]
+get_html_translation_table()
+
+###################################################
+["##","##","\/\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+
+###################################################
+["##","##","\/\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+
+###################################################
+["##","##","\/\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["#o#","#o#","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["#o#","#o#","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["#o#","#o#","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["#o#","#o#","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+ob_get_contens()
+ob
+###################################################
+["#ob#","#ob#","#ob#","\/ob\/"]
+ob_get_contens()
+ob
+###################################################
+["#ob#","#ob#","#ob#","\/ob\/"]
+ob_get_contens()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+ob_get_contens()
+
+###################################################
+["##","##","\/\/"]
+ob_get_contens()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["#o#","#o#","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["#o#","#o#","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["#o#","#o#","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["#o#","#o#","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["#o#","#o#","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+ob
+###################################################
+["#ob#","#ob#","#ob#","\/ob\/"]
+ob_get_contens()
+ob
+###################################################
+["#ob#","#ob#","#ob#","\/ob\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+ob
+###################################################
+["#ob#","#ob#","#ob#","\/ob\/"]
+ob_get_contens()
+ob
+###################################################
+["#ob#","#ob#","#ob#","\/ob\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+ob
+###################################################
+["#ob#","#ob#","#ob#","\/ob\/"]
+ob_get_contens()
+ob
+###################################################
+["#ob#","#ob#","#ob#","\/ob\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+ob
+###################################################
+["#ob#","#ob#","#ob#","\/ob\/"]
+ob_get_contens()
+ob
+###################################################
+["#ob#","#ob#","#ob#","\/ob\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+
+###################################################
+["##","##","\/\/"]
+ob_get_contens()
+
+###################################################
+["##","##","\/\/"]
+test
+
+###################################################
+["##","##","\/\/"]
+get_html_translation_table()
+
+###################################################
+["##","##","\/\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+
+###################################################
+["##","##","\/\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+
+###################################################
+["##","##","\/\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["#o#","#o#","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["#o#","#o#","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["#o#","#o#","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["#o#","#o#","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+ob_get_contens()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+get_html_translation_table()
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+$fichierCache = &quot;cache.html&quot;;
+if (@filemtime($fichierCache)&lt;time()-2*60) {
+// Oul&agrave;... &ccedil;a commence &agrave; dater
+ob_start();
+// Ins&eacute;rez ici, le code du script tel qu&rsquo;il serait
+// sans l&rsquo;utilisation de cache
+// Exemple echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.
+// strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+echo &quot;J&rsquo;ai &eacute;t&eacute; mis en cache &agrave; &quot;.strftime(&quot;%d/%m/%y %H:%M:%S&quot;);
+$contenuCache = ob_get_contents();
+ob_end_flush();
+$fd = fopen($fichierCache, &quot;w&quot;);
+if ($fd) {
+fwrite($fd, $contenuCache);
+fclose($fd);
+}
+} else {
+include($fichierCache);
+}
+?&gt;
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+&lt;?php
+
+echo &quot;Bonjour&quot;; 
+?&gt;
+
+
+o
+###################################################
+["\/o\/","\/o\/","\/o\/"]
+Permet de placer, dans un tableau associatif, les tables de conversion des caract&egrave;res sp&eacute;ciaux en
+leurs &eacute;quivalents HTML, utilis&eacute;es par les fonctions htmlSpecialChars() et
+htmlEntities().

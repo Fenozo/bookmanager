@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="<?php echo csrf_token(); ?>" id="token">
+    <meta name="" content="">
     <meta log="{{ asset('/Logo-bookmanager.png') }}" charset="utf-8">
     <title >
         @section('title', 'Bookmanager | Dashboard')

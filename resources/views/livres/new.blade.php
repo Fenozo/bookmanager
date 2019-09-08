@@ -12,53 +12,55 @@
                     <h4 class="modal-title text-shadow">Nouveau <strong class="">Livre</strong></h4>
                 </div>
                 <div class="modal-body">
-                        <!-- form start -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- form start -->
 
-                        {{ csrf_field() }}
+                            {{ csrf_field() }}
                         
-                        <div class="box-body">
-                            <div class="premary-content">
-                                {{--
-                                
-                                --}}
+                            <div class="box-body">
+                                <div class="premary-content">
+                                    {{--
+                                    
+                                    --}}
 
-                                <input type="hidden" name="livre[id]" id="book_id">
-                                
-                                <div class="form-group">
-                                    <label for="name">Titre</label>
-                                    <input type="text" name="livre[name]" class="form-control" id="name" placeholder="Titre">
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="author">Auteur</label>
-                                    <input type="text" name="livre[author]" class="form-control" id="author" placeholder="Titre">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="description">Description</label>
-                                    <textarea  id="description" name="livre[description]" placeholder="Description" class="form-control"></textarea>
-                                </div>
-
-                                <!-- Date -->
-                                <div class="form-group">
-                                    <label>Date de publication:</label>
-
-                                    <div class="input-group date">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>
-                                        </div>
-                                        <input type="text" name="livre[date_publication]" class="form-control pull-right" id="date_publication">
+                                    <input type="hidden" name="livre[id]" id="book_id">
+                                    
+                                    <div class="form-group">
+                                        <label for="name">Titre</label>
+                                        <input type="text" name="livre[name]" class="form-control" id="name" placeholder="Titre">
                                     </div>
-                                    <!-- /.input group -->
+                                    
+                                    <div class="form-group">
+                                        <label for="author">Auteur</label>
+                                        <input type="text" name="livre[author]" class="form-control" id="author" placeholder="Titre">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="description">Description</label>
+                                        <textarea  id="description" name="livre[description]" placeholder="Description" class="form-control"></textarea>
+                                    </div>
+
+                                    <!-- Date -->
+                                    <div class="form-group">
+                                        <label>Date de publication:</label>
+
+                                        <div class="input-group date">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-calendar"></i>
+                                            </div>
+                                            <input type="text" name="livre[date_publication]" class="form-control pull-right" id="date_publication">
+                                        </div>
+                                        <!-- /.input group -->
+                                    </div>
+
                                 </div>
 
                             </div>
-
+                            <!-- /.box-body -->
                         </div>
-                    <!-- /.box-body -->
-
-
-                <!-- end modal-body -->
+                    </div>
+                    <!-- end modal-body -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>

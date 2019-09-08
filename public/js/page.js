@@ -6,66 +6,10 @@ jQuery(function() {
 
     // $('#count-search-page').fadeOut();
 
-    $(document).on('keyup', '#search-page', function() {
-
-        var search = $(this).val();
-
-        $.ajax({
-            url: $('.page-list-url').data('url'),
-            method: "GET",
-            dataType : 'json',
-            data: { argument: search },
-            success: function(response) {
-                $('.showing-page-list').find('div').remove();
-                
-                if (search.length == 0) {
-                    $('#count-search-page').html(0);
-                } else {
-                    $('#count-search-page').html(response.count);
-                }
-
-                if (response.hasOwnProperty('list') && response.list.length > 0) {
-                    // parcours des élements trouvé
-                    response.list.forEach((elem) => {
-                        // var item = JSON.stringify(elem);
-                        var text = elem.text;
-                        var id = elem.id;
-                        var title = elem.title
-                        var content = elem.content
-
-                        var pattern = new RegExp(search,"gi");
-                        var subject = text;
-
-                            // console.log(search)
-                        // var text = subject.replace(pattern,"<strong>"+search+"</strong>");
-
-                        if (search.length > 1) {
-                            $('.showing-page-list').append('<div  data-id="'+id+'" data-title="'+title+'" data-content="'+content+'" class="search-div"> ' + text + '</div>');
-                        } else {
-                            $('.showing-page-list').find('div').remove();
-                        }
-
-                    });
-                }
-            }
-        });
-
-
-    });
 });
 
-jQuery(function(){
-    $(document).on("click", ".search-div", function(){
-        // alert($(this).data('id')+' '+ $(this).data('title')+ ' '+ $(this).data('content'));
-        $('#datail-modal').modal('show');
-        $('#datail-modal').find('h4').find('span').html($(this).data('id'));
-        $('#datail-modal').find('.modal-body').find('h1').html($(this).data('title'));
-        // $('#datail-modal').find('.data-content').find('p').remove();
-        $('#datail-modal').find('.data-content').html("");
-        $('#datail-modal').find('.data-content').append('<p>'+$(this).data('content')+'</p>');
-    });
-});
-
+/**
+*/
 jQuery(function() {
 
     $(document).on('click', '#save-livre', (e) => {
@@ -74,7 +18,7 @@ jQuery(function() {
         $.ajax({
             url: $('.livre.store-url').data('url')
         });
-        alert(datas);
+        // alert(datas);
     });
 
     //Date picker
@@ -94,7 +38,10 @@ jQuery(function() {
     getListBook();
     getLitCapiter();
 
-    var chap = '<div class="form-group chap"><label for="chapiter">Chapitre</label><input type="text" name="chapiter" class="form-control" id="chapiter" placeholder="Chapitre"></div>';
+    var chap = '<div class="form-group chap">'+
+                    '<label for="chapiter">Chapitre</label>'+
+                    '<input type="text" name="chapiter" class="form-control" id="chapiter" placeholder="Chapitre">'+
+                '</div>';
 
     $('.add_chapiter').on('click', function(e) {
         e.preventDefault();

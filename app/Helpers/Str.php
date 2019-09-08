@@ -20,25 +20,30 @@ class Str
 
         $search_list [] = "/".self::decode_str($search)."/";
 
-        $date_memo = date('d-m-Y');
+        // $date_memo = date('d-m-Y');
 
-        \App\Helpers\Dir::create_dir(['/../','memo','textes']);
+        // \App\Helpers\Dir::create_dir(['/../','memo','textes']);
 
-        $fichier = fopen(HELPERS.'/../memo/textes/-'.$date_memo.'-.txt', "a+");
-        fwrite($fichier, self::decode_str($search)."\n");
-        fwrite($fichier, "###################################################\n");
-        fwrite($fichier, json_encode($search_list)."\n");
-        fwrite($fichier, $subject."\n");
-        fclose($fichier);
+        // $fichier = fopen(HELPERS.'/../memo/textes/-'.$date_memo.'-.txt', "a+");
+        // fwrite($fichier, self::decode_str($search)."\n");
+        // fwrite($fichier, "###################################################\n");
+        // fwrite($fichier, json_encode($search_list)."\n");
+        // fwrite($fichier, $subject."\n");
+        // fclose($fichier);
+        if (strlen($search) <= 1) {
 
-
+            $search_list = array_flip(array_flip($search_list));
+        }
+       
         $text = preg_replace_callback(
             $search_list,
-            function($rearch){
- 
-                return isset($rearch[0]) ? '<strong>'.$rearch[0].'</strong>' : '';
+            function($search){
+
+                $string = isset($search[0]) ? "<strong>".$search[0]."</strong>" : '';
+                return $string;
 
             }, $subject );
+        // $text = str_replace(ucwords($search), "<strong>".$search."</strong>", $subject);
 
         return self::decode_str($text);
     }
@@ -111,9 +116,11 @@ class Str
         return ['list' =>$total, 'changed' => $changed];
     }
 
-    public static function decode_str($string)
+    public static function decode_str($string, $second = [])
     {
+
        $conversion = array(
+
             "è"         => "&agrave;"
            ,"é"         => "&eacute;"
            ,"\\351"     => "&eacute;"
@@ -133,12 +140,14 @@ class Str
            ,"î"         => "&icirc;"
            ,"history.back()" => "history_back"
            ,"alert("    => "_alert("
-           ,"<?"        => "<php>"
-           ,"<?php"     => "<php>"
-           ,"?>"        => "</php>"
+           ,"<?php"     => "[php]"
+           ,"?>"        => "[/php]"
            ,"<script"   => "<js"
            ,"</script>" => "<js>"
+           
        );
+          $conversion = array_merge($conversion, $second);
+
        return strtr($string, $conversion);
     }
     public static function encode_str($string)
@@ -152,6 +161,8 @@ class Str
         );
         return strtr($string, $conversion);
     }
+
+
 
 
 

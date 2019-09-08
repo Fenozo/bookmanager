@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class PutImageInTableLivres extends Migration
+class CreateStoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class PutImageInTableLivres extends Migration
      */
     public function up()
     {
-        Schema::table('livres', function (Blueprint $table) {
-            $table->string('image')->after('name')->nullable();
+        Schema::create('stories', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->integer('index_object');
+            $table->string('table_name');
+            $table->string('action_type');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class PutImageInTableLivres extends Migration
      */
     public function down()
     {
-        Schema::table('livres', function (Blueprint $table) {
-            $table->dropColumn('image');
-        });
+        Schema::dropIfExists('stories');
     }
 }

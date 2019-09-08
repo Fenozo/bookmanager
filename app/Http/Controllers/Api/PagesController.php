@@ -42,13 +42,13 @@ class PagesController extends Controller
      */
      public function store(Request $request)
      {
-         $chapiter_id = $request->input('chapiter_id') ;
+        $chapiter_id = $request->input('chapiter_id') ;
  
-         $data_page = [
-             'title'         => $request->input('title'),
-             'content'       => $request->input('content'),
-             'book_id'       => $request->input('book_id', 1),
-         ];
+        $data_page = [
+            'title'         => $request->input('title'),
+            'content'       => $request->input('content'),
+            'book_id'       => $request->input('book_id', 1),
+        ];
  
          
          $errors = [];
@@ -57,49 +57,49 @@ class PagesController extends Controller
          $validations_fields = new \App\Helpers\ValidationFields();
         
          $validate = $validations_fields->handle($data_page,  [
-             'title'     => [
-                 'required'  =>['message' => sprintf('erreur, le %s ne doit pas être vide !', 'titre')],
-                 'min:4'    =>['message' => sprintf("erreur, le %s ne doit pas être inférieur à %d", 'titre', 4)]
-                 ],
-             'content'   => ['required', 'message' => sprintf("erreur, le %s ne doit pas être vide !", 'contenue')],
-             'book_id'   => ['required', 'message' => sprintf("erreur, le %s ne doit pas être vide !", 'book_id')],
+            'title'     => [
+                'required'  =>['message' => sprintf('erreur, le %s ne doit pas être vide !', 'titre')],
+                'min:4'     =>['message' => sprintf("erreur, le %s ne doit pas être inférieur à %d", 'titre', 4)]
+            ],
+            'content'   => ['required', 'message' => sprintf("erreur, le %s ne doit pas être vide !", 'contenue')],
+            'book_id'   => ['required', 'message' => sprintf("erreur, le %s ne doit pas être vide !", 'book_id')],
          ]);
  
          $errors = $validate['errors'];
  
-         $message_list = [
-             "nbValidated"       => count($validated),
-             'list_validated'    => $validated, 
-             "nbError"           => count($errors),
-             'list_errors'       => $errors,
-         ];
+        $message_list = [
+            "nbValidated"       => count($validated),
+            'list_validated'    => $validated, 
+            "nbError"           => count($errors),
+            'list_errors'       => $errors,
+        ];
  
          if (count($errors) > 0)
-         {
-             $message_list = array_merge($message_list, ['message'=>'error']);
+        {
+            $message_list = array_merge($message_list, ['message'=>'error']);
  
-         } else {
-             $message_list = array_merge($message_list, ['message'=>'validated']);
+        }else{
+            $message_list = array_merge($message_list, ['message'=>'validated']);
          }
  
-         if (count($errors) == 0) { // si l'erreur est égale à zéro
+        if (count($errors) == 0) { // si l'erreur est égale à zéro
  
-             if ($request->get('chapiter') != null)
-             {
-                 $chapiter = \App\Models\Chapiter::create([
-                    'name' => $request->get('chapiter'),
+            if ($request->get('chapiter') != null)
+            {
+                $chapiter = \App\Models\Chapiter::create([
+                    'name'    => $request->get('chapiter'),
                     'book_id' => $data_page['book_id']
                 ]);
-                 $chapiter_id = $chapiter->id;
+                $chapiter_id = $chapiter->id;
              }
  
-             $data_page = array_merge($data_page, ['chapiter_id'   => $chapiter_id,]);
- 
-             // Création de la page après les différentes actions éffectué.
-             $page = \App\Models\Page::create($data_page);
-         }
+            $data_page = array_merge($data_page, ['chapiter_id'   => $chapiter_id,]);
+
+            // Création de la page après les différentes actions éffectué.
+            $page = \App\Models\Page::create($data_page);
+        }
              
-         return new Response(json_encode($message_list, false));
+        return new Response(json_encode($message_list, false));
      }
 
     /**
@@ -110,7 +110,36 @@ class PagesController extends Controller
      */
     public function show($id)
     {
-        //
+
+       $page =  Page::where("id","=", $id)->first();
+
+       if ($page) {
+
+           \App\Models\Story::create([
+                "index_object" => $page->id,
+                "table_name"   => Page::class,
+                "action_type"  => "show"
+           ]);
+       }
+
+       array_walk_recursive($page, function(&$item, $index) {
+            $item = strtr($item, array(
+                "<?php" => "[php]",
+                "?>"    => "[/php]",
+                "{"     => "<br/>[acolade]<br/>",
+                "}"     => "<br/>[/acolade]<br/>",
+                "<"     => "&lt;",
+                ">"     => "&gt;",
+                "//"    => "<br/>//",
+                "\n"    => "<br/>"
+
+            ));
+
+
+            
+       });
+
+       return $page;
     }
 
     /**

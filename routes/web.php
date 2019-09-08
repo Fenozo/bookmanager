@@ -17,6 +17,8 @@ Route::group(['prefix'=>'pages'],function() {
     Route::get('/list', 'PagesController@index')->name('page.list');
     
 });
+/*******************************************************************************/
+Route::get("/api/stories","Api\StoriesController@index")->name("api.stories.index");
 /**
 * ######################-GESTION DE LIVRE-############################################
 */
@@ -32,7 +34,8 @@ Route::group(['prefix' => 'api'], function () {
     Route::get('livre/where','Api\LivresController@where')->name('api.livre.where');
     Route::get('livre/list','Api\LivresController@list')->name('api.livre.list');
 
-    Route::post('api/page/store','Api\PagesController@store')->name('api.page.store');
+    Route::post('page/store','Api\PagesController@store')->name('api.page.store');
+    Route::get('page/show/{id}', "Api\PagesController@show")->name("api.page.show");
     Route::get('chapiter','Api\ChapitersController@index')->name('api.chapiter');
 
 });
@@ -42,4 +45,8 @@ Route::group(['prefix'=> 'lecture'], function () {
 });
 
 
+/*****************************************************************************************/
+
 Route::get('api/page/list', 'Api\PagesController@index')->name('api.page.list');
+
+/***************************************************************************************/

@@ -13,6 +13,10 @@ class Images
 	protected $path;
 	protected $specified_dirs ;
 
+	protected $name;
+	protected $size;
+	protected $type;
+
 	function __construct($dir = ['/../','img'])
 	{
 		$this->specified_dirs = implode(DIRECTORY_SEPARATOR, $dir);
@@ -46,6 +50,37 @@ class Images
 		file_put_contents($this->path.'/'.$filename, $source);
 	}
 
+	public function delete ($file, $o) {
+		if(isset($_POST['x-file-value']))
+	        {
+	            $o->value = $_POST['x-file-value'];
+
+	            $image = Image::where("cripted_name","=", $_POST['x-file-value'])->first();
+
+	            if ($image) {
+		            
+					if(file_exists($this->path.'/'.$image->cripted_name)) {
+						// Supprimé un fichier
+						unlink($this->path.'/'.$image->cripted_name);
+
+						}
+
+					Image::where("cripted_name", "=", $image->cripted_name)->delete();
+				}
+	        }
+
+        foreach(glob($this->path.'/*') as $each_files) 
+	        {
+	        	if ($file["name"] === $each_files) {
+	        		self::$file = $each_files;
+	        		break;
+	        	} else {
+	        		self::$file = false;
+	        	}
+
+	        }
+	}
+
 	/**
 	* Permet d'uploader un fichier ou des fichiers images
 	*
@@ -60,22 +95,20 @@ class Images
 		if (isset($_FILES['file']))
 		{
 			$h 		 = getallheaders();
+
+			$this->getFile();
 			
 			$file    = $_FILES['file'];
+
 			$o		 = new \stdClass();
+
 			$o->error= null;
+
 			$o->file = $file;
+
 			$types 	 =  array('image/png','image/jpg','image/jpeg');
-			$real_name = $file["name"];
 
-			$cripted_name = md5(date("Ymd-hms")).".".filename_in_path($file["name"], ".");
-
-			while(Image::where("cripted_name", "=", $cripted_name)->first()) {
-
-				$cripted_name = md5(date("Ymd-hms")).".".filename_in_path($file["name"], ".");
-			}
-
-			$file['name'] = $cripted_name;
+			$cripted_name =  $this->getCriptedName();
 
 
 			if(!in_array($h['x-file-type'], $types) || $h['x-file-type'] == "") // si l'extension du fichier n'est pas pris en compte
@@ -85,54 +118,26 @@ class Images
 
 			}else{ 	// si l'extension du fichier est pris en compte
 		
-				 if(isset($_POST['x-file-value']))
-			        {
-			            $o->value = $_POST['x-file-value'];
-
-			            $image = Image::where("cripted_name","=", $_POST['x-file-value'])->first();
-
-			            if ($image) {
-				            
-							if(file_exists($this->path.'/'.$image->cripted_name)) {
-								// Supprimé un fichier
-								unlink($this->path.'/'.$image->cripted_name);
-
-								}
-
-							Image::where("cripted_name", "=", $image->cripted_name)->delete();
-						}
-			        }
-
-			        foreach(glob($this->path.'/*') as $each_files) 
-				        {
-				        	if ($file["name"] === $each_files) {
-				        		self::$file = $each_files;
-				        		break;
-				        	} else {
-				        		self::$file = false;
-				        	}
-
-				        }
-
+					$this->delete($file, $o);
 
 			        if (self::$file === false)
 			        {
 
 			        	// Enregisté les fichiers dans un dosseir
-						if(move_uploaded_file($file['tmp_name'], $this->path.'/'.$file["name"] ))
+						if(move_uploaded_file($file['tmp_name'], $this->path.'/'.$cripted_name ))
 					   	{
-							if (file_exists($this->path.'/'.$file["name"] )) // si le fichier existe
+							if (file_exists($this->path.'/'. $cripted_name )) // si le fichier existe
 							{
 								Image::create([
-					   				"name" 			=> $real_name, 
-					   				"size" 			=> $file['size'],
-					   				"type" 			=> $file['type'],
+					   				"name" 			=> $this->name, 
+					   				"size" 			=> $this->size,
+					   				"type" 			=> $this->type,
 					   				"cripted_name" 	=> $cripted_name,
 					   			]);
 
 						       	$o->message = "L'upload s'est bien passé";
-						       	$o->content = '<img src="'.asset($image_path.'/'.$file["name"]).'"  />';
-						       	$o->name    = $file["name"];
+						       	$o->content = '<img src="'.asset($image_path.'/'. $cripted_name).'"  />';
+						       	$o->name    =  $cripted_name;
 
 							}else{
 									// echo "Voici une test";
@@ -153,5 +158,28 @@ class Images
 			echo json_encode($o);
 		}
 
+	}
+
+	private function getFile() {
+
+		if (isset($_FILES['file'])) {
+
+			$file = $_FILES['file'];
+
+			$this->name = $file['name'];
+			$this->size = $file['size'];
+			$this->type = $file['type'];
+		}
+	}
+
+	public function getCriptedName() {
+		
+		$cripted_name = date("Ymd.hms").".".filename_in_path($this->name, ".");
+
+			if (Image::where("cripted_name", "=", $cripted_name)->first()) {
+				return $this->getCriptedName();
+			}
+
+		return $cripted_name;
 	}
 }

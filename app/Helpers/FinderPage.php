@@ -56,30 +56,34 @@ class FinderPage
                     // Limité l'affichage de caractère à 150 sur le champ content
                     $content = $data->content;
                     
-                    $content = htmlentities( $content, ENT_QUOTES, 'UTF-8') ;
-                    $content = Str::replaceToStrong($search, $content);
+                    $content_htmlentities = htmlentities( $content, ENT_QUOTES, 'UTF-8') ;
+                    $content = Str::replaceToStrong($search, $content_htmlentities);
                     $count_search = strlen($search);
+
                     $strpos = !empty($search)? strpos($data->content, $search) : 0;
  
-                    $court_text = substr( $content, ( $strpos>8 ? $strpos - 8 : 0), ($strpos>8 ? $strpos+150 : 151) );
+                    $court_text = substr( $content, ( $strpos >8 ? $strpos - 9 : 0), ($strpos>8 ? $strpos+150 : 151) );
 
-                    if($strpos > 8 &&  strlen($court_text) < 150) {
-                        $content = substr($content, ( $strpos>8 ? $strpos - 8 : 0));
+                    if($strpos > 9 &&  strlen($court_text) < 150) {
+                        $content = substr($content, ( $strpos>8 ? $strpos - 9 : 0));
                     }
                     
                     $court_text = strlen($court_text) > 150 ? $court_text.' [...]' : $content ;
 
+                    // $court_text = $content;
+                    
                     if (! isset($elements ['list'][$data->id]))
                     {
-                        $elements ['list'][]  = [
-                                'id'        => $data->id
-                                ,'text'      => Str::decode_str($court_text)
-                                ,'title'     => Str::decode_str($data->title)
-                                ,'content'   => Str::decode_str($data->content)
-                                // ,'content'   => $data->content
+
+                        $elements ['list'][]  
+                                    = [
+                                        'id'         => $data->id
+                                        ,'text'      => Str::decode_str($court_text)
+                                        ,'title'     => Str::decode_str($data->title)
+                                        ,'content'   => $content
                             ];
                     }
-                    // $elements ['id'][$data->id] = $data->id;
+                    
                 }
             }
         }
