@@ -14,6 +14,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
+                            
                             <!-- form start -->
 
                             {{ csrf_field() }}

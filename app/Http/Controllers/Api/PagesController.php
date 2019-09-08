@@ -43,20 +43,28 @@ class PagesController extends Controller
      public function store(Request $request)
      {
         $chapiter_id = $request->input('chapiter_id') ;
- 
+        
+        // Ceci est utile pour faire les tests de validation
+        $pages = $request->input('page');
+        if(isset($pages['content'])) {
+            $content = (isset($pages['content'][0])) ? $pages['content'][0] : "";
+        } else {
+            $content = "";
+        }
+
         $data_page = [
             'title'         => $request->input('title'),
-            'content'       => $request->input('content'),
+            'content'       => $content,
             'book_id'       => $request->input('book_id', 1),
         ];
+
+
+        $errors = [];
+        $validated = [];
  
-         
-         $errors = [];
-         $validated = [];
- 
-         $validations_fields = new \App\Helpers\ValidationFields();
+        $validations_fields = new \App\Helpers\ValidationFields();
         
-         $validate = $validations_fields->handle($data_page,  [
+        $validate = $validations_fields->handle($data_page,  [
             'title'     => [
                 'required'  =>['message' => sprintf('erreur, le %s ne doit pas être vide !', 'titre')],
                 'min:4'     =>['message' => sprintf("erreur, le %s ne doit pas être inférieur à %d", 'titre', 4)]
@@ -79,27 +87,43 @@ class PagesController extends Controller
             $message_list = array_merge($message_list, ['message'=>'error']);
  
         }else{
-            $message_list = array_merge($message_list, ['message'=>'validated']);
-         }
- 
+                $message_list = array_merge($message_list, ['message'=>'validated']);
+            }
+
+        $list_new_page = [];
+
+
         if (count($errors) == 0) { // si l'erreur est égale à zéro
  
-            if ($request->get('chapiter') != null)
-            {
-                $chapiter = \App\Models\Chapiter::create([
-                    'name'    => $request->get('chapiter'),
-                    'book_id' => $data_page['book_id']
-                ]);
-                $chapiter_id = $chapiter->id;
-             }
- 
-            $data_page = array_merge($data_page, ['chapiter_id'   => $chapiter_id,]);
+            if ($request->get('chapiter') != null) {
+                $chapiter = \App\Models\Chapiter::where('name', $request->get('chapiter'))->first();
+                if ($chapiter == null) {
+                    $chapiter = \App\Models\Chapiter::create([
+                        'name'    => $request->get('chapiter'),
+                        'book_id' => $data_page['book_id']
+                    ]);
+                    $chapiter_id = $chapiter->id;
+                } else {
+                    $chapiter_id = $chapiter->id;
+                }
+            }
 
             // Création de la page après les différentes actions éffectué.
-            $page = \App\Models\Page::create($data_page);
+              
+
+            for($i=0; $i<count($pages['code']); $i++) {
+     
+                $list_new_page[] =\App\Models\Page::create([
+                        'title'     => $data_page['title'],
+                        "content"   => $pages['content'][$i],
+                        "code"      => htmlentities($pages['code'][$i], ENT_NOQUOTES,"UTF-8"),
+                        'book_id'   => $data_page['book_id'],
+                        'chapiter_id'   => $chapiter_id
+                    ]);
+            }
         }
              
-        return new Response(json_encode($message_list, false));
+        return new Response(json_encode(array_merge($message_list, ["new_pages" => $list_new_page]), false));
      }
 
     /**

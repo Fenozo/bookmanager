@@ -34,9 +34,10 @@ class FinderPage
                         $title = Str::replaceToStrong($search, $data->title);
                         $elements ['list'][] = [
                             'id'        => $data->id
-                            ,'text'      => Str::decode_str($title)
-                            ,'title'     => Str::decode_str($data->title)
-                            ,'content'   => Str::decode_str($data->content)
+                            ,'text'     => Str::decode_str($title)
+                            ,'title'    => Str::decode_str($data->title)
+                            ,'content'  => Str::decode_str($data->content)
+                            ,'code'     => Str::decode_str($data->code)
                         ];
                     }
                     // $elements ['id'][$data->id] = $data->id; 
@@ -81,6 +82,7 @@ class FinderPage
                                         ,'text'      => Str::decode_str($court_text)
                                         ,'title'     => Str::decode_str($data->title)
                                         ,'content'   => $content
+                                        ,'code'      => Str::decode_str($data->code)
                             ];
                     }
                     

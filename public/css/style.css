@@ -84,13 +84,15 @@
     padding: 6px 7px;
     margin: 2px 0px;
     box-shadow: 5px 1px 18px #ced2d4;
-    background-color: #fff;
+    background-color: #e8e5e5;
     cursor: pointer;
 }
 .showing-book-list {
+    position: absolute;
     overflow: auto;
-    height: 279px;
     background: #f7f9f9;
+    z-index: 200;
+    width: 98%;
 
 }
 .modal-header {
@@ -117,8 +119,8 @@
     text-shadow: #848383 1px 1px 0px;
 }
 
-.page-content {
-    min-height: 315px !important;
+.page-content, .page-code {
+    min-height: 142px !important;
 }
 .modal-content .data-content {
     font-size: 16px;
@@ -203,7 +205,7 @@ strong em {
     .pull-right-container {
         top: -15%;  
         position: absolute;
-        z-index: 9563;
+        z-index: 1000;
         left: 26px;
     }
 }
@@ -282,6 +284,9 @@ h2.title {
     margin: 0;
     padding: 0;
     list-style: none;
+}
+.recent-list li:hover {
+    text-decoration:underline;
 }
 .recent-list li h3 {
     color: #15110d;

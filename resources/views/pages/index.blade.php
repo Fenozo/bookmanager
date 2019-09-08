@@ -53,12 +53,7 @@
                     <h2 class="h2 title">Recents shows</h2>
                     <div class="content-recent-list">
                         <ul class="recent-list">
-                            <li class="search-div" data-title="recent 2" data-show="{{ route('api.page.show', ['id' => 2] ) }}">
-                                <h3>recent 2</h3>
-                            </li>
-                            <li class="search-div" data-title="recent 2" data-show="{{ route('api.page.show', ['id' => 1] ) }}">
-                                <h3>recent 1</h3>
-                            </li>
+                           
                         </ul>
                     </div>
                     <!-- /.input-group -->
@@ -75,11 +70,15 @@
                     <div class="book-modal">
                         
                     </div>
-                    <!-- /.box-header -->
-                    @include('livres.new')
-                    <!-- /.modal -->
-                    <!-- /.box-header -->
-                    @include('pages.new')
+
+                     <form id="form-page-store" role="form" action="" method="post">
+                        <!-- /.box-header -->
+                        @include('pages.select')
+                        <!-- /.modal -->
+                        <!-- /.box-header -->
+                        @include('pages.new')
+                    </form>
+
                     <div class="modal fade" id="datail-modal">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -93,7 +92,7 @@
                                         <a href="#" class="btn btn-info">Editer</a>
                                     </div>
                                     <h1 class="title-mini">Title...</h1>
-                                    <div class="data-content">
+                                    <div class="row data-content">
                                         
                                     </div>
                                 </div>
@@ -101,41 +100,7 @@
                         </div>
                     </div>
                    
-                    <!-- /.box-header -->
-                    <div class="modal fade" id="book-modal">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <form id="form-page-store" role="form" action="" method="post">
 
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title text-shadow">Chercher <strong class="">livre</strong></h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h1>Liste des livres</h1>
-                                      
-                                            <div class="input-group">
-                                                <input autocorrect="off" autocomplete="off" autocapitalize="off" type="text" id="book-search" name="search" class="form-control" placeholder="Search">
-
-                                                <div class="input-group-btn">
-                                                    <button type="submit" name="submit" class="search-page btn btn-warning btn-flat"><i class="fa fa-search"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-
-                                            <div class="showing-book-list">
-
-                                            </div>
-                                            <!-- /.input-group -->
-                                        
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- /.modal -->
 
 	               <!-- page liste -->
 	               <!-- page liste-->
@@ -200,14 +165,19 @@
                 
                 // Convertion de balise <?php ?>
                 
-                var data = response.content.replace(/\[php\]/, "&lt;?php <br/><section><code>");
-                data = data.replace(/\[\/php\]/, "</code></section>?&gt;");
+                var code = response.code.replace(/\[php\]/, "&lt;?php <br/><section><code>");
+                var content = response.content;
+                code = code.replace(/\[\/php\]/, "</code></section>?&gt;");
 
                 // Convertion acolade
-                data = data.replace(/\[acolade\]/g, "{");
-                data = data.replace(/\[\/acolade\]/g, "}");
+                code = code.replace(/\[acolade\]/g, "{");
+                code = code.replace(/\[\/acolade\]/g, "}");
 
-                $('#datail-modal').find('.data-content').html("<code>"+data+"</code>");
+                $('#datail-modal').find('.data-content').html('<div class="col-md-6"><code>'
+                    +code+'</code></div>'+
+                    '<div class="col-md-6"><section>'
+                    +content+'</section></div>');
+                
                 
             },
             error : function(error) {
