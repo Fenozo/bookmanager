@@ -163,6 +163,10 @@ jQuery(function(){
 
     var i   = 1;
 
+    $('.content-list').html("");
+
+    put_field_for_new_page();
+
     function put_field_for_new_page() {
         $('.content-list').append(
             '<div class="col-md-7 list-'+i+'">'
@@ -178,29 +182,41 @@ jQuery(function(){
                 +'<textarea  class="page-code form-control" id="code-'+i+'" name="page[code][]" placeholder="code"></textarea>'
             +'</div>'
             +'</div>'
-            +'<div class="col-md-12 list-'+i+'">'
+            +'<div class="col-md-12 delete-list-'+i+'">'
                 +'<button class="btn btn-danger pull-right delete-list" data-indice="'+i+'"><i class="fa fa-minus"></i></button>'
             +'</div>'
             );
         panier.push(i)
         i++;
+
+        if (panier.length() == 1) {
+                $('.delete-list-'+panier.getCurrentValue()).addClass('hidden');
+            }
+        if (panier.length() > 1) {
+            if ($('body').find('.hidden')) {
+                $('body').find('.hidden').removeClass('hidden');   
+            }
+        }
+            
     }
 
     $(document).on('click', ".add-new-page-field", function(e) {
         e.preventDefault();
         put_field_for_new_page();
-            console.log(panier.length());
-            panier.dump();
     });
 
     $(document).on('click','.delete-list', function(e){
         e.preventDefault();
         var i= $(this).data('indice');
-        $('.list-'+i).remove();
+            $('.list-'+i).remove();
+            $('.delete-list-'+i).remove();
+            panier.splice(i); // supprimer un champ
+
+            if (panier.length() == 1) { // ajout de la classe hidden
+                $('.delete-list-'+panier.get(0)).addClass('hidden');
+            } 
+
             
-            panier.splice(i);
-            panier.dump();
-            console.log(panier.length());
     });
 
 });
