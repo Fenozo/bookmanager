@@ -10,8 +10,13 @@
                                         <h4 class="modal-title text-shadow">Les différents choix </h4>
                                     </div>
                                     <div class="modal-body">
-                                            <h1>Liste des livres</h1>
-                                      
+                                            
+                                        <div class="box-modal">
+                                                <h1>Liste des livres</h1>
+                                                
+                                            <input type="hidden" id="input_hidden_book" value="">
+                                            <input type="hidden" id="input_hidden_id" name="book_id" value="">
+
                                             <div class="input-group">
                                                 <input autocorrect="off" autocomplete="off" autocapitalize="off" type="text" id="book-search" name="search" class="form-control" placeholder="Search">
 
@@ -32,7 +37,6 @@
                                             </div>
 
                                             
-
                                             <fieldset class="fieldset">
                                                 <div class="row">
                                                     <div class="col-xs-3">
@@ -53,13 +57,12 @@
                                                     
                                                     </div>
                                                 </div>
-                                                
-                                                
                                             </fieldset>
-                                            
-                                            <button class="btn btn-info suivant-to-write-page" style="margin-top: 12px;float: right;">suivant</button>
-                                            <!-- /.input-group -->
-                                        
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-info suivant-to-write-page" style="margin-top: 12px;float: right;">suivant</button>
+                                        <!-- /.input-group -->
                                     </div>
                                  <!-- /form -->
                             </div>

@@ -292,3 +292,7 @@ h2.title {
     color: #15110d;
     text-decoration: underline;
 }
+/*********************-MODAL-************************************/
+#modal-default {
+    overflow: auto !important;
+}

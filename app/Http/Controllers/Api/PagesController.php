@@ -51,7 +51,7 @@ class PagesController extends Controller
         } else {
             $content = "";
         }
-
+        
         $data_page = [
             'title'         => $request->input('title'),
             'content'       => $content,
@@ -73,7 +73,7 @@ class PagesController extends Controller
             'book_id'   => ['required', 'message' => sprintf("erreur, le %s ne doit pas être vide !", 'book_id')],
          ]);
  
-         $errors = $validate['errors'];
+        $errors = $validate['errors'];
  
         $message_list = [
             "nbValidated"       => count($validated),
@@ -82,7 +82,7 @@ class PagesController extends Controller
             'list_errors'       => $errors,
         ];
  
-         if (count($errors) > 0)
+        if (count($errors) > 0)
         {
             $message_list = array_merge($message_list, ['message'=>'error']);
  
@@ -146,7 +146,7 @@ class PagesController extends Controller
            ]);
        }
 
-       array_walk_recursive($page, function(&$item, $index) {
+        array_walk_recursive($page, function(&$item, $index) {
             $item = strtr($item, array(
                 "<?php" => "[php]",
                 "?>"    => "[/php]",
@@ -156,12 +156,8 @@ class PagesController extends Controller
                 ">"     => "&gt;",
                 "//"    => "<br/>//",
                 "\n"    => "<br/>"
-
-            ));
-
-
-            
-       });
+            ));           
+        });
 
        return $page;
     }

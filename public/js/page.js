@@ -144,8 +144,6 @@ jQuery(function() {
 
     }
 
-
-
     $('.select2-search__field').on('keyup', function() {
         alert($(this).val())
     });
@@ -157,45 +155,57 @@ jQuery(function() {
     }
 });
 
+
+
 jQuery(function(){
-    $('.livre-slct2').select2();
 
-     $('#select2-select-book-container').on('click', function() {
+    var panier = $(this).panier();
 
-         if ($(this).find('.select2-search__field'))
-            {
-                $('.select2-search').on('keyup','input', function(){
-                    // alert(this)
-                   
-                });
-            }
-     });
+    var i   = 1;
 
-    $('#select2-chapiter-container').on('click', function() {
-        if ($('input').hasClass('select2-search__field')) {
-            $('.select2-search').on('keyup', 'input', function() {
-                var valeur  = $('.select2-search').find('input').val();
-                var book    = JSON.parse($('#input_hidden_book').val());
+    function put_field_for_new_page() {
+        $('.content-list').append(
+            '<div class="col-md-7 list-'+i+'">'
+            +'<div class="form-group">'
+                +'<label for="content">Content</label>'
+                +'<textarea  class="page-content form-control" id="content-'+i+'" name="page[content][]" placeholder="content"></textarea>'
+            +'</div>'
+            +'</div>'
 
-                // $.ajax({
-                //     url: $('.chapiter-url').val(),
-                //     method: "GET",
-                //     dataType: 'json',
-                //     data: { search: valeur ,book_id : book.id},
-                //     success: function(datas) {
-                //                     console.log(datas)
-                //         // var datas = JSON.parse(data);
-                //         $('#chapiter').find('option').remove();
-                //         datas.items.forEach(elem => {
-                //             $('#chapiter').append('<option value="' + elem.id + '">' + elem.name + '</option>');
-                //         });
-                //     }
-                // });
-            });
-        }
+            +'<div class="col-md-5 list-'+i+'">'
+            +'<div class="form-group">'
+                +'<label for="content">Content</label>'
+                +'<textarea  class="page-code form-control" id="code-'+i+'" name="page[code][]" placeholder="code"></textarea>'
+            +'</div>'
+            +'</div>'
+            +'<div class="col-md-12 list-'+i+'">'
+                +'<button class="btn btn-danger pull-right delete-list" data-indice="'+i+'"><i class="fa fa-minus"></i></button>'
+            +'</div>'
+            );
+        panier.push(i)
+        i++;
+    }
+
+    $(document).on('click', ".add-new-page-field", function(e) {
+        e.preventDefault();
+        put_field_for_new_page();
+            console.log(panier.length());
+            panier.dump();
+    });
+
+    $(document).on('click','.delete-list', function(e){
+        e.preventDefault();
+        var i= $(this).data('indice');
+        $('.list-'+i).remove();
+            
+            panier.splice(i);
+            panier.dump();
+            console.log(panier.length());
     });
 
 });
+
+
 
 jQuery(function() {
 
@@ -203,6 +213,12 @@ jQuery(function() {
         e.preventDefault();
 
         $('#book-modal').modal('hide');
+        $('#modal-default').modal('show');
+    });
+    $(document).on('keyup', "#title", function(e){
+        e.preventDefault();
+
+        alert(this.value)
     });
     $('.book-modal').modal('hide');
     $(document).on('click','.select_one_book', function(e){
@@ -251,4 +267,49 @@ jQuery(function() {
 
 
     });
+});
+
+/**
+*
+*   ############ LES SELECT 2 : section de livre et de chapitre
+*/
+
+jQuery(function(){
+    $('.livre-slct2').select2();
+
+     $('#select2-select-book-container').on('click', function() {
+
+         if ($(this).find('.select2-search__field'))
+            {
+                $('.select2-search').on('keyup','input', function(){
+                    // alert(this)
+                   
+                });
+            }
+     });
+
+    $('#select2-chapiter-container').on('click', function() {
+        if ($('input').hasClass('select2-search__field')) {
+            $('.select2-search').on('keyup', 'input', function() {
+                var valeur  = $('.select2-search').find('input').val();
+                var book    = JSON.parse($('#input_hidden_book').val());
+
+                // $.ajax({
+                //     url: $('.chapiter-url').val(),
+                //     method: "GET",
+                //     dataType: 'json',
+                //     data: { search: valeur ,book_id : book.id},
+                //     success: function(datas) {
+                //                     console.log(datas)
+                //         // var datas = JSON.parse(data);
+                //         $('#chapiter').find('option').remove();
+                //         datas.items.forEach(elem => {
+                //             $('#chapiter').append('<option value="' + elem.id + '">' + elem.name + '</option>');
+                //         });
+                //     }
+                // });
+            });
+        }
+    });
+
 });

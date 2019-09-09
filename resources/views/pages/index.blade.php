@@ -27,7 +27,7 @@
             </span>
 			<div class="box box-primary" style="border: 0px;margin-top: 85px;padding-top:16px;">
 	            <div class="box-header">
-                <button type="button" style="" class="btn btn-primary nouvelle-page" data-toggle="modal" data-target="#modal-default">
+                <button type="button" style="" class="btn btn-primary nouvelle-page" data-toggle="modal" data-target="#book-modal">
                     <i class="fa fa-plus"></i>
                 </button><h3 class="box-title box-search-page">La liste des pages par livre</h3>
 	            </div>
@@ -116,6 +116,7 @@
 @section('javascript')
 
 <script src="{{ asset('js/page.js') }}"></script>
+<script src="{{ asset('js/panier.js') }}"></script>
 <script type="text/javascript">
 
 
