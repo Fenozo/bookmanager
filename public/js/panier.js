@@ -15,8 +15,9 @@
             *
             */
             ,get: function(key=null) {
-                if (key != null)
+                if (this.hasOwnProperty('key')) {
                     return this.tab[key];
+                }
                 return this.tab;
             }
             /**

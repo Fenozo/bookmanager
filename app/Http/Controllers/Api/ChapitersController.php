@@ -42,6 +42,25 @@ class ChapitersController extends Controller
     }
 
     /**
+    *
+    * @param Request $request
+    *
+    */
+    public function show_with_book($book_id) {  
+
+    
+        if ($book_id) {
+            $books = Chapiter::where("book_id", $book_id)->limit(7)->get();
+            return [
+                        "count" => count($books)
+                        ,"items" => $books
+                    ];
+        }else{
+                return new Response(json_encode(["items" =>array()]));
+            }
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -70,7 +89,11 @@ class ChapitersController extends Controller
      */
     public function show($id)
     {
-        //
+        if ($id) {
+            return ["item" => Chapiter::where("id", $id)->limit(7)->first()];
+        }else{
+                return new Response(json_encode(["item" =>array()]));
+            }
     }
 
     /**

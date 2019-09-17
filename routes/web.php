@@ -36,8 +36,10 @@ Route::group(['prefix' => 'api'], function () {
 
     Route::post('page/store','Api\PagesController@store')->name('api.page.store');
     Route::get('page/show/{id}', "Api\PagesController@show")->name("api.page.show");
+    
     Route::get('chapiter','Api\ChapitersController@index')->name('api.chapiter');
-
+    Route::get('chapiter/{book_id}','Api\ChapitersController@show_with_book')->name('api.chapiter.show.book');
+    Route::get('chapiter/{id}/chapiter','Api\ChapitersController@show')->name('api.chapiter.show.chapiter');
 });
 
 Route::group(['prefix'=> 'lecture'], function () {

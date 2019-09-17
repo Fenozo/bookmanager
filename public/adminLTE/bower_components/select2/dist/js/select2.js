@@ -3122,12 +3122,28 @@ S2.define('select2/data/select',[
     });
   };
 
-  SelectAdapter.prototype.bind = function (container, $container) {
+  SelectAdapter.prototype.bind = function (container, $container, callback) {
     var self = this;
+
+    var options = self.options.options;
 
     this.container = container;
 
+    if (options.hasOwnProperty('selectMe')) {
+        callback = options.selectMe;
+    }
+
     container.on('select', function (params) {
+
+
+        if (typeof callback == 'function') {
+            
+            callback(params);
+            
+        } else {
+            console.log(self.options.options);
+        }
+        // console.log(this)
       self.select(params.data);
     });
 
@@ -3147,7 +3163,7 @@ S2.define('select2/data/select',[
   SelectAdapter.prototype.query = function (params, callback) {
     var data = [];
     var self = this;
-
+    // alert(this)
     var $options = this.$element.children();
 
     $options.each(function () {
@@ -3158,7 +3174,7 @@ S2.define('select2/data/select',[
       }
 
       var option = self.item($option);
-
+      // console.log(option)
       var matches = self.matches(params, option);
 
       if (matches !== null) {
@@ -3447,6 +3463,7 @@ S2.define('select2/data/ajax',[
       options.url = options.url.call(this.$element, params);
     }
 
+    // console.log(options.data);
     if (typeof options.data === 'function') {
       options.data = options.data.call(this.$element, params);
     }
@@ -5033,6 +5050,7 @@ S2.define('select2/core',[
   './keys'
 ], function ($, Options, Utils, KEYS) {
   var Select2 = function ($element, options) {
+
     if ($element.data('select2') != null) {
       $element.data('select2').destroy();
     }
@@ -5043,8 +5061,9 @@ S2.define('select2/core',[
 
     options = options || {};
 
+    // console.log(options)
     this.options = new Options(options, $element);
-
+    // console.log(this.options)
     Select2.__super__.constructor.call(this);
 
     // Set up the tabindex
@@ -5657,7 +5676,8 @@ S2.define('jquery.select2',[
     // All methods that should return the element
     var thisMethods = ['open', 'close', 'destroy'];
 
-    $.fn.select2 = function (options) {
+    $.fn.select2 = function (options) 
+    {
       options = options || {};
 
       if (typeof options === 'object') {
@@ -5672,7 +5692,8 @@ S2.define('jquery.select2',[
         var ret;
         var args = Array.prototype.slice.call(arguments, 1);
 
-        this.each(function () {
+        this.each(function () 
+        {
           var instance = $(this).data('select2');
 
           if (instance == null && window.console && console.error) {

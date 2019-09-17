@@ -164,7 +164,7 @@
     <script src="{{ asset($root.'/bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
 
     
-    <script src="{{ asset($root.'/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
+    <script src="{{ asset($root.'/bower_components/select2/dist/js/select2.js')}}"></script>
     
     <!-- ChartJS -->
     <!-- <script src="bower_components/Chart.js/Chart.js"></script>

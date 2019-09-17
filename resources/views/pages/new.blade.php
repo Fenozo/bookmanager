@@ -22,7 +22,17 @@
                                         <div class="select">
                                             <div class="form-group">
                                                 <div>
-                                                    Livre : <span id="book_title"></span> 
+                                                    <span  class="badge">Livre : </span>
+                                                    <span id="book_title"></span> 
+                                                    
+                                                    <span>
+                                                        <span class="badge" >Titre : </span>
+                                                        <span id="page_title"></span>
+                                                    </span>
+                                                    <span>
+                                                        <span class="badge">Chapitre</span>
+                                                        <span id="page_chapiter"></span>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -47,7 +57,6 @@
                                     </div>
                                 </div>
 
-
                                 <button class="btn btn-success add-new-page-field"><i class="fa fa-plus"></i></button>
                                 <!--  -->
                             </div>
@@ -58,7 +67,7 @@
                 <!-- end modal-body -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-info pull-left select_one_book" >précedent</button>
+                    <button type="button" class="btn btn-info pull-left preview-to-write-page" >précedent</button>
                     <button type="submit" class="btn btn-primary" id="save-page">Enregistrer</button>
                     <!-- data-dismiss="modal" cd code sert à dissimulé le modal -->
                 </div>

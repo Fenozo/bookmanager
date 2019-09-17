@@ -1,3 +1,5 @@
+
+
 jQuery(function() {
 
     // var url = $('#livre-url').data('url');
@@ -28,11 +30,14 @@ jQuery(function() {
 
 jQuery(function() {
 
-    
     $.ajax({
+
         url : $('.livre-index-url').data('url'),
+
         method : 'GET',
+
         dataType : 'json',
+
         success : function (data) {
             // var datas = JSON.parse(data);
             datas.items.forEach(elem => {
@@ -40,7 +45,9 @@ jQuery(function() {
                 $('#select-book').append('<option>'+elem.name+'</option>');
             });
         }
+
     });
+
 });
 
 jQuery(function() {
@@ -133,3 +140,6 @@ $(document).on('click','#livre-update', function(e){
 
 
 });
+
+
+

@@ -71,7 +71,7 @@
 
 /************************************************/
 .modal-body {
-    min-height: 400px;
+    min-height: 254px;
 }
 .modal-body h1 {
     margin: 0;
@@ -298,4 +298,12 @@ h2.title {
 }
 .hidden {
     display: none;
+}
+/*************************************************************/
+#page_title, #book_title, #page_chapiter {
+    display:inline-block;
+    font-weight: 600;
+    font-size:15px;
+}
+#book_title {
 }

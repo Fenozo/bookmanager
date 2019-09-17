@@ -1,3 +1,19 @@
+(function($){
+
+    $.fn.selectNode = function() 
+    {
+
+    }
+    
+    $('#type').select2({
+        selectMe : function(params) {
+            alert(params)
+        }
+    });
+
+
+})(jQuery);
+
 jQuery(function() {
 
     $(document).on('click', '.search-page', function(event) {
@@ -39,7 +55,7 @@ jQuery(function() {
     getLitCapiter();
 
     var chap = '<div class="form-group chap">'+
-                    '<label for="chapiter">Chapitre</label>'+
+                    '<label for="chapiter">Nouveau Chapitre</label>'+
                     '<input type="text" name="chapiter" class="form-control" id="chapiter" placeholder="Chapitre">'+
                 '</div>';
 
@@ -62,8 +78,6 @@ jQuery(function() {
 
     });
     // $('.select2-selection__rendered')
-
-
 
     function save_page() {
         $('#save-page').on('click', function(e) {
@@ -120,28 +134,27 @@ jQuery(function() {
     }
 
     function getLitCapiter() {
-        $('#modal-default').on('show.bs.modal', function() {
-            // Book id 
-            var id = $('#input_hidden_id').val();
+        // $('#modal-default').on('show.bs.modal', function() {
+        //     // Book id 
+        //     var id = $('#input_hidden_id').val();
 
-            if (id != 0)
-            {
-                $.ajax({
-                    url: $('.chapiter-url').data('url'),
-                    method: "GET",
-                    data : {book_id : id},
-                    dataType : 'json',
-                    success: function(datas) {
+        //     if (id != 0)
+        //     {
+        //         $.ajax({
+        //             url: $('.chapiter-url').data('url'),
+        //             method: "GET",
+        //             data : {book_id : id},
+        //             dataType : 'json',
+        //             success: function(datas) {
 
-                        datas.items.forEach(elem => {
-                            $('#chapiter').append('<option value="' + elem.id + '">' + elem.name + '</option>');
-                        });
-                    }
-                });
-            }
+        //                 datas.items.forEach(elem => {
+        //                     $('#chapiter').append('<option value="' + elem.id + '">' + elem.name + '</option>');
+        //                 });
+        //             }
+        //         });
+        //     }
             
-        });
-
+        // });
     }
 
     $('.select2-search__field').on('keyup', function() {
@@ -223,90 +236,107 @@ jQuery(function(){
 
 
 
-jQuery(function() {
-
-    $(document).on('click', ".suivant-to-write-page", function(e) {
-        e.preventDefault();
-
-        $('#book-modal').modal('hide');
-        $('#modal-default').modal('show');
-    });
-    $(document).on('keyup', "#title", function(e){
-        e.preventDefault();
-
-        alert(this.value)
-    });
-    $('.book-modal').modal('hide');
-    $(document).on('click','.select_one_book', function(e){
-        e.preventDefault();
-        $('#modal-default').modal('hide');
-        $('#book-modal').modal('show');
-
-        $('#book-modal').on('hidden.bs.modal', function(){
-            $('#modal-default').modal('show');
-        });
-        
-        $(document).on('keyup', '#book-search', function() {
-             var search = $(this).val();
-                    // console.log(valeur);
-
-                        $.ajax({
-                            url         : $('.book-url-where').data('url'),
-                            method      : 'GET',
-                            dataType    : 'json',
-                            data        : {search : search},
-                            success     : function(datas) 
-                            {
-                                // alert(search)
-                                // console.log(datas);
-
-                                $('.showing-book-list').find('p').remove();
-                                datas.items.forEach(elem => {
-                                    $('.showing-book-list').append('<p data-id="'+elem.id+'" data-title="'+elem.name+'">'+elem.name+'</p>');
-                                });
-                            }
-                        });
-        });
-
-        $(document).on('click','.showing-book-list>p', function() {
-
-            var id = $(this).data('id');
-            var name = $(this).data('title');
-
-            $('.showing-book-list').find('p').remove();
-            $('#book-search').val(name);
-    
-            $('#book_title').html(name);
-            $('#input_hidden_id').val(id);
-            
-        });
-
-
-    });
-});
-
-/**
-*
-*   ############ LES SELECT 2 : section de livre et de chapitre
-*/
-
 jQuery(function(){
-    $('.livre-slct2').select2();
 
-     $('#select2-select-book-container').on('click', function() {
+    /**
+    * Permet de chercher un livre 
+    * 
+    */
+    $(document).on("keyup", "#book-search", function(e){
+        e.preventDefault();
+        var search = $(this).val();
+        $.ajax({
+                url         : $('.book-url-where').data('url')
+                ,method      : 'GET'
+                ,dataType    : 'json'
+                ,data        : {search : search}
+                ,success     : function(datas) 
+                {
+                    $('.showing-book-list').find('p').remove();
 
-         if ($(this).find('.select2-search__field'))
-            {
-                $('.select2-search').on('keyup','input', function(){
-                    // alert(this)
-                   
+                    datas.items.forEach(elem => {
+                        $('.showing-book-list').append('<p data-id="'+elem.id+'" data-title="'+elem.name+'">'+elem.name+'</p>');
+                    });
+                }
+            });
+    });
+
+    /**
+    * 
+    *  
+    */
+    $(document).on('change','#chapiter', function(e) 
+    {
+        e.preventDefault();
+        var chapiter_id = $(this).val();
+        // alert($(this).val());
+         $.ajax({
+            url         : $('.chapiter-url').val()+"/"+chapiter_id+"/chapiter"
+            ,method     : "GET"
+            ,dataType   : "json"
+            ,success    : function (data) {
+                var chapiter_name = data.item.name;
+                var chapiter_id = data.item.id;
+                $('#page_chapiter').html(chapiter_name);
+            }
+        })
+    });
+
+    /**
+    * Permet de séléctioner une chapitre
+    *
+    */
+    $(document).on('click','.showing-book-list>p', function(e) 
+    {
+
+        e.preventDefault();
+
+        var id = $(this).data('id');
+        var name = $(this).data('title');
+
+        $.ajax({
+            url         : $('.chapiter-url').val()+"/"+id
+            , method    : "GET"
+            ,dataType   : "json"
+            ,success    : function (datas) {
+                var id      = 0;
+                var name    = "";
+                if(datas.hasOwnProperty('count')) 
+                {
+                    if (datas['count'] >= 1) 
+                    {
+                        id      = datas.items[0].id;
+                        name    = datas.items[0].name;
+                        // console.log(datas.items[0]);
+                        $('#chapiter').val(id)
+                        $('#page_chapiter').html(name);
+                    }else
+                        {
+                            $('#page_chapiter').html("");
+                        }
+                }
+
+                $('#chapiter').find('option').remove();
+                datas.items.forEach(elem => {
+                    $('#chapiter').append('<option value="' + elem.id + '">' + elem.name + '</option>');
                 });
             }
-     });
+        })
 
-    $('#select2-chapiter-container').on('click', function() {
-        if ($('input').hasClass('select2-search__field')) {
-            $('.select2-search').on('keyup', 'input', function() {
+        $('.showing-book-list').find('p').remove();
+        $('#book-search').val(name);
+
+        $('#book_title').html(name);
+        $('#input_hidden_id').val(id);
+        
+    });
+
+    $('#select2-chapiter-container').on('click', function() 
+    {
+        if ($('input').hasClass('select2-search__field')) 
+        {
+            $('.select2-search').on('keyup', 'input', function() 
+            {
                 var valeur  = $('.select2-search').find('input').val();
                 var book    = JSON.parse($('#input_hidden_book').val());
 
@@ -327,5 +357,95 @@ jQuery(function(){
             });
         }
     });
+
+    /********************************************/
+
+    var i = 0;
+    var p = $(this).panier();
+    /**
+    *   Permet de créer un nouveau titre
+    *
+    */
+    $(document).on('keyup', "#title", function(e) 
+    {
+        e.preventDefault();
+        var title = $(this).val();
+        var choice = $('.shoice').text();
+
+        if (i == 0) 
+        {
+           p.push(choice);
+        }
+
+        i++;
+
+        $('#page_title').html(title);
+
+        if (title.length == 0) 
+        {
+            
+            $('.shoice').html(p.get(0))
+        }else{
+                $('.shoice').html(" "+title)
+            }
+    });
+    /**
+    *  Permet de créer un nouveau chapitre
+    *   
+    */
+    $(document).on('keyup', "#chapiter", function(e) 
+    {
+        e.preventDefault();
+        var val = $(this).val();
+        $('#page_chapiter').html(val);
+    });
+    /**
+    *   Permet de passé à la modal suivante
+    * 
+    */
+    $(document).on('click', ".suivant-to-write-page", function(e) {
+        e.preventDefault();
+
+        $('#book-modal').modal('hide');
+        $('#modal-default').modal('show');
+    });
+    /*
+    *   Permet de passé à la page précedante
+    *
+    */
+    $(document).on('click','.preview-to-write-page', function(e){
+        e.preventDefault();
+        $('#modal-default').modal('hide');
+        $('#book-modal').modal('show');
+
+        $('#book-modal').on('hidden.bs.modal', function(){
+            $('#modal-default').modal('show');
+        });
+    });
+
+});
+
+
+
+/**
+*
+*   ############ LES SELECT 2 : section de livre et de chapitre
+*/
+
+jQuery(function(){
+    $('.livre-slct2').select2();
+
+     $('#select2-select-book-container').on('click', function() {
+
+         if ($(this).find('.select2-search__field'))
+            {
+                $('.select2-search').on('keyup','input', function(){
+                    // alert(this)
+                   
+                });
+            }
+     });
+
+
 
 });
