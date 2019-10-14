@@ -14,7 +14,7 @@ class PagesController extends Controller
     public function index()
     {
          // dd('Hello word');
-         return view('pages.index');
+         return view('frontOffice.pages.index');
     }
 
     /**

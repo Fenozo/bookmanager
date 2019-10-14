@@ -3129,8 +3129,8 @@ S2.define('select2/data/select',[
 
     this.container = container;
 
-    if (options.hasOwnProperty('selectMe')) {
-        callback = options.selectMe;
+    if (options.hasOwnProperty('onSelected')) {
+        callback = options.onSelected;
     }
 
     container.on('select', function (params) {
@@ -5679,6 +5679,8 @@ S2.define('jquery.select2',[
     $.fn.select2 = function (options) 
     {
       options = options || {};
+
+      console.log(options)
 
       if (typeof options === 'object') {
         this.each(function () {

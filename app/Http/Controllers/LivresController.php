@@ -19,7 +19,7 @@ class LivresController extends Controller
                 ->paginate(5)
                 ;
 
-        return view('livres.index', compact('livres'));
+        return view('frontOffice.livres.index', compact('livres'));
     }
 
     /**

@@ -56,7 +56,7 @@
 
     top: -73px;
     /*top:-73px;
-    right: -705%;*/
+    bloc-bottom: -705%;*/
 }
 
 .content-header {
@@ -175,7 +175,7 @@ strong em {
     left: 0;
     bottom: -20px;
     background-color: #498CFA;
-    right: 0;
+    bloc-bottom: 0;
     text-align: center;
 }
 .dropfile.hover{
@@ -192,7 +192,7 @@ strong em {
     position: absolute; 
     top: 33%;
     left: 0;
-    right: 0;
+    bloc-bottom: 0;
     font-weight: bold;
     font-size: 18px;
     text-align: center;
@@ -202,7 +202,7 @@ strong em {
 }
 /*************************************************/
 @media (max-width: 760px) {
-    .pull-right-container {
+    .pull-bloc-bottom-container {
         top: -15%;  
         position: absolute;
         z-index: 1000;
@@ -232,32 +232,35 @@ strong em {
     margin-bottom:8px;
 }
 .my-box .block {
-    border: 2px solid #636161;
+    height: 321px;
+    border: 1px solid #f1ecec;
     background-color: #fff;
     margin: 2px 2px;
-    height: 155px;
+    overflow: hidden;
+    box-shadow: 1px 2px 4px #000;
+}
+
+.block >.bloc-top {
+    width:100%;
+    height: 206px;
+    float: left;
+    padding: 7px;
     overflow: hidden;
 }
-
-.block >.left {
-    float: left;
-    width:50%;
-    padding: 7px;
-}
-.block >.left img{
-    max-width: 210px;
+.block >.bloc-top img{
     width: 100%;
-    border: 2px solid #3c8dbc;
+    max-width: 210px;
+    /* border: 2px solid #3c8dbc; */
     border-radius: 1px;
-    box-shadow: 2px 1px 10px #2b2727;
+    box-shadow: 3px 2px 4px #2b2727;
     margin-bottom: 5px;
+    height: 166px;
 }
-.block >.right{
+.block >.bloc-bottom{
 
     float: left;
-    width: 50%;
+    width: 100%;
     padding: 6px 7px;
-    border-left: 2px solid #bbbaba;
     height: 100%;
 
 }

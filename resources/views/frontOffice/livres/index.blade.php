@@ -1,4 +1,4 @@
-@extends('layouts.adminLTE')
+@extends('layouts.frontOffice.adminLTE')
 
 @section('content')
 
@@ -29,7 +29,7 @@
                 <button type="button" class="btn btn-primary nouveau-article" data-toggle="modal" data-target="#modal-livre">
 				<i class="fa fa-plus"></i>
                 </button>
-                    @include('livres.new')
+                    @include('frontOffice.livres.new')
 	               <div id="booklist" data-url="{{ route('api.livre.list') }}">
                     <!-- page liste -->
                     <table class="table">

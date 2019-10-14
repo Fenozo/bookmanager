@@ -13,7 +13,7 @@ class LecturesController extends Controller
      */
     public function index()
     {
-        return view('lectures.index');
+        return view('frontOffice.lectures.index');
     }
 
     /**

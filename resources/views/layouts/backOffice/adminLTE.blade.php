@@ -5,13 +5,13 @@
     $root = 'adminLTE';
 ?>
 
-@include('layouts.partials.header')
+@include('layouts.backOffice.partials.header')
 
-@include('layouts.partials.left')
+@include('layouts.backOffice.partials.left')
 
 
 <div class="content-wrapper">
     @yield('content')
 </div>
 
-@include('layouts.partials.footer')
+@include('layouts.backOffice.partials.footer')

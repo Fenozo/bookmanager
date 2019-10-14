@@ -1,4 +1,4 @@
-@extends('layouts.adminLTE')
+@extends('layouts.frontOffice.adminLTE')
 
 @section('content')
 
@@ -70,13 +70,13 @@
                     <div class="book-modal">
                         
                     </div>
-
-                     <form id="form-page-store" role="form" action="" method="post">
+                    
+                    <form id="form-page-store" role="form" action="" method="post">
                         <!-- /.box-header -->
-                        @include('pages.select')
+                        @include('frontOffice.pages.select')
                         <!-- /.modal -->
                         <!-- /.box-header -->
-                        @include('pages.new')
+                        @include('frontOffice.pages.new')
                     </form>
 
                     <div class="modal fade" id="datail-modal">

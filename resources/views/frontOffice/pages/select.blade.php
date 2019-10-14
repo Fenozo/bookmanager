@@ -39,7 +39,17 @@
 
                                                 
                                             
-                                                <fieldset class="fieldset">
+                                                
+                                                
+                                            </div>
+
+                                            <div class="col-md-6">
+
+                                                <select name="type" class="form-control select2" id="type" style="width: 100%;">
+                                                    <option value="1">Bible</option>
+                                                    <option value="2">Autres</option>                     
+                                                </select>
+                                                <fieldset class="fieldset" style="margin-top:6px;margin-bottom:6px">
                                                     <div class="row">
                                                         <div class="col-xs-3">
                                                             <!-- ajout nouveau chapitre -->
@@ -48,25 +58,21 @@
                                                             </button>
                                                             <!-- fin nouveau chapitre -->
                                                         </div>
-                                                        <div class="col-xs-9 select-chapiter">
-                                                            <div class="form-group">
-                                                                <label for="slug">chapiters</label>
-                                                                    <select name="chapiter_id" class="form-control select2" id="chapiter" style="width: 100%;">                             
-                                                                    </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xs-9 input-chapiter">
+                                                    <label for="slug">chapiters</label>
                                                         
-                                                        </div>
                                                     </div>
                                                 </fieldset>
-                                            </div>
+                                                
 
-                                            <div class="col-md-6">
-                                                <select name="type" class="form-control select2" id="type" style="width: 100%;">
-                                                    <option value="1">Bible</option>
-                                                    <option value="2">Autres</option>                     
-                                                </select>
+                                                <div class="input-chapiter">    
+                                                </div>
+                                                <div class=" select-chapiter">
+                                                    <div class="form-group">
+                                                        
+                                                            <select name="chapiter_id" class="form-control select2" id="chapiter" style="width: 100%;">                             
+                                                            </select>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

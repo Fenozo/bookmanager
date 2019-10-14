@@ -9,7 +9,7 @@ Route::get('/galerie','GaleriesController@index')->name('galerie.list');
 Route::post('/galerie/upload','GaleriesController@upload')->name('galerie.upload');
 
 /**
-* ####################-GESTION DE PAGE-###########################################
+* ####################-PAGE-###########################################
 */
 
 Route::group(['prefix'=>'pages'],function() {
@@ -52,3 +52,15 @@ Route::group(['prefix'=> 'lecture'], function () {
 Route::get('api/page/list', 'Api\PagesController@index')->name('api.page.list');
 
 /***************************************************************************************/
+
+/**
+* ####################-COURSE MANAGER-###########################################
+*/
+
+Route::group(["prefix" => 'admin'], function(){
+    Route::get("cours", "BackOffice\CoursController@list")->name("admin.course.list");
+});
+
+/**
+* ####################-GESTION DE PAGE-###########################################
+*/

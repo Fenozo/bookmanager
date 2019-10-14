@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use App\Models\Livre;
 use DB;
+
 class LivresController extends Controller
 {
     /**
@@ -68,7 +69,7 @@ class LivresController extends Controller
     {
         $livres = Livre::orderBy('id', 'desc')->paginate(3, ['id','name','slug','author','description','date_publication'], 'livrepage');
         
-        return view('livres.api.index',[
+        return view('frontOffice.livres.api.index',[
             'livres' => $livres
         ]);
     }

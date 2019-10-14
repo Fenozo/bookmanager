@@ -1,4 +1,4 @@
-@extends('layouts.adminLTE')
+@extends('layouts.frontOffice.adminLTE')
 
 @section('content')
 

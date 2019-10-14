@@ -1,4 +1,4 @@
-@extends('layouts.adminLTE')
+@extends('layouts.frontOffice.adminLTE')
 
 @section('content')
 
@@ -22,8 +22,8 @@
             
             </div>
 		<div class="col-md-12">
-            <span class="pull-right-container">
-                <span class="label label-primary pull-right" id="count-search-page">0</span>
+            <span class="pull-bloc-bottom-container">
+                <span class="label label-primary pull-bloc-bottom" id="count-search-page">0</span>
             </span>
 			<div class="box box-primary" style="border: 0px;margin-top: -15px;padding-top:16px;min-height: 92px;">
 	            <div class="box-header">
@@ -78,11 +78,11 @@
     <div class="row">
         <div class="my-box col-md-3 col-sm-3 col-xs-12">
             <div class="block">
-                <div class="left">
-                    <img src="{{ asset('img/chat-arche-noe.png') }}">
-                    <em>Image</em>
+                <div class="bloc-top">
+                    <img src="{{ asset('img/20190907.050935.jpg') }}" alt="">
+                    <em></em>
                 </div>
-                <div class="right">
+                <div class="bloc-bottom">
                     <h1>php </h1>
                     <p>
                         <?php echo substr("Le PHP est une langage de programmation bien connue est très célèbre sur le
@@ -93,33 +93,33 @@
         </div>
         <div class="my-box col-md-3 col-sm-3 col-xs-12">
             <div class="block">
-                <div class="left">
-                    <img src="{{ asset('img/chat-arche-noe.png') }}">
-                    <em>Image</em>
+                <div class="bloc-top">
+                    <img src="{{ asset('img/chat-arche-noe.png') }}" alt="">
+                    <em></em>
                 </div>
-                <div class="right">
+                <div class="bloc-bottom">
                     <h1>Java </h1>
                 </div>
             </div>
         </div>
         <div class="my-box col-md-3 col-sm-3 col-xs-12">
             <div class="block">
-                <div class="left">
-                    <img src="{{ asset('img/chat-arche-noe.png') }}">
-                    <em>Image</em>
+                <div class="bloc-top">
+                    <img src="{{ asset('img/chat-arche-noe.png') }}" title="Img" alt="">
+                    <em></em>
                 </div>
-                <div class="right">
+                <div class="bloc-bottom">
                     <h1>C++ </h1>
                 </div>
             </div>
         </div>
         <div class="my-box col-md-3 col-sm-3 col-xs-12">
             <div class="block">
-                <div class="left">
-                    <img src="{{ asset('img/chat-arche-noe.png') }}">
-                    <em>Image</em>
+                <div class="bloc-top">
+                    <img src="{{ asset('img/chat-arche-noe.png') }}" alt="">
+                    <em></em>
                 </div>
-                <div class="right">
+                <div class="bloc-bottom">
                     <h1>C# </h1>
                     <p>Le C# est une langage de programmation bien connue</p>
                 </div>
@@ -127,44 +127,44 @@
         </div>
         <div class="my-box col-md-3 col-sm-3 col-xs-12">
             <div class="block">
-                <div class="left">
-                    <img src="{{ asset('img/chat-arche-noe.png') }}">
-                    <em>Image</em>
+                <div class="bloc-top">
+                    <img src="{{ asset('img/chat-arche-noe.png') }}" alt="">
+                    <em></em>
                 </div>
-                <div class="right">
+                <div class="bloc-bottom">
                     <h1>C++ </h1>
                 </div>
             </div>
         </div>
         <div class="my-box col-md-3 col-sm-3 col-xs-12">
             <div class="block">
-                <div class="left">
-                    <img src="{{ asset('img/chat-arche-noe.png') }}">
-                    <em>Image</em>
+                <div class="bloc-top">
+                    <img src="{{ asset('img/chat-arche-noe.png') }}" alt="">
+                    <em></em>
                 </div>
-                <div class="right">
+                <div class="bloc-bottom">
                     <h1>C# </h1>
                 </div>
             </div>
         </div>
         <div class="my-box col-md-3 col-sm-3 col-xs-12">
             <div class="block">
-                <div class="left">
-                    <img src="{{ asset('img/chat-arche-noe.png') }}">
-                    <em>Image</em>
+                <div class="bloc-top">
+                    <img src="{{ asset('img/chat-arche-noe.png') }}" alt="">
+                    <em></em>
                 </div>
-                <div class="right">
+                <div class="bloc-bottom">
                     <h1>C++ </h1>
                 </div>
             </div>
         </div>
         <div class="my-box col-md-3 col-sm-3 col-xs-12">
             <div class="block">
-                <div class="left">
-                    <img src="{{ asset('img/chat-arche-noe.png') }}">
-                    <em>Image</em>
+                <div class="bloc-top">
+                    <img src="{{ asset('img/chat-arche-noe.png') }}" alt="">
+                    <em></em>
                 </div>
-                <div class="right">
+                <div class="bloc-bottom">
                     <h1>C# </h1>
                 </div>
             </div>
