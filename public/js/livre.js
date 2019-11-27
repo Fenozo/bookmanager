@@ -73,7 +73,8 @@ $(document).on('click', '.nouveau-article', function(e) {
     $('.modal-footer').append('<button type="submit" class="btn btn-primary" id="livre-save">Enregistrer</button>');
     
 
-})
+});
+
 /**
 * Faire une édite du champ livre
 *
